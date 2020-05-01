@@ -1,0 +1,482 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,IE=9,chrome=1"><meta name="generator" content="MATLAB"><title>MATLAB Companion Script for Machine Learning ex7 (Optional)</title><style type="text/css">.rtcContent { padding: 30px; } .S0 { margin: 3px 10px 5px 4px; padding: 0px; line-height: 28.8px; min-height: 0px; white-space: pre-wrap; color: rgb(213, 80, 0); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 24px; font-weight: 400; text-align: left;  }
+.S1 { margin: 20px 10px 5px 4px; padding: 0px; line-height: 20px; min-height: 0px; white-space: pre-wrap; color: rgb(60, 60, 60); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 20px; font-weight: 700; text-align: left;  }
+.S2 { margin: 2px 10px 9px 4px; padding: 0px; line-height: 21px; min-height: 0px; white-space: pre-wrap; color: rgb(0, 0, 0); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 14px; font-weight: 400; text-align: left;  }
+.S3 { margin: 10px 0px 20px; padding-left: 0px; font-family: Helvetica, Arial, sans-serif; font-size: 14px;  }
+.S4 { margin-left: 56px; line-height: 21px; min-height: 0px; text-align: left; white-space: pre-wrap;  }
+.S5 { margin-bottom: 20px; padding-bottom: 4px;  }
+.S6 { margin: 0px; padding: 10px 0px 10px 5px; line-height: 21px; min-height: 0px; white-space: pre-wrap; color: rgb(0, 0, 0); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 14px; font-weight: 700; text-align: start;  }
+.S7 { margin: -1px 0px 0px; padding: 10px 0px 10px 7px; line-height: 21px; min-height: 0px; white-space: pre-wrap; color: rgb(0, 0, 0); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 14px; font-weight: 400; text-align: start;  }
+.CodeBlock { background-color: #F7F7F7; margin: 10px 0 10px 0;}
+.S8 { border-left: 1px solid rgb(233, 233, 233); border-right: 1px solid rgb(233, 233, 233); border-top: 1px solid rgb(233, 233, 233); border-bottom: 0px none rgb(0, 0, 0); border-radius: 4px 4px 0px 0px; padding: 6px 45px 0px 13px; line-height: 17.234px; min-height: 18px; white-space: nowrap; color: rgb(0, 0, 0); font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 14px;  }
+.S9 { border-left: 1px solid rgb(233, 233, 233); border-right: 1px solid rgb(233, 233, 233); border-top: 0px none rgb(0, 0, 0); border-bottom: 1px solid rgb(233, 233, 233); border-radius: 0px 0px 4px 4px; padding: 0px 45px 4px 13px; line-height: 17.234px; min-height: 18px; white-space: nowrap; color: rgb(0, 0, 0); font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 14px;  }
+.S10 { margin: 3px 10px 5px 4px; padding: 0px; line-height: 20px; min-height: 0px; white-space: pre-wrap; color: rgb(60, 60, 60); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 20px; font-weight: 700; text-align: left;  }
+.S11 { border-left: 1px solid rgb(233, 233, 233); border-right: 1px solid rgb(233, 233, 233); border-top: 1px solid rgb(233, 233, 233); border-bottom: 1px solid rgb(233, 233, 233); border-radius: 4px; padding: 6px 45px 4px 13px; line-height: 17.234px; min-height: 18px; white-space: nowrap; color: rgb(0, 0, 0); font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 14px;  }
+.S12 { border-left: 1px solid rgb(233, 233, 233); border-right: 1px solid rgb(233, 233, 233); border-top: 0px none rgb(0, 0, 0); border-bottom: 0px none rgb(0, 0, 0); border-radius: 0px; padding: 0px 45px 0px 13px; line-height: 17.234px; min-height: 18px; white-space: nowrap; color: rgb(0, 0, 0); font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 14px;  }
+.S13 { margin: 10px 10px 9px 4px; padding: 0px; line-height: 21px; min-height: 0px; white-space: pre-wrap; color: rgb(0, 0, 0); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 14px; font-weight: 400; text-align: left;  }</style></head><body><div class = rtcContent><h1  class = 'S0' id = 'T_13370202' ><span>MATLAB Companion Script for </span><span style=' font-style: italic;'>Machine Learning</span><span> ex7 (Optional)</span></h1><h2  class = 'S1' id = 'H_5E50F655' ><span>Introduction</span></h2><div  class = 'S2'><span>Coursera's</span><span style=' font-style: italic;'> Machine Learning</span><span> was designed to provide you with a greater understanding of machine learning algorithms- what they are, how they work, and where to apply them. You are also shown techniques to improve their performance and to address common issues. As is mentioned in the course, there are many tools available that allow you to use machine learning algorithms </span><span style=' font-style: italic;'>without</span><span> having to implement them yourself. This Live Script was created by MathWorks to help </span><span style=' font-style: italic;'>Machine Learning</span><span> students explore the data analysis and machine learning tools available in MATLAB.</span></div><h2  class = 'S1' id = 'H_8D135D31' ><span>FAQ</span></h2><div  class = 'S2'><span style=' font-weight: bold;'>Who is this intended for?</span></div><ul  class = 'S3'><li  class = 'S4'><span>This script is intended for students using MATLAB Online who have completed ex7 and want to learn more about the corresponding machine learning tools in MATLAB.</span></li></ul><div  class = 'S2'><span style=' font-weight: bold;'>How do I use this script?</span></div><ul  class = 'S3'><li  class = 'S4'><span>In the sections that follow, read the information provided about the data analysis and machine learning tools in MATLAB, then run the code in each section and examine the results. You may also be presented with instructions for using a MATLAB machine learning app. This script should be located in the ex7 folder which should be set as your Current Folder in MATLAB Online.</span></li></ul><div  class = 'S2'><span style=' font-weight: bold;'>Can I use the tools in this companion script to complete the programming exercises?</span></div><ul  class = 'S3'><li  class = 'S4'><span>No. Most algorithm steps implemented in the programming exercises are handled automatically by MATLAB machine learning functions. Additionally, the results will be similar, but not identical, to those in the programming exercises due to differences in implementation, parameter settings, and randomization.</span></li></ul><div  class = 'S2'><span style=' font-weight: bold;'>Where can I obtain help with this script or report issues?</span></div><ul  class = 'S3'><li  class = 'S4'><span>As this script is not part of the original course materials, please direct any questions, comments, or issues to the </span><span style=' font-style: italic;'>MATLAB Help</span><span> discussion forum.</span></li></ul><h1  class = 'S0' id = 'T_C3921EC1' ><span>K-Means Clustering and Dimensionality Reduction Using PCA</span></h1><div  class = 'S2'><span>In this Live Script, we use functions and apps from the </span><a href = "https://www.mathworks.com/products/statistics.html"><span>Statistics and Machine Learning Toolbox</span></a><span> to perform </span><a href = "https://www.mathworks.com/discovery/cluster-analysis.html"><span>cluster analysis</span></a><span> and </span><a href = "https://www.mathworks.com/help/stats/principal-component-analysis-pca.html"><span>PCA for data compression and visualization</span></a><span>. </span></div><h2  class = 'S1' id = 'H_07A6C7BF' ><span>Files needed for this script</span></h2><ul  class = 'S3'><li  class = 'S4'><span style=' font-family: monospace;'>ex7data1.mat</span><span> - Example Dataset for PCA</span></li><li  class = 'S4'><span style=' font-family: monospace;'>ex7data2.mat</span><span> - Example Dataset for K-means</span></li><li  class = 'S4'><span style=' font-family: monospace;'>ex7faces.mat</span><span> - Faces Dataset</span></li><li  class = 'S4'><span>bird_small.png - Example Image</span></li></ul><div  class = 'S5'><div  class = 'S6'><span style=' font-weight: bold;'>Table of Contents</span></div><div  class = 'S7'><a href = "#T_13370202"><span>MATLAB Companion Script for Machine Learning ex7 (Optional)
+</span></a><span>    </span><a href = "#H_5E50F655"><span>Introduction
+</span></a><span>    </span><a href = "#H_8D135D31"><span>FAQ
+</span></a><a href = "#T_C3921EC1"><span>K-Means Clustering and Dimensionality Reduction Using PCA
+</span></a><span>    </span><a href = "#H_07A6C7BF"><span>Files needed for this script
+</span></a><a href = "#T_7D5C1DF8"><span>K-means clustering
+</span></a><span>    </span><a href = "#H_3D273DD7"><span>Load the data
+</span></a><span>    </span><a href = "#H_B07699E6"><span>Cluster using kmeans
+</span></a><span>    </span><a href = "#H_616FCD6C"><span>Visualize the clusters using gscatter
+</span></a><span>    </span><a href = "#H_5B7C5AB9"><span>Run k-means using multiple random initializations
+</span></a><span>    </span><a href = "#H_6EBDA3B5"><span>Analyze the groups using grpstats
+</span></a><span>    </span><a href = "#H_583E961F"><span>Determine the optimal number of clusters using silhouette plots
+</span></a><span>    </span><a href = "#H_AA2068A9"><span>Evaluate the number of clusters using evalclusters
+</span></a><a href = "#T_3D75840E"><span>Image Compression with K-means
+</span></a><span>    </span><a href = "#H_BEB99194"><span>Load, format, and visualize the image data
+</span></a><span>    </span><a href = "#H_F044C824"><span>Compress the image data using kmeans
+</span></a><a href = "#T_41E8F184"><span>Principal Component Analysis
+</span></a><span>    </span><a href = "#H_8EC67DAA"><span>Load the example 2D dataset and rename the ex7 pca function
+</span></a><span>    </span><a href = "#H_4748D0DD"><span>Use pca to obtain principle components
+</span></a><span>    </span><a href = "#H_FB681885"><span>Visualize the data in the principal component space
+</span></a><span>    </span><a href = "#H_0ECE8269"><span>Visualize the principal components and reconstruct the data in the original space
+</span></a><a href = "#T_AF1F5A29"><span>Use PCA to Compress Facial Image Data
+</span></a><span>    </span><a href = "#H_A5C91A40"><span>Load the face image data and calculate the principal components
+</span></a><span>    </span><a href = "#H_729E5FE4"><span>Select the number of principal components using a variance cutoff
+</span></a><a href = "#T_431BD579"><span>Use PCA with the Regression and Classification Learner Apps
+</span></a><span>    </span><a href = "#H_35614376"><span>Generate training data
+</span></a><span>    </span><a href = "#H_F9BBCE27"><span>Open the Classification Learner App and select the data
+</span></a><span>    </span><a href = "#H_2B01915A"><span>Select the model and PCA options and train the classifier
+</span></a><span>    </span><a href = "#H_7C6B10E9"><span>Export and extract the model and PCA coefficients
+</span></a><span>    </span><a href = "#H_E62C66A2"><span>Predict labels using the model variable and the PCA coefficients
+</span></a><span>    </span><a href = "#H_B52031AC"><span>Predict class labels without projecting using predictFcn
+</span></a><a href = "#T_A25DFB4A"><span>Re-rename your pca function</span></a></div></div><h1  class = 'S0' id = 'T_7D5C1DF8' ><span>K-means clustering</span></h1><div  class = 'S2'><span>In this section we group data using the </span><span style=' font-family: monospace;'>kmeans</span><span> function. We then visualize the and evaluate the resulting clusters. </span></div><h2  class = 'S1' id = 'H_3D273DD7' ><span>Load the data</span></h2><div  class = 'S2'><span>Run the code below to load the example dataset in </span><span style=' font-family: monospace;'>ex7data2.mat</span><span> which contains a matrix, </span><span style=' font-family: monospace;'>X</span><span>, of two-dimensional data points.</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>clear;</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>load </span><span style="color: rgb(160, 32, 240);">ex7data2.mat</span><span>;</span></span></div></div></div><h2  class = 'S10' id = 'H_B07699E6' ><span>Cluster using </span><span style=' font-family: monospace;'>kmeans</span></h2><div  class = 'S2'><span>The </span><a href = "https://www.mathworks.com/help/stats/kmeans.html"><span style=' font-family: monospace;'>kmeans</span></a><span> function automatically performs all steps of the clustering algorithm you implemented in ex7, including random initialization. Note that additional options such as the maximum number of iterations or the preferred distance metric can be set by providing additional inputs. Run the code below to cluster the data into 3 groups. Note that </span><span style=' font-family: monospace;'>kmeans</span><span> returns two outputs: a vector containing the assigned centroid for each data point, </span><span style=' font-family: monospace;'>idx</span><span>, and a matrix of centroid locations, </span><span style=' font-family: monospace;'>C</span><span>. We also print the algorithm progress at each step by setting the </span><span style=' font-family: monospace;'>Display</span><span> option to </span><span style=' font-family: monospace;'>iter</span><span>. </span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S11'><span style="white-space: pre;"><span>[idx,C] = kmeans(X,3,</span><span style="color: rgb(160, 32, 240);">'Display'</span><span>,</span><span style="color: rgb(160, 32, 240);">'iter'</span><span>);</span></span></div></div></div><h2  class = 'S10' id = 'H_616FCD6C' ><span>Visualize the clusters using </span><span style=' font-family: monospace;'>gscatter</span></h2><div  class = 'S2'><span>Run the code in this section to plot the data points using the </span><a href = "https://www.mathworks.com/help/stats/gscatter.html"><span style=' font-family: monospace;'>gscatter</span></a><span> function, which provides a convenient way to visualize data by group or category. </span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>gscatter(X(:,1),X(:,2),idx,</span><span style="color: rgb(160, 32, 240);">''</span><span>,</span><span style="color: rgb(160, 32, 240);">''</span><span>,</span><span style="color: rgb(160, 32, 240);">''</span><span>,</span><span style="color: rgb(160, 32, 240);">'off'</span><span>); hold </span><span style="color: rgb(160, 32, 240);">on</span><span>;</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>plot(C(:,1),C(:,2),</span><span style="color: rgb(160, 32, 240);">'kx'</span><span>,</span><span style="color: rgb(160, 32, 240);">'MarkerSize'</span><span>,10,</span><span style="color: rgb(160, 32, 240);">'MarkerEdgeColor'</span><span>,</span><span style="color: rgb(160, 32, 240);">'k'</span><span>,</span><span style="color: rgb(160, 32, 240);">'LineWidth'</span><span>,3);</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>legend([</span><span style="color: rgb(160, 32, 240);">"Cluster "</span><span>+(1:3),</span><span style="color: rgb(160, 32, 240);">'Centroids'</span><span>]); hold </span><span style="color: rgb(160, 32, 240);">off</span><span>;</span></span></div></div></div><h2  class = 'S10' id = 'H_5B7C5AB9' ><span>Run k-means using multiple random initializations</span></h2><div  class = 'S2'><span>If you were to rerun the previous sections multiple times, you may occasionally encounter clustering result where one of the three fairly distinct clusters are split by two centroids. In that case, the algorithm converged to a local minimum value of the cost metric. Because of this possibility, it is often advisable to repeat the algorithm multiple times using different initial centroids, which we can accomplish using the </span><span style=' font-family: monospace;'>'Replicates'</span><span> option. The code below will run k-means using 5 different random initializations. Note that only the centroid locations and indices corresponding to the lowest cost are returned as the output. </span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S11'><span style="white-space: pre;"><span>[idx,~] = kmeans(X,3,</span><span style="color: rgb(160, 32, 240);">'Display'</span><span>,</span><span style="color: rgb(160, 32, 240);">'iter'</span><span>,</span><span style="color: rgb(160, 32, 240);">'Replicates'</span><span>,5);</span></span></div></div></div><h2  class = 'S10' id = 'H_6EBDA3B5' ><span>Analyze the groups using </span><span style=' font-family: monospace;'>grpstats</span></h2><div  class = 'S2'><span>When a dataset contains categorical labels, or if the data has been clustered into groups as above, it is common to compute statistics for each variable to help determine the differences and similarities between groups. Below we use the </span><a href = "https://www.mathworks.com/help/stats/grpstats.html"><span style=' font-family: monospace;'>grpstats</span></a><span> function to compute summary statistics for each variable in the dataset by cluster. The </span><span style=' font-family: monospace;'>grpstats</span><span> function will output the individual results for each statistic requested. However, as we are requesting several statistics, it's easier to view them if they are organized as a </span><span style=' font-family: monospace;'>table</span><span> (which is the default output of </span><span style=' font-family: monospace;'>grpstats</span><span> for </span><span style=' font-family: monospace;'>table</span><span> inputs). Run the code below to compute and display a table of summary statistics on the clustered data. The first two columns in the table contain the group number and the number of elements in each group. The remaining columns contain the summary stats - one for each statistic and variable - by group.</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S11'><span style="white-space: pre;"><span>tblstats = grpstats(array2table([X,idx],</span><span style="color: rgb(160, 32, 240);">'VariableNames'</span><span>,{</span><span style="color: rgb(160, 32, 240);">'X1'</span><span>,</span><span style="color: rgb(160, 32, 240);">'X2'</span><span>,</span><span style="color: rgb(160, 32, 240);">'Group'</span><span>}),</span><span style="color: rgb(160, 32, 240);">'Group'</span><span>,{</span><span style="color: rgb(160, 32, 240);">'mean'</span><span>,</span><span style="color: rgb(160, 32, 240);">'median'</span><span>,</span><span style="color: rgb(160, 32, 240);">'std'</span><span>,</span><span style="color: rgb(160, 32, 240);">'min'</span><span>,</span><span style="color: rgb(160, 32, 240);">'max'</span><span>})</span></span></div></div></div><h2  class = 'S10' id = 'H_583E961F' ><span>Determine the optimal number of clusters using silhouette plots</span></h2><div  class = 'S2'><span>As discussed in the course, it can be difficult to determine the 'best' number of centroids to use when clustering data. A visual inspection of the current data set would lead most people to choose 3 centroids, but this method may prove difficult or impossible for higher dimensional data or larger numbers of groups. One way to help choose the appropriate number of clusters is to create a </span><span style=' font-style: italic;'>silhouette plot</span><span>. The 'silhouette' of a data point is a measure of how close that point is to other points in neighboring clusters. This measure ranges from -1 to 1 where: </span></div><ul  class = 'S3'><li  class = 'S4'><span>Values close to +1 imply the point is very distant from neighboring clusters.</span></li><li  class = 'S4'><span>Values close to 0 imply the point is not distinctly in its assigned cluster or another one.</span></li><li  class = 'S4'><span>Values close to -1 imply the point has most likely been misclassified and belongs to a different cluster.</span></li></ul><div  class = 'S2'><span>In general, 'weaker' clusters can be identified as having a larger proportion of points possessing small or even negative silhouette values. The mean silhouette value over all data points can therefore be used to compare the performance of different clustering models. Run the code below to cluster the data using two different numbers of centroids and create a silhouette plot for each using the </span><a href = "https://www.mathworks.com/help/stats/silhouette.html"><span style=' font-family: monospace;'>silhouette</span></a><span> function, then examine the resulting plots.</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>idx = kmeans(X,3,</span><span style="color: rgb(160, 32, 240);">'Replicates'</span><span>,5);</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>[s4,~] = silhouette(X,idx);</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>title(sprintf(</span><span style="color: rgb(160, 32, 240);">'Mean silhouette value for 3 centroids: %g'</span><span>,mean(s4)))</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>idx = kmeans(X,4,</span><span style="color: rgb(160, 32, 240);">'Replicates'</span><span>,5);</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>[s3,~] = silhouette(X,idx);</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>title(sprintf(</span><span style="color: rgb(160, 32, 240);">'Mean silhouette value for 4 centroids: %g'</span><span>,mean(s3)))</span></span></div></div></div><div  class = 'S13'><span>As expected, the 3-centroid model appears to perform better than the 4-centroid model based on its larger mean silhouette value. Also note the presence of the two weaker clusters in the 4-silhouette model where a larger proportion of their data points have relatively low silhouette values.</span></div><h2  class = 'S10' id = 'H_AA2068A9' ><span>Evaluate the number of clusters using </span><span style=' font-family: monospace;'>evalclusters</span></h2><div  class = 'S2'><span>The silhouette criterion is just one method of evaluating the performance of a clustering model. The </span><a href = "https://www.mathworks.com/help/stats/evalclusters.html"><span style=' font-family: monospace;'>evalclusters</span></a><span> function allows one to quickly obtain the optimal number of clusters based on a particular criterion- see the documentation for the list of available criteria and their descriptions. Run the code below to call </span><span style=' font-family: monospace;'>evalclusters</span><span> using the </span><span style=' font-family: monospace;'>'silhouette'</span><span> criterion over the range of centroid values </span><span texencoding="k = 2,3,\ldots,6" style="vertical-align:-5px"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK8AAAAjCAYAAADi4FrWAAAHYUlEQVR4Xu2cBagtVRSGv2d3YmAr2KCIgqIitogdYHcHNmJ3g4ndLXYjdovdgShiYWB3B5+uke28EzP3zDn3zn0z8Hi8e/fs+Pe/117rX2veGJqnQaCmCIyp6bybaTcI0JC3IUFtEWjIW9utaybekLfhQG0RaMhb261rJl6EvOMB0wPzAW8CnzewNQgMAIEJgNmAhYN7NwPvpuO2I++EwA7AyvFnSuAJYFPgvQFMvOohXOfcwDaxnqXiIN4NXAa8CPxZ4aATAysA2wIrAeL5OHA5cAvwU4VjjaauNJQLAdsD6wM3ARcBbwC/5xfazfJOBpwenV0B7AZ8VzO0PMGbAacA07WYu+s5Gji1FUBDWKtj2N+uwJPA98C8wJzR13nAAcDXQ+h7NL8yA3BE4HYNcFDe0pYl77SApF0D2Cc2uG4ArghcHFbvOuBjYC5gY2AnwFtFAm8B3Nrj4rS4xwJ/xWFxLB9/vnng53haFi1K8/yLwPyBxzJB4JOK3E7dLO8CgBvuZq8eV1+dAPfwnQPcBniaJVX2uPZNgHODwJcCuwM/9LDA5YClg6S/5PqRtGfFITkb2Bf4uYexRsurCwKXAEsC4rJ/0T3oRt61wxo9FFfvRzVDzJOsxfPWaOVnTg6cCWxdgU+vX7sVcDvwaRucDgWOCnLrOvxaMzyrnu5MgG7UOsCdcSN9UnSQTuQdP3y3A2OAvYuY8qIDD6jdnsCrwP0dxtN10Pq+BGwUgVw/ppfiuUEEI/0Ypy59yr09gNNiwqUx6UTe1N/dOQhcF2DKzNNg7krgvlBTPivzcom2s0b8YORc+Gos0X/dmqr+6MrpLoj9lhGPFF5HJ/IuAtwATAGsBTwH+DM327+VNV6INq/V0CpnIGWWV7WhX1e5AZuui7qlrsOXhXdo9DbcDrgwlqeidW+4XUqLKjZyS6lMefH9VjB0Im87i+SJMVI2ELqxhD5qRHktsGiP+3FYuDM9dvPP6xMBJ4SvtV4X92Ko4xnsHhmW5dHweR8ogdtQxx3J700afr+Gw8fkl76vGrjSosZxL2DN+N2OwCP5BbUjb7ap+rmpRfJEGCVL2udLojMSyZtdXc/EVV5l8sBgUV3cDVBpSB8t/MkV6colt2FENDdjexWwWsiUGwL35GaWBnMmeAy8C2XYZonOl4+XHGjm0EWVlOqYZWt1cA0YlMvMvOmL9uPRypikMGOpGpHpyv2y9P1YQ9V9poZM11Td+5sWg+hCmBYWs7HyDO0sr1bjLkDZwlPxRwQzWovR4q8tET6XisTDVe9Oi/7E2pSxCROzbceH/yu249qTkld3oZ2SlRrRsbTxduTNghhz/wr8RsdnhAuRCv11Bd0rSZ/dU59PXvRzTaaq9X9NfXayOP2cw0joOyVlJ/KmiR25aBz2RbaAVuTNO9NZ2yHJGSMBqdwcTEycGEmJQRI3m8Yq4d+NtRkjEKt+TWnquPW81TvVzKRcLERer7SrI82phXg5rJOnoLSQnKx+JARsGXGVYawmG6tSqV+7lfSrS/ZYpELH1RSxCZvDw23qpK+n5FVW08X7sZPlzSzDW+HvfhDSmAGGzrP63FdD2OThJq/E9TBazdWugkzt2jRvvi5hCMtt+0qWch/Xi3OyYExpLMsj5EFLLbR7Z5zw35N3G/z3waGjpj5ZJihbfZXJGp4eA5Bna1De5wnWb7cQppNEZQWaSRn9fB/JLIC/hf7YK4lNVlgxtXgr6QdwnpOEfFTmVpgKmCc00U5yX9XtUjzKYmUG13yBRtEbSIOSj6cygzcjsC7wdCfypg6ymaCsvC9LbUrW60Mymz2IbJt+WqoqCKPMMk3UJreaq4GUa7O2wTpcSxn9maCaxChS8+vBt8DEoMIbyvLKtELN32ttzOWr/+YVjrS6Sl1Tg6F43+3RzVO+VNa8ICL3VpVxVbdL51UWq+xd8dLnfT2q7bztU6/A2+l84LhwM/53oPOWN73aV42UnZ3lywfviAzRfkA6YDegB/37FNQiY6cWIBXSfbdb4Y4WU6su+X0MMEx7ejNpcdWTLZdUbfDLjfyTZTSzn6fGo9Pc/SpEgV/DYwrfOuW3W7xQdbt0iLJYZe+mHwp4mOXTO8E3YwOJ+2C7lHqevJk/1uqTHwdSaD8m8s5ew2WzbEUIVGWbXUJZyGe4Wo2htU19L9drEkM3KvsCY9kuNc3eRodE5khLp8WWqG6MqU8DxXafG2k4rPfVOvt0kpDS+evLe/tZTO/YWt9WLkfV7fKWtyxW6fum0L1p/OzM59uoZ1ATf6odZt3qeaskUp378hMV636tqyhylfe6Vius5kjctl77G+T7A8OqIW+xbTWQ8ysJb50ygVSx3v/fSgvpOH5doExZt2dgWDXk7U4NAyl9Yd2Hdl9IdO+lWAtdFYPLDwec+Ss2u+6tBolV83+VddmPxUJRUSHoV5F6NgUDPv3GVyLYq/JT/O60673FILH6Z7aN5e1905oehgmBhrzDBHwzbO8INOTtHcOmh2FCoCHvMAHfDNs7An8DmLuzM20URl0AAAAASUVORK5CYII=" width="87.5" height="17.5" /></span><span> (provided using the </span><span style=' font-family: monospace;'>'Klist'</span><span> option) and compare the result with the previous section. Note that </span><span style=' font-family: monospace;'>evalclusters</span><span> returns an object containing the optimal number of clusters in the </span><span style=' font-family: monospace;'>OptimalK</span><span> property. </span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>clsteval = evalclusters(X,</span><span style="color: rgb(160, 32, 240);">'kmeans'</span><span>,</span><span style="color: rgb(160, 32, 240);">'silhouette'</span><span>,</span><span style="color: rgb(160, 32, 240);">'Klist'</span><span>,2:6)</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>fprintf(</span><span style="color: rgb(160, 32, 240);">'The optimal number of clusters found for this dataset is %d.'</span><span>,clsteval.OptimalK);</span></span></div></div></div><h1  class = 'S0' id = 'T_3D75840E' ><span>Image Compression with </span><span style=' font-style: italic;'>K</span><span>-means</span></h1><div  class = 'S2'><span>Recall that in ex7 you used k-means to cluster the pixel color values of an example image into 16 seperate clusters. You then compressed the image by replacing the RGB pixels with the closest centroid color. This only required 4 bits per pixel to map to one of the 16 centroids, resulting in significant storage savings over the original set of 3, 8-bit RGB values per pixel. In this section, we will repeat this analysis using functions from the Statistics and Machine Learning Toolbox.</span></div><h2  class = 'S1' id = 'H_BEB99194' ><span>Load, format, and visualize the image data</span></h2><div  class = 'S2'><span>Run the code below to load and format the image into a double array for use with </span><span style=' font-family: monospace;'>kmeans</span><span>. A 3D scatter plot will be generated using </span><span style=' font-family: monospace;'>scatter3</span><span> to visualize the color data. Use the Zoom, Pan, and Rotate figure controls to explore the color content of the image. To view the data in a particular color plane (e.g. red-blue), hover the cursor over the image and click the 'Rotate' icon when it appears. Then right-click the plot and select the desired axis view using the 'Go to' view options. </span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>clear;</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>A = imread(</span><span style="color: rgb(160, 32, 240);">'bird_small.png'</span><span>); </span><span style="color: rgb(60, 118, 61);">% A is a 128x128x3 uint8 image array</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>X = double(reshape(A(:),length(A(:))/3,3)); </span><span style="color: rgb(60, 118, 61);">% X is a (128*128)x3 double matrix</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>scatter3(X(:,1),X(:,2),X(:,3),12,X/255,</span><span style="color: rgb(160, 32, 240);">'filled'</span><span>);</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>xlabel(</span><span style="color: rgb(160, 32, 240);">'Red'</span><span>); ylabel(</span><span style="color: rgb(160, 32, 240);">'Green'</span><span>); zlabel(</span><span style="color: rgb(160, 32, 240);">'Blue'</span><span>)</span></span></div></div></div><h2  class = 'S10' id = 'H_F044C824' ><span>Compress the image data using </span><span style=' font-family: monospace;'>kmeans</span></h2><div  class = 'S2'><span>Choose a </span><span style=' font-family: monospace;'>k</span><span> value using the control below to cluster the color data into </span><span style=' font-family: monospace;'>k</span><span> colors and compress the image. The original and compressed images will be displayed along with the compression ratio. The grouped data is also plotted generated for comparison with the figure in the previous section. You may want to launch the figure into a separate window and maximize the figure for closer inspection (hover the cursor over the figure and click the 'arrow' control when it appears).</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>k = </span></span><span>64</span><span style="white-space: pre;"><span>;</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>replicates = 10;</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>[idx,C] = kmeans(X,k,</span><span style="color: rgb(160, 32, 240);">'Replicates'</span><span>,replicates,</span><span style="color: rgb(160, 32, 240);">'MaxIter'</span><span>,200);</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span style="color: rgb(60, 118, 61);">% Map the pixels to the centroids and convert to uint8</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>Xcomp = C(idx,:);</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>Acomp = uint8(reshape(Xcomp,size(A)));</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span style="color: rgb(60, 118, 61);">% Original and compressed scatter plots</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>subplot(2,2,1)</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>scatter3(X(:,1),X(:,2),X(:,3),12,X/255);</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>title(sprintf(</span><span style="color: rgb(160, 32, 240);">'Original: %d colors'</span><span>,length(unique(X,</span><span style="color: rgb(160, 32, 240);">'rows'</span><span>))));</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>xlabel(</span><span style="color: rgb(160, 32, 240);">'Red'</span><span>); ylabel(</span><span style="color: rgb(160, 32, 240);">'Green'</span><span>);zlabel(</span><span style="color: rgb(160, 32, 240);">'Blue'</span><span>)</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>subplot(2,2,3);</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>scatter3(X(:,1),X(:,2),X(:,3),12,Xcomp/255);</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>xlabel(</span><span style="color: rgb(160, 32, 240);">'Red'</span><span>); ylabel(</span><span style="color: rgb(160, 32, 240);">'Green'</span><span>);zlabel(</span><span style="color: rgb(160, 32, 240);">'Blue'</span><span>);</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>title(sprintf(</span><span style="color: rgb(160, 32, 240);">'Compressed: %d colors.'</span><span>, k));</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span style="color: rgb(60, 118, 61);">% Original and compressed images </span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>subplot(2,2,2);</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>imshow(A); </span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>title(</span><span style="color: rgb(160, 32, 240);">'Original'</span><span>);</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>axis </span><span style="color: rgb(160, 32, 240);">square</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>subplot(2,2,4);</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>imshow(uint8(Acomp))</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>title(sprintf(</span><span style="color: rgb(160, 32, 240);">'Compressed size: %0.2g%% of original'</span><span>,100*log2(k)/24))</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>axis </span><span style="color: rgb(160, 32, 240);">square</span></span></div></div></div><h1  class = 'S0' id = 'T_41E8F184' ><span>Principal Component Analysis</span></h1><div  class = 'S2'><span>In ex7 you used principal component analysis to compress data, remove duplicate information, and increase the efficiency of machine learning algorithms. In this section you will use the MATLAB </span><a href = "https://www.mathworks.com/help/stats/pca.html"><span style=' font-family: monospace;'>pca</span></a><span> function from the Statistics and Machine Learning Toolbox to obtain the principal components of the sample dataset used in ex7. </span></div><h2  class = 'S1' id = 'H_8EC67DAA' ><span>Load the example 2D dataset and rename the ex7 pca function</span></h2><div  class = 'S2'><span>Run the code below to load the example data matrix </span><span style=' font-family: monospace;'>X</span><span>. </span><span style=' font-weight: bold;'>Since the </span><span style=' font-weight: bold; font-family: monospace;'>pca</span><span style=' font-weight: bold;'> function from ex7 shares the same name as the MATLAB version, the code below will also rename your </span><span style=' font-weight: bold; font-family: monospace;'>pca</span><span style=' font-weight: bold;'> function to </span><span style=' font-weight: bold; font-family: monospace;'>pca_ex7</span><span style=' font-weight: bold;'>. </span><span>Make sure to run the code at the end of this section to undo this change before trying to use ex7 or submit the exercise again.</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>clear;</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>movefile </span><span style="color: rgb(160, 32, 240);">pca.m pca_ex7.m</span><span>;</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>load(</span><span style="color: rgb(160, 32, 240);">'ex7data1.mat'</span><span>);</span></span></div></div></div><h2  class = 'S10' id = 'H_4748D0DD' ><span>Use </span><span style=' font-family: monospace;'>pca</span><span> to obtain principle components</span></h2><div  class = 'S2'><span>The </span><span style=' font-family: monospace;'>pca</span><span> function takes a matrix as input and returns a matrix as output. The columns of the output matrix contain the principal components sorted in order of decreasing variance. The </span><span style=' font-family: monospace;'>pca</span><span> function automatically centers the data about the mean before computing the principal components. Additional information from the analysis can be obtained by requesting additional outputs, including the row scores (the data coordinates in the principal component space), column means, and the principal component variances and variance percentages- see the documentation for details. Run the code below to compute the principal components of </span><span style=' font-family: monospace;'>X</span><span>. You should see that the two components account for about 87% and 13% of the variance of the data in </span><span style=' font-family: monospace;'>X</span><span>, respectively.</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S11'><span style="white-space: pre;"><span>[coeff,scr,~,~,</span><span class="warning_squiggle_rteliveEditorF4B0EFB3 warningHighlightliveEditorF4B0EFB3">varpct</span><span>,mu] = pca(X)</span></span></div></div></div><h2  class = 'S10' id = 'H_FB681885' ><span>Visualize the data in the principal component space</span></h2><div  class = 'S2'><span>The code below uses the </span><a href = "https://www.mathworks.com/help/stats/biplot.html"><span style=' font-family: monospace;'>biplot</span></a><span> function to visualize the data </span><span style=' font-style: italic;'>in the principle component space</span><span> using the coefficient and score outputs from </span><span style=' font-family: monospace;'>pca</span><span>. </span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>figure;</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>biplot(coeff,</span><span style="color: rgb(160, 32, 240);">'Scores'</span><span>,scr)</span></span></div></div></div><div  class = 'S13'><span>It's clear from the plot that the data values vary the most along the first principal component (x-axis)</span></div><h2  class = 'S10' id = 'H_0ECE8269' ><span>Visualize the principal components and reconstruct the data in the original space</span></h2><div  class = 'S2'><span>The score output contains the coefficients of the original data when projected onto the principal components, so there is no need to write an additional function to project the data as in ex7. Run the code in this section to plot the data points and principal components in the original space. The 'reconstructed' data is also plotted using the projection onto the first principle component.</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span style="color: rgb(60, 118, 61);">% Plot the data    </span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>figure; hold </span><span style="color: rgb(160, 32, 240);">on</span><span>;</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>scatter(X(:,1),X(:,2)); </span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span style="color: rgb(60, 118, 61);">% Plot the mean location</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>plot(mu(1),mu(2),</span><span style="color: rgb(160, 32, 240);">'kx'</span><span>,</span><span style="color: rgb(160, 32, 240);">'MarkerSize'</span><span>,12,</span><span style="color: rgb(160, 32, 240);">'LineWidth'</span><span>,3);</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span style="color: rgb(60, 118, 61);">% Plot the principal component directions</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>m = coeff(2,:)./coeff(1,:);</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>plot([min(X(:,1)),max(X(:,1))],[m(1)*(min(X(:,1))-mu(1))+mu(2),m(1)*(max(X(:,1))-mu(1))+mu(2)],</span><span style="color: rgb(160, 32, 240);">'r--'</span><span>)</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>plot([min(X(:,1)),max(X(:,1))],[m(2)*(min(X(:,1))-mu(1))+mu(2),m(2)*(max(X(:,1))-mu(1))+mu(2)],</span><span style="color: rgb(160, 32, 240);">'g--'</span><span>)</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span style="color: rgb(60, 118, 61);">% Plot the reconstructed data</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>Xrec = scr(:,1)*coeff(:,1)'+mu;</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>plot(Xrec(:,1),Xrec(:,2),</span><span style="color: rgb(160, 32, 240);">'b.'</span><span>,</span><span style="color: rgb(160, 32, 240);">'MarkerSize'</span><span>,12)</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>legend({</span><span style="color: rgb(160, 32, 240);">'Data'</span><span>,</span><span style="color: rgb(160, 32, 240);">'$\mu$'</span><span>,</span><span style="color: rgb(160, 32, 240);">'PC 1'</span><span>,</span><span style="color: rgb(160, 32, 240);">'PC 2'</span><span>,</span><span style="color: rgb(160, 32, 240);">'Projected Data'</span><span>},</span><span style="color: rgb(160, 32, 240);">'Location'</span><span>,</span><span style="color: rgb(160, 32, 240);">'northwest'</span><span>,</span><span style="color: rgb(160, 32, 240);">'Interpreter'</span><span>,</span><span style="color: rgb(160, 32, 240);">'latex'</span><span>)</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>axis </span><span style="color: rgb(160, 32, 240);">tight</span><span>; axis </span><span style="color: rgb(160, 32, 240);">equal</span><span>; hold </span><span style="color: rgb(160, 32, 240);">off</span><span>;</span></span></div></div></div><h1  class = 'S0' id = 'T_AF1F5A29' ><span>Use PCA to Compress Facial Image Data</span></h1><div  class = 'S2'><span>In the last part of ex7 you ran PCA on face images to compress the data values by projecting onto a subset of principal components. In the next two sections we reproduce those results using the </span><span style=' font-family: monospace;'>pca</span><span> function.</span></div><h2  class = 'S1' id = 'H_A5C91A40' ><span>Load the face image data and calculate the principal components</span></h2><div  class = 'S2'><span>Run the code below to load the matrix </span><span style=' font-family: monospace;'>X</span><span> of 5000 32x32 grayscale images used in ex7. (Recall that the face images have been 'unwound' into 1024-element row vectors and stacked into </span><span style=' font-family: monospace;'>X</span><span>.) The </span><span style=' font-family: monospace;'>pca</span><span> function is then used to obtain the principal components, scores, variance percentages, and column means of </span><span style=' font-family: monospace;'>X</span><span>.</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>clear;</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>load(</span><span style="color: rgb(160, 32, 240);">'ex7faces.mat'</span><span>);</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>[coeff,scr,~,~,varpct,mu] = pca(X);</span></span></div></div></div><h2  class = 'S10' id = 'H_729E5FE4' ><span>Select the number of principal components using a variance cutoff</span></h2><div  class = 'S2'><span>In this section we implement a method below for choosing the minimum number of principal components, </span><span style=' font-family: monospace;'>k</span><span>, which account for the chosen variance percentage, </span><span style=' font-family: monospace;'>v</span><span>, in the data. Run the code below to calculate the required number of components needed to account for the variance and plot a random image alongside its compressed counterpart. Use the control to increase or decrease the percentage of variance that is accounted for by the projected data.</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span style="color: rgb(60, 118, 61);">% Find k and project onto first k components</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>v = </span></span><span>80</span><span style="white-space: pre;"><span>;</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span style="color: rgb(0, 0, 255);">if </span><span>v == 100</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>    k = 1024;</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span style="color: rgb(0, 0, 255);">else</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>    k = find(cumsum(varpct)&gt;v,1);</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span style="color: rgb(0, 0, 255);">end</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>Xcomp = scr(:,1:k)*coeff(:,1:k)'+mu;</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span style="color: rgb(60, 118, 61);">% Plot images side by side</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>figure;</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>colormap(gray);</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>idx = randi(5000);</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>subplot(1,2,1);</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>imagesc(reshape(X(idx,:),32,32));</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>xlabel(sprintf(</span><span style="color: rgb(160, 32, 240);">'Original image #%d'</span><span>,idx));</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>axis </span><span style="color: rgb(160, 32, 240);">square</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>subplot(1,2,2);</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>imagesc(reshape(Xcomp(idx,:),32,32));</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>xlabel(sprintf(</span><span style="color: rgb(160, 32, 240);">'Reconstructed using %d\n principal components'</span><span>,k));</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>title(sprintf(</span><span style="color: rgb(160, 32, 240);">'Variance cutoff: %d%%'</span><span>,v))</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>axis </span><span style="color: rgb(160, 32, 240);">square</span></span></div></div></div><h1  class = 'S0' id = 'T_431BD579' ><span>Use PCA with the Regression and Classification Learner Apps</span></h1><div  class = 'S2'><span>As discussed in the lectures, PCA can help improve the performance of machine learning algorithms by reducing data redundancy prior to training. In the following sections we provide instructions for using PCA with the Regression or Classification Learner Apps.</span></div><h2  class = 'S1' id = 'H_35614376' ><span>Generate training data</span></h2><div  class = 'S2'><span>The code below uses a subset of 20% of the bird image data loaded in the previous section. Artificial class labels are then generated using a hypersphere as a decision surface with some noise near the boundary added in for a more realistic (less well-separated) example. The features and labels are then combined in the matrix </span><span style=' font-family: monospace;'>data</span><span> and a 3D scatterplot is generated to help visualize the labeled data.</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>clear;</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>A = imread(</span><span style="color: rgb(160, 32, 240);">'bird_small.png'</span><span>); </span><span style="color: rgb(60, 118, 61);">% A is a 128x128x3 uint8 image array</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>X = double(reshape(A(:),length(A(:))/3,3)); </span><span style="color: rgb(60, 118, 61);">% X is a (128*128)x3 double matrix</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>m = length(X);</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>tind = rand(m,1) &lt; 0.2;</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>Xtrain = X(tind,:);</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>yt = (sum(Xtrain.^2,2)&lt;1e5 + 1e4*randn(length(Xtrain),1));</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>data = [Xtrain,yt];</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>figure;</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>scatter3(Xtrain(:,1),Xtrain(:,2),Xtrain(:,3),10,[yt,0*yt,~yt]);</span></span></div></div></div><div  class = 'S2'><span>To train, export, and utilize an SVM classifier model using PCA on the example data, follow the steps in the next few sections. </span></div><div  class = 'S2'><span style=' font-weight: bold;'>Note: </span><span>If you have difficulty reading the instructions below while the app is open in MATLAB Online, export this script to a pdf file which you can then use to display the instructions in a separate browser tab or window. To export this script, click on the 'Save' button in the 'Live Editor' tab above, then select 'Export to PDF'.</span></div><h2  class = 'S1' id = 'H_F9BBCE27' ><span>Open the Classification Learner App and select the data</span></h2><ol  class = 'S3'><li  class = 'S4'><span>In the </span><span style=' font-weight: bold;'>MATLAB Apps tab</span><span>, select the </span><span style=' font-weight: bold;'>Classification Learner</span><span> app from the Machine Learning section.</span></li><li  class = 'S4'><span>Select '</span><span style=' font-weight: bold;'>New Session -&gt; From Workspace</span><span>' to start a new interactive session.</span></li><li  class = 'S4'><span>Under '</span><span style=' font-weight: bold;'>Workspace Variable'</span><span>, select '</span><span style=' font-weight: bold;'>data</span><span>' (if not already selected).</span></li><li  class = 'S4'><span>Under '</span><span style=' font-weight: bold;'>Response</span><span>' select '</span><span style=' font-weight: bold;'>column_4</span><span>' (if not already selected).</span></li><li  class = 'S4'><span>Under '</span><span style=' font-weight: bold;'>Predictors</span><span>' select the remaining columns (if not already selected).</span></li><li  class = 'S4'><span>Under '</span><span style=' font-weight: bold;'>Validation</span><span>' select '</span><span style=' font-weight: bold;'>No Validation</span><span>'.</span></li><li  class = 'S4'><span>Click the '</span><span style=' font-weight: bold;'>Start Session</span><span>' button.</span></li></ol><h2  class = 'S10' id = 'H_2B01915A' ><span>Select the model and PCA options and train the classifier</span></h2><ol  class = 'S3'><li  class = 'S4'><span>Expand the model list and select '</span><span style=' font-weight: bold;'>Quadratic SVM</span><span>' from the '</span><span style=' font-weight: bold;'>Support Vector Machines</span><span>' list.</span></li><li  class = 'S4'><span>Click on the '</span><span style=' font-weight: bold;'>PCA</span><span>' button to open the </span><span style=' font-weight: bold;'>Advanced PCA Options</span><span>' menu.</span></li><li  class = 'S4'><span>Check the '</span><span style=' font-weight: bold;'>Enable PCA</span><span>' box.</span></li><li  class = 'S4'><span>Expand the '</span><span style=' font-weight: bold;'>Component reduction criterion</span><span>' drop-down list and select '</span><span style=' font-weight: bold;'>Specify number of components</span><span>'.</span></li><li  class = 'S4'><span>Change the '</span><span style=' font-weight: bold;'>Number of numeric components</span><span>' to</span><span style=' font-weight: bold;'> 2</span><span>.</span></li><li  class = 'S4'><span>Close the '</span><span style=' font-weight: bold;'>Advanced PCA options</span><span>' menu.</span></li><li  class = 'S4'><span>Click the '</span><span style=' font-weight: bold;'>Train</span><span>' button.</span></li></ol><h2  class = 'S10' id = 'H_7C6B10E9' ><span>Export and extract the model and PCA coefficients</span></h2><ol  class = 'S3'><li  class = 'S4'><span>Select '</span><span style=' font-weight: bold;'>Export Model' -&gt; 'Export Model</span><span>'.</span></li><li  class = 'S4'><span>Select the default output variable name ('trainedModel') and click '</span><span style=' font-weight: bold;'>OK</span><span>'.</span></li><li  class = 'S4'><span>Close the app.</span></li><li  class = 'S4'><span>Run the code below to extract the </span><span style=' font-family: monospace;'>classificationSVM</span><span> model and the PCA information. </span></li></ol><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>quadSVMmdl = trainedModel.ClassificationSVM</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>coeff = trainedModel.PCACoefficients</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>mu = trainedModel.PCACenters</span></span></div></div></div><div  class = 'S13'><span>When PCA is used before training the model in the Regression and Classification Learner Apps, the principal components and variable means are included in the </span><span style=' font-family: monospace;'>PCACoefficients</span><span> and </span><span style=' font-family: monospace;'>PCACenters</span><span> properties of the </span><span style=' font-family: monospace;'>trainedModel</span><span> variable. Note that only the principal components used in training are returned.</span></div><h2  class = 'S10' id = 'H_E62C66A2' ><span>Predict labels using the model variable and the PCA coefficients</span></h2><div  class = 'S2'><span>Depending on how you are going to use the trained model, you may work either projected data values or the original data values. In this section we work with projected data, while in the next section we work with the original data, i.e. without projecting data onto the components before predicting. Since the </span><span style=' font-family: monospace;'>classificationSVM</span><span> model was trained on the projected data, you must project</span><span style=' font-weight: bold;'> </span><span>new data, such as a test set, onto the principal components before using the </span><span style=' font-family: monospace;'>predict</span><span> function, as the original data will contain more features then the model was trained on.  </span></div><div  class = 'S2'><span>    Run the code below to project the remaining pixel data (not used for training) onto the first two principal components and predict classes using the </span><span style=' font-family: monospace;'>predict</span><span> function. The resulting data points and their predicted classes are then plotted using the original and projected coordinates for comparison.</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span style="color: rgb(60, 118, 61);">% Center and project the original data onto the principal components</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>Xtest = (X(~tind,:)-mu)*coeff;</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span style="color: rgb(60, 118, 61);">% Classify the projected data</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>ytest = predict(quadSVMmdl,Xtest);</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span style="color: rgb(60, 118, 61);">% Plot the results in the original coordinates</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>figure;</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>scatter3(X(~tind,1),X(~tind,2),X(~tind,3),10,[ytest,0*ytest,~ytest]);</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>title(</span><span style="color: rgb(160, 32, 240);">'Original coordinates'</span><span>);</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span style="color: rgb(60, 118, 61);">% Plot the results in the principal coordinates</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>figure;</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>gscatter(Xtest(:,1),Xtest(:,2),ytest,</span><span style="color: rgb(160, 32, 240);">'br'</span><span>,</span><span style="color: rgb(160, 32, 240);">'o'</span><span>,10,</span><span style="color: rgb(160, 32, 240);">'off'</span><span>)</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>title(</span><span style="color: rgb(160, 32, 240);">'Principal component coordinates'</span><span>);</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>axis </span><span style="color: rgb(160, 32, 240);">square</span></span></div></div></div><h2  class = 'S10' id = 'H_B52031AC' ><span>Predict class labels without projecting using </span><span style=' font-family: monospace;'>predictFcn</span></h2><div  class = 'S2'><span>If after training </span><span style=' font-style: italic;'>you do not want to work with in the principal component space</span><span>, you can predict class labels using feature data in the original coordinate space </span><a href = "https://www.mathworks.com/help/stats/export-classification-model-for-use-with-new-data.html"><span>by using the </span><span style=' font-family: monospace;'>predictFcn</span><span> function</span></a><span>. This function takes feature data from the original space as input and returns a vector of class labels as output- the projection into the component space is handled automatically before prediction. The </span><span style=' font-family: monospace;'>predictFcn</span><span> is included as a property of all </span><span style=' font-family: monospace;'>trainedModel</span><span> variables exported from the Regression or Classification Learner Apps. Run the code below to predict the labels using the held-out data values and recreate the 'original coordinates' scatter plot from the previous section. </span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span style="color: rgb(60, 118, 61);">% Use predictFcn</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>Xtest = X(~tind,:);</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>ytest = trainedModel.predictFcn(Xtest);</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span style="color: rgb(60, 118, 61);">% Plot the results</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>figure;</span></span></div></div><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>scatter3(Xtest(:,1),Xtest(:,2),Xtest(:,3),10,[ytest,0*ytest,~ytest]);</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>title(</span><span style="color: rgb(160, 32, 240);">'Original coordinates'</span><span>)</span></span></div></div></div><h1  class = 'S0' id = 'T_A25DFB4A' ><span>Re-rename your </span><span style=' font-family: monospace;'>pca</span><span> function</span></h1><div  class = 'S2'><span>Run the code below to change the name of your pca function back to 'pca.m' from 'pca_ex7.m' if you plan to work on or resubmit ex7 in the future.</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S11'><span style="white-space: pre;"><span>movefile </span><span style="color: rgb(160, 32, 240);">pca_ex7.m pca.m </span></span></div></div></div></div>
+<br>
+<!-- 
+##### SOURCE BEGIN #####
+%% MATLAB Companion Script for _Machine Learning_ ex7 (Optional)
+%% Introduction
+% Coursera's _Machine Learning_ was designed to provide you with a greater understanding 
+% of machine learning algorithms- what they are, how they work, and where to apply 
+% them. You are also shown techniques to improve their performance and to address 
+% common issues. As is mentioned in the course, there are many tools available 
+% that allow you to use machine learning algorithms _without_ having to implement 
+% them yourself. This Live Script was created by MathWorks to help _Machine Learning_ 
+% students explore the data analysis and machine learning tools available in MATLAB.
+%% FAQ
+% *Who is this intended for?*
+%% 
+% * This script is intended for students using MATLAB Online who have completed 
+% ex7 and want to learn more about the corresponding machine learning tools in 
+% MATLAB.
+%% 
+% *How do I use this script?*
+%% 
+% * In the sections that follow, read the information provided about the data 
+% analysis and machine learning tools in MATLAB, then run the code in each section 
+% and examine the results. You may also be presented with instructions for using 
+% a MATLAB machine learning app. This script should be located in the ex7 folder 
+% which should be set as your Current Folder in MATLAB Online.
+%% 
+% *Can I use the tools in this companion script to complete the programming 
+% exercises?*
+%% 
+% * No. Most algorithm steps implemented in the programming exercises are handled 
+% automatically by MATLAB machine learning functions. Additionally, the results 
+% will be similar, but not identical, to those in the programming exercises due 
+% to differences in implementation, parameter settings, and randomization.
+%% 
+% *Where can I obtain help with this script or report issues?*
+%% 
+% * As this script is not part of the original course materials, please direct 
+% any questions, comments, or issues to the _MATLAB Help_ discussion forum.
+%% K-Means Clustering and Dimensionality Reduction Using PCA
+% In this Live Script, we use functions and apps from the <https://www.mathworks.com/products/statistics.html 
+% Statistics and Machine Learning Toolbox> to perform <https://www.mathworks.com/discovery/cluster-analysis.html 
+% cluster analysis> and <https://www.mathworks.com/help/stats/principal-component-analysis-pca.html 
+% PCA for data compression and visualization>. 
+%% Files needed for this script
+%% 
+% * |ex7data1.mat| - Example Dataset for PCA
+% * |ex7data2.mat| - Example Dataset for K-means
+% * |ex7faces.mat| - Faces Dataset
+% * bird_small.png - Example Image
+%% K-means clustering
+% In this section we group data using the |kmeans| function. We then visualize 
+% the and evaluate the resulting clusters. 
+%% Load the data
+% Run the code below to load the example dataset in |ex7data2.mat| which contains 
+% a matrix, |X|, of two-dimensional data points.
+
+clear;
+load ex7data2.mat;
+%% Cluster using |kmeans|
+% The <https://www.mathworks.com/help/stats/kmeans.html |kmeans|> function automatically 
+% performs all steps of the clustering algorithm you implemented in ex7, including 
+% random initialization. Note that additional options such as the maximum number 
+% of iterations or the preferred distance metric can be set by providing additional 
+% inputs. Run the code below to cluster the data into 3 groups. Note that |kmeans| 
+% returns two outputs: a vector containing the assigned centroid for each data 
+% point, |idx|, and a matrix of centroid locations, |C|. We also print the algorithm 
+% progress at each step by setting the |Display| option to |iter|. 
+
+[idx,C] = kmeans(X,3,'Display','iter');
+%% Visualize the clusters using |gscatter|
+% Run the code in this section to plot the data points using the <https://www.mathworks.com/help/stats/gscatter.html 
+% |gscatter|> function, which provides a convenient way to visualize data by group 
+% or category. 
+
+gscatter(X(:,1),X(:,2),idx,'','','','off'); hold on;
+plot(C(:,1),C(:,2),'kx','MarkerSize',10,'MarkerEdgeColor','k','LineWidth',3);
+legend(["Cluster "+(1:3),'Centroids']); hold off;
+%% Run k-means using multiple random initializations
+% If you were to rerun the previous sections multiple times, you may occasionally 
+% encounter clustering result where one of the three fairly distinct clusters 
+% are split by two centroids. In that case, the algorithm converged to a local 
+% minimum value of the cost metric. Because of this possibility, it is often advisable 
+% to repeat the algorithm multiple times using different initial centroids, which 
+% we can accomplish using the |'Replicates'| option. The code below will run k-means 
+% using 5 different random initializations. Note that only the centroid locations 
+% and indices corresponding to the lowest cost are returned as the output. 
+
+[idx,~] = kmeans(X,3,'Display','iter','Replicates',5);
+%% Analyze the groups using |grpstats|
+% When a dataset contains categorical labels, or if the data has been clustered 
+% into groups as above, it is common to compute statistics for each variable to 
+% help determine the differences and similarities between groups. Below we use 
+% the <https://www.mathworks.com/help/stats/grpstats.html |grpstats|> function 
+% to compute summary statistics for each variable in the dataset by cluster. The 
+% |grpstats| function will output the individual results for each statistic requested. 
+% However, as we are requesting several statistics, it's easier to view them if 
+% they are organized as a |table| (which is the default output of |grpstats| for 
+% |table| inputs). Run the code below to compute and display a table of summary 
+% statistics on the clustered data. The first two columns in the table contain 
+% the group number and the number of elements in each group. The remaining columns 
+% contain the summary stats - one for each statistic and variable - by group.
+
+tblstats = grpstats(array2table([X,idx],'VariableNames',{'X1','X2','Group'}),'Group',{'mean','median','std','min','max'})
+%% Determine the optimal number of clusters using silhouette plots
+% As discussed in the course, it can be difficult to determine the 'best' number 
+% of centroids to use when clustering data. A visual inspection of the current 
+% data set would lead most people to choose 3 centroids, but this method may prove 
+% difficult or impossible for higher dimensional data or larger numbers of groups. 
+% One way to help choose the appropriate number of clusters is to create a _silhouette 
+% plot_. The 'silhouette' of a data point is a measure of how close that point 
+% is to other points in neighboring clusters. This measure ranges from -1 to 1 
+% where: 
+%% 
+% * Values close to +1 imply the point is very distant from neighboring clusters.
+% * Values close to 0 imply the point is not distinctly in its assigned cluster 
+% or another one.
+% * Values close to -1 imply the point has most likely been misclassified and 
+% belongs to a different cluster.
+%% 
+% In general, 'weaker' clusters can be identified as having a larger proportion 
+% of points possessing small or even negative silhouette values. The mean silhouette 
+% value over all data points can therefore be used to compare the performance 
+% of different clustering models. Run the code below to cluster the data using 
+% two different numbers of centroids and create a silhouette plot for each using 
+% the <https://www.mathworks.com/help/stats/silhouette.html |silhouette|> function, 
+% then examine the resulting plots.
+
+idx = kmeans(X,3,'Replicates',5);
+[s4,~] = silhouette(X,idx);
+title(sprintf('Mean silhouette value for 3 centroids: %g',mean(s4)))
+idx = kmeans(X,4,'Replicates',5);
+[s3,~] = silhouette(X,idx);
+title(sprintf('Mean silhouette value for 4 centroids: %g',mean(s3)))
+%% 
+% As expected, the 3-centroid model appears to perform better than the 4-centroid 
+% model based on its larger mean silhouette value. Also note the presence of the 
+% two weaker clusters in the 4-silhouette model where a larger proportion of their 
+% data points have relatively low silhouette values.
+%% Evaluate the number of clusters using |evalclusters|
+% The silhouette criterion is just one method of evaluating the performance 
+% of a clustering model. The <https://www.mathworks.com/help/stats/evalclusters.html 
+% |evalclusters|> function allows one to quickly obtain the optimal number of 
+% clusters based on a particular criterion- see the documentation for the list 
+% of available criteria and their descriptions. Run the code below to call |evalclusters| 
+% using the |'silhouette'| criterion over the range of centroid values $k = 2,3,\ldots,6$ 
+% (provided using the |'Klist'| option) and compare the result with the previous 
+% section. Note that |evalclusters| returns an object containing the optimal number 
+% of clusters in the |OptimalK| property. 
+
+clsteval = evalclusters(X,'kmeans','silhouette','Klist',2:6)
+fprintf('The optimal number of clusters found for this dataset is %d.',clsteval.OptimalK);
+%% Image Compression with _K_-means
+% Recall that in ex7 you used k-means to cluster the pixel color values of an 
+% example image into 16 seperate clusters. You then compressed the image by replacing 
+% the RGB pixels with the closest centroid color. This only required 4 bits per 
+% pixel to map to one of the 16 centroids, resulting in significant storage savings 
+% over the original set of 3, 8-bit RGB values per pixel. In this section, we 
+% will repeat this analysis using functions from the Statistics and Machine Learning 
+% Toolbox.
+%% Load, format, and visualize the image data
+% Run the code below to load and format the image into a double array for use 
+% with |kmeans|. A 3D scatter plot will be generated using |scatter3| to visualize 
+% the color data. Use the Zoom, Pan, and Rotate figure controls to explore the 
+% color content of the image. To view the data in a particular color plane (e.g. 
+% red-blue), hover the cursor over the image and click the 'Rotate' icon when 
+% it appears. Then right-click the plot and select the desired axis view using 
+% the 'Go to' view options. 
+
+clear;
+A = imread('bird_small.png'); % A is a 128x128x3 uint8 image array
+X = double(reshape(A(:),length(A(:))/3,3)); % X is a (128*128)x3 double matrix
+scatter3(X(:,1),X(:,2),X(:,3),12,X/255,'filled');
+xlabel('Red'); ylabel('Green'); zlabel('Blue')
+%% Compress the image data using |kmeans|
+% Choose a |k| value using the control below to cluster the color data into 
+% |k| colors and compress the image. The original and compressed images will be 
+% displayed along with the compression ratio. The grouped data is also plotted 
+% generated for comparison with the figure in the previous section. You may want 
+% to launch the figure into a separate window and maximize the figure for closer 
+% inspection (hover the cursor over the figure and click the 'arrow' control when 
+% it appears).
+
+k = 64;
+replicates = 10;
+[idx,C] = kmeans(X,k,'Replicates',replicates,'MaxIter',200);
+% Map the pixels to the centroids and convert to uint8
+Xcomp = C(idx,:);
+Acomp = uint8(reshape(Xcomp,size(A)));
+
+% Original and compressed scatter plots
+subplot(2,2,1)
+scatter3(X(:,1),X(:,2),X(:,3),12,X/255);
+title(sprintf('Original: %d colors',length(unique(X,'rows'))));
+xlabel('Red'); ylabel('Green');zlabel('Blue')
+subplot(2,2,3);
+scatter3(X(:,1),X(:,2),X(:,3),12,Xcomp/255);
+xlabel('Red'); ylabel('Green');zlabel('Blue');
+title(sprintf('Compressed: %d colors.', k));
+
+% Original and compressed images 
+subplot(2,2,2);
+imshow(A); 
+title('Original');
+axis square
+subplot(2,2,4);
+imshow(uint8(Acomp))
+title(sprintf('Compressed size: %0.2g%% of original',100*log2(k)/24))
+axis square
+%% Principal Component Analysis
+% In ex7 you used principal component analysis to compress data, remove duplicate 
+% information, and increase the efficiency of machine learning algorithms. In 
+% this section you will use the MATLAB <https://www.mathworks.com/help/stats/pca.html 
+% |pca|> function from the Statistics and Machine Learning Toolbox to obtain the 
+% principal components of the sample dataset used in ex7. 
+%% Load the example 2D dataset and rename the ex7 pca function
+% Run the code below to load the example data matrix |X|. *Since the |pca| function 
+% from ex7 shares the same name as the MATLAB version, the code below will also 
+% rename your |pca| function to |pca_ex7|.* Make sure to run the code at the end 
+% of this section to undo this change before trying to use ex7 or submit the exercise 
+% again.
+
+clear;
+movefile pca.m pca_ex7.m;
+load('ex7data1.mat');
+%% Use |pca| to obtain principle components
+% The |pca| function takes a matrix as input and returns a matrix as output. 
+% The columns of the output matrix contain the principal components sorted in 
+% order of decreasing variance. The |pca| function automatically centers the data 
+% about the mean before computing the principal components. Additional information 
+% from the analysis can be obtained by requesting additional outputs, including 
+% the row scores (the data coordinates in the principal component space), column 
+% means, and the principal component variances and variance percentages- see the 
+% documentation for details. Run the code below to compute the principal components 
+% of |X|. You should see that the two components account for about 87% and 13% 
+% of the variance of the data in |X|, respectively.
+
+[coeff,scr,~,~,varpct,mu] = pca(X)
+%% Visualize the data in the principal component space
+% The code below uses the <https://www.mathworks.com/help/stats/biplot.html 
+% |biplot|> function to visualize the data _in the principle component space_ 
+% using the coefficient and score outputs from |pca|. 
+
+figure;
+biplot(coeff,'Scores',scr)
+%% 
+% It's clear from the plot that the data values vary the most along the first 
+% principal component (x-axis)
+%% Visualize the principal components and reconstruct the data in the original space
+% The score output contains the coefficients of the original data when projected 
+% onto the principal components, so there is no need to write an additional function 
+% to project the data as in ex7. Run the code in this section to plot the data 
+% points and principal components in the original space. The 'reconstructed' data 
+% is also plotted using the projection onto the first principle component.
+
+% Plot the data    
+figure; hold on;
+scatter(X(:,1),X(:,2)); 
+% Plot the mean location
+plot(mu(1),mu(2),'kx','MarkerSize',12,'LineWidth',3);
+% Plot the principal component directions
+m = coeff(2,:)./coeff(1,:);
+plot([min(X(:,1)),max(X(:,1))],[m(1)*(min(X(:,1))-mu(1))+mu(2),m(1)*(max(X(:,1))-mu(1))+mu(2)],'rREPLACE_WITH_DASH_DASH')
+plot([min(X(:,1)),max(X(:,1))],[m(2)*(min(X(:,1))-mu(1))+mu(2),m(2)*(max(X(:,1))-mu(1))+mu(2)],'gREPLACE_WITH_DASH_DASH')
+% Plot the reconstructed data
+Xrec = scr(:,1)*coeff(:,1)'+mu;
+plot(Xrec(:,1),Xrec(:,2),'b.','MarkerSize',12)
+legend({'Data','$\mu$','PC 1','PC 2','Projected Data'},'Location','northwest','Interpreter','latex')
+axis tight; axis equal; hold off;
+%% Use PCA to Compress Facial Image Data
+% In the last part of ex7 you ran PCA on face images to compress the data values 
+% by projecting onto a subset of principal components. In the next two sections 
+% we reproduce those results using the |pca| function.
+%% Load the face image data and calculate the principal components
+% Run the code below to load the matrix |X| of 5000 32x32 grayscale images used 
+% in ex7. (Recall that the face images have been 'unwound' into 1024-element row 
+% vectors and stacked into |X|.) The |pca| function is then used to obtain the 
+% principal components, scores, variance percentages, and column means of |X|.
+
+clear;
+load('ex7faces.mat');
+[coeff,scr,~,~,varpct,mu] = pca(X);
+%% Select the number of principal components using a variance cutoff
+% In this section we implement a method below for choosing the minimum number 
+% of principal components, |k|, which account for the chosen variance percentage, 
+% |v|, in the data. Run the code below to calculate the required number of components 
+% needed to account for the variance and plot a random image alongside its compressed 
+% counterpart. Use the control to increase or decrease the percentage of variance 
+% that is accounted for by the projected data.
+
+% Find k and project onto first k components
+v = 80;
+if v == 100
+    k = 1024;
+else
+    k = find(cumsum(varpct)>v,1);
+end
+Xcomp = scr(:,1:k)*coeff(:,1:k)'+mu;
+
+% Plot images side by side
+figure;
+colormap(gray);
+idx = randi(5000);
+subplot(1,2,1);
+imagesc(reshape(X(idx,:),32,32));
+xlabel(sprintf('Original image #%d',idx));
+axis square
+subplot(1,2,2);
+imagesc(reshape(Xcomp(idx,:),32,32));
+xlabel(sprintf('Reconstructed using %d\n principal components',k));
+title(sprintf('Variance cutoff: %d%%',v))
+axis square
+%% Use PCA with the Regression and Classification Learner Apps
+% As discussed in the lectures, PCA can help improve the performance of machine 
+% learning algorithms by reducing data redundancy prior to training. In the following 
+% sections we provide instructions for using PCA with the Regression or Classification 
+% Learner Apps.
+%% Generate training data
+% The code below uses a subset of 20% of the bird image data loaded in the previous 
+% section. Artificial class labels are then generated using a hypersphere as a 
+% decision surface with some noise near the boundary added in for a more realistic 
+% (less well-separated) example. The features and labels are then combined in 
+% the matrix |data| and a 3D scatterplot is generated to help visualize the labeled 
+% data.
+
+clear;
+A = imread('bird_small.png'); % A is a 128x128x3 uint8 image array
+X = double(reshape(A(:),length(A(:))/3,3)); % X is a (128*128)x3 double matrix
+m = length(X);
+tind = rand(m,1) < 0.2;
+Xtrain = X(tind,:);
+yt = (sum(Xtrain.^2,2)<1e5 + 1e4*randn(length(Xtrain),1));
+data = [Xtrain,yt];
+figure;
+scatter3(Xtrain(:,1),Xtrain(:,2),Xtrain(:,3),10,[yt,0*yt,~yt]);
+%% 
+% To train, export, and utilize an SVM classifier model using PCA on the example 
+% data, follow the steps in the next few sections. 
+% 
+% *Note:* If you have difficulty reading the instructions below while the app 
+% is open in MATLAB Online, export this script to a pdf file which you can then 
+% use to display the instructions in a separate browser tab or window. To export 
+% this script, click on the 'Save' button in the 'Live Editor' tab above, then 
+% select 'Export to PDF'.
+%% Open the Classification Learner App and select the data
+%% 
+% # In the *MATLAB Apps tab*, select the *Classification Learner* app from the 
+% Machine Learning section.
+% # Select '*New Session -> From Workspace*' to start a new interactive session.
+% # Under '*Workspace Variable'*, select '*data*' (if not already selected).
+% # Under '*Response*' select '*column_4*' (if not already selected).
+% # Under '*Predictors*' select the remaining columns (if not already selected).
+% # Under '*Validation*' select '*No Validation*'.
+% # Click the '*Start Session*' button.
+%% Select the model and PCA options and train the classifier
+%% 
+% # Expand the model list and select '*Quadratic SVM*' from the '*Support Vector 
+% Machines*' list.
+% # Click on the '*PCA*' button to open the *Advanced PCA Options*' menu.
+% # Check the '*Enable PCA*' box.
+% # Expand the '*Component reduction criterion*' drop-down list and select '*Specify 
+% number of components*'.
+% # Change the '*Number of numeric components*' to *2*.
+% # Close the '*Advanced PCA options*' menu.
+% # Click the '*Train*' button.
+%% Export and extract the model and PCA coefficients
+%% 
+% # Select '*Export Model' -> 'Export Model*'.
+% # Select the default output variable name ('trainedModel') and click '*OK*'.
+% # Close the app.
+% # Run the code below to extract the |classificationSVM| model and the PCA 
+% information. 
+
+quadSVMmdl = trainedModel.ClassificationSVM
+coeff = trainedModel.PCACoefficients
+mu = trainedModel.PCACenters
+%% 
+% When PCA is used before training the model in the Regression and Classification 
+% Learner Apps, the principal components and variable means are included in the 
+% |PCACoefficients| and |PCACenters| properties of the |trainedModel| variable. 
+% Note that only the principal components used in training are returned.
+%% Predict labels using the model variable and the PCA coefficients
+% Depending on how you are going to use the trained model, you may work either 
+% projected data values or the original data values. In this section we work with 
+% projected data, while in the next section we work with the original data, i.e. 
+% without projecting data onto the components before predicting. Since the |classificationSVM| 
+% model was trained on the projected data, you must project new data, such as 
+% a test set, onto the principal components before using the |predict| function, 
+% as the original data will contain more features then the model was trained on.  
+% 
+% Run the code below to project the remaining pixel data (not used for training) 
+% onto the first two principal components and predict classes using the |predict| 
+% function. The resulting data points and their predicted classes are then plotted 
+% using the original and projected coordinates for comparison.
+
+% Center and project the original data onto the principal components
+Xtest = (X(~tind,:)-mu)*coeff;
+% Classify the projected data
+ytest = predict(quadSVMmdl,Xtest);
+% Plot the results in the original coordinates
+figure;
+scatter3(X(~tind,1),X(~tind,2),X(~tind,3),10,[ytest,0*ytest,~ytest]);
+title('Original coordinates');
+% Plot the results in the principal coordinates
+figure;
+gscatter(Xtest(:,1),Xtest(:,2),ytest,'br','o',10,'off')
+title('Principal component coordinates');
+axis square
+%% Predict class labels without projecting using |predictFcn|
+% If after training _you do not want to work with in the principal component 
+% space_, you can predict class labels using feature data in the original coordinate 
+% space <https://www.mathworks.com/help/stats/export-classification-model-for-use-with-new-data.html 
+% by using the |predictFcn| function>. This function takes feature data from the 
+% original space as input and returns a vector of class labels as output- the 
+% projection into the component space is handled automatically before prediction. 
+% The |predictFcn| is included as a property of all |trainedModel| variables exported 
+% from the Regression or Classification Learner Apps. Run the code below to predict 
+% the labels using the held-out data values and recreate the 'original coordinates' 
+% scatter plot from the previous section. 
+
+% Use predictFcn
+Xtest = X(~tind,:);
+ytest = trainedModel.predictFcn(Xtest);
+% Plot the results
+figure;
+scatter3(Xtest(:,1),Xtest(:,2),Xtest(:,3),10,[ytest,0*ytest,~ytest]);
+title('Original coordinates')
+%% Re-rename your |pca| function
+% Run the code below to change the name of your pca function back to 'pca.m' 
+% from 'pca_ex7.m' if you plan to work on or resubmit ex7 in the future.
+
+movefile pca_ex7.m pca.m
+##### SOURCE END #####
+--></body></html>

@@ -1,0 +1,16 @@
+data = load('trainmod.csv');
+X = data(:, 3:8);
+y = data(:, 2);
+m = length(y);
+% Add intercept term to X
+X = [ones(m, 1) X];
+% Calculate the parameters from the normal equation
+theta = normalEqn(X, y);
+
+data = csvread('testmod.csv');
+X = data(:, 2:7);
+% Add intercept term to X
+m = size(data, 1);
+X = [ones(m, 1) X];
+y = [data(:, 1) (X * theta)];
+save result.csv y

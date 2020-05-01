@@ -1,0 +1,212 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,IE=9,chrome=1"><meta name="generator" content="MATLAB"><title>MATLAB Companion Script for Machine Learning ex3 (Optional)</title><style type="text/css">.rtcContent { padding: 30px; } .S0 { margin: 3px 10px 5px 4px; padding: 0px; line-height: 28.8px; min-height: 0px; white-space: pre-wrap; color: rgb(213, 80, 0); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 24px; font-weight: 400; text-align: left;  }
+.S1 { margin: 20px 10px 5px 4px; padding: 0px; line-height: 20px; min-height: 0px; white-space: pre-wrap; color: rgb(60, 60, 60); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 20px; font-weight: 700; text-align: left;  }
+.S2 { margin: 2px 10px 9px 4px; padding: 0px; line-height: 21px; min-height: 0px; white-space: pre-wrap; color: rgb(0, 0, 0); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 14px; font-weight: 400; text-align: left;  }
+.S3 { margin: 10px 0px 20px; padding-left: 0px; font-family: Helvetica, Arial, sans-serif; font-size: 14px;  }
+.S4 { margin-left: 56px; line-height: 21px; min-height: 0px; text-align: left; white-space: pre-wrap;  }
+.S5 { margin-bottom: 20px; padding-bottom: 4px;  }
+.S6 { margin: 0px; padding: 10px 0px 10px 5px; line-height: 21px; min-height: 0px; white-space: pre-wrap; color: rgb(0, 0, 0); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 14px; font-weight: 700; text-align: start;  }
+.S7 { margin: -1px 0px 0px; padding: 10px 0px 10px 7px; line-height: 21px; min-height: 0px; white-space: pre-wrap; color: rgb(0, 0, 0); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 14px; font-weight: 400; text-align: start;  }
+.CodeBlock { background-color: #F7F7F7; margin: 10px 0 10px 0;}
+.S8 { border-left: 1px solid rgb(233, 233, 233); border-right: 1px solid rgb(233, 233, 233); border-top: 1px solid rgb(233, 233, 233); border-bottom: 0px none rgb(0, 0, 0); border-radius: 4px 4px 0px 0px; padding: 6px 45px 0px 13px; line-height: 17.234px; min-height: 18px; white-space: nowrap; color: rgb(0, 0, 0); font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 14px;  }
+.S9 { border-left: 1px solid rgb(233, 233, 233); border-right: 1px solid rgb(233, 233, 233); border-top: 0px none rgb(0, 0, 0); border-bottom: 0px none rgb(0, 0, 0); border-radius: 0px; padding: 0px 45px 0px 13px; line-height: 17.234px; min-height: 18px; white-space: nowrap; color: rgb(0, 0, 0); font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 14px;  }
+.S10 { border-left: 1px solid rgb(233, 233, 233); border-right: 1px solid rgb(233, 233, 233); border-top: 0px none rgb(0, 0, 0); border-bottom: 1px solid rgb(233, 233, 233); border-radius: 0px 0px 4px 4px; padding: 0px 45px 4px 13px; line-height: 17.234px; min-height: 18px; white-space: nowrap; color: rgb(0, 0, 0); font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 14px;  }
+.S11 { margin: 3px 10px 5px 4px; padding: 0px; line-height: 20px; min-height: 0px; white-space: pre-wrap; color: rgb(60, 60, 60); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 20px; font-weight: 700; text-align: left;  }
+.S12 { border-left: 1px solid rgb(233, 233, 233); border-right: 1px solid rgb(233, 233, 233); border-top: 1px solid rgb(233, 233, 233); border-bottom: 1px solid rgb(233, 233, 233); border-radius: 4px; padding: 6px 45px 4px 13px; line-height: 17.234px; min-height: 18px; white-space: nowrap; color: rgb(0, 0, 0); font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 14px;  }
+.S13 { margin: 10px 10px 9px 4px; padding: 0px; line-height: 21px; min-height: 0px; white-space: pre-wrap; color: rgb(0, 0, 0); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 14px; font-weight: 400; text-align: left;  }</style></head><body><div class = rtcContent><h1  class = 'S0' id = 'T_13370202' ><span>MATLAB Companion Script for </span><span style=' font-style: italic;'>Machine Learning</span><span> ex3 (Optional)</span></h1><h2  class = 'S1' id = 'H_5E50F655' ><span>Introduction</span></h2><div  class = 'S2'><span>Coursera's</span><span style=' font-style: italic;'> Machine Learning</span><span> was designed to provide you with a greater understanding of machine learning algorithms- what they are, how they work, and where to apply them. You are also shown techniques to improve their performance and to address common issues. As is mentioned in the course, there are many tools available that allow you to use machine learning algorithms </span><span style=' font-style: italic;'>without</span><span> having to implement them yourself. This Live Script was created by MathWorks to help </span><span style=' font-style: italic;'>Machine Learning</span><span> students explore the data analysis and machine learning tools available in MATLAB.</span></div><h2  class = 'S1' id = 'H_8D135D31' ><span>FAQ</span></h2><div  class = 'S2'><span style=' font-weight: bold;'>Who is this intended for?</span></div><ul  class = 'S3'><li  class = 'S4'><span>This script is intended for students using MATLAB Online who have completed ex3 and want to learn more about the corresponding machine learning tools in MATLAB.</span></li></ul><div  class = 'S2'><span style=' font-weight: bold;'>How do I use this script?</span></div><ul  class = 'S3'><li  class = 'S4'><span>In the sections that follow, read the information provided about the data analysis and machine learning tools in MATLAB, then run the code in each section and examine the results. You may also be presented with instructions for using a MATLAB machine learning app. This script should be located in the ex3 folder which should be set as your Current Folder in MATLAB Online.</span></li></ul><div  class = 'S2'><span style=' font-weight: bold;'>Can I use the tools in this companion script to complete the programming exercises?</span></div><ul  class = 'S3'><li  class = 'S4'><span>No. Most algorithm steps implemented in the programming exercises are handled automatically by MATLAB machine learning functions. Additionally, the results will be similar, but not identical, to those in the programming exercises due to differences in implementation, parameter settings, and randomization.</span></li></ul><div  class = 'S2'><span style=' font-weight: bold;'>Where can I obtain help with this script or report issues?</span></div><ul  class = 'S3'><li  class = 'S4'><span>As this script is not part of the original course materials, please direct any questions, comments, or issues to the </span><span style=' font-style: italic;'>MATLAB Help</span><span> discussion forum.</span></li></ul><h1  class = 'S0' id = 'T_9487A1AD' ><span>Multi-Class Logistic Regression and Neural Network Prediction</span></h1><div  class = 'S2'><span>In the first part of this Live Script, a multi-class (one-vs-all) logistic regression model is implemented using the </span><span style=' font-family: monospace;'>fitcecoc</span><span> function from the </span><a href = "https://www.mathworks.com/products/statistics.html"><span>Statistics and Machine Learning Toolbox</span></a><span>. In the second part, a pre-trained neural network created using tools from the</span><a href = "https://www.mathworks.com/products/deep-learning.html"><span> Deep Learning Toolbox</span></a><span> is used to classify handwritten digits.</span></div><h2  class = 'S1' id = 'H_87AF1C8F' ><span>Files needed for this script</span></h2><ul  class = 'S3'><li  class = 'S4'><span style=' font-family: monospace;'>ex3data1.mat</span><span> - Training set of hand-written digits</span></li><li  class = 'S4'><span style=' font-family: monospace;'>ex3_MATLAB.mat</span><span> - Data file containing a trained neural network variable</span></li></ul><div  class = 'S5'><div  class = 'S6'><span style=' font-weight: bold;'>Table of Contents</span></div><div  class = 'S7'><a href = "#T_13370202"><span>MATLAB Companion Script for Machine Learning ex3 (Optional)
+</span></a><span>    </span><a href = "#H_5E50F655"><span>Introduction
+</span></a><span>    </span><a href = "#H_8D135D31"><span>FAQ
+</span></a><a href = "#T_9487A1AD"><span>Multi-Class Logistic Regression and Neural Network Prediction
+</span></a><span>    </span><a href = "#H_87AF1C8F"><span>Files needed for this script
+</span></a><a href = "#T_3218CA71"><span>Multi-Class Classification Using Logistic Regression
+</span></a><span>    </span><a href = "#H_621B0A64"><span>Load the data
+</span></a><span>    </span><a href = "#H_3977670F"><span>Train a one-vs-all multi-class logistic classifier using fitcecoc
+</span></a><span>    </span><a href = "#H_CB1353C8"><span>Compute the training accuracy
+</span></a><span>    </span><a href = "#H_4C0BA1FE"><span>Predicting the class of a random training example
+</span></a><a href = "#T_BBF6965F"><span>Digit Prediction Using a Trained Neural Network
+</span></a><span>    </span><a href = "#H_4D4A9E3B"><span>Load the data and neural network variable
+</span></a><span>    </span><a href = "#H_8BD24E72"><span>Explore the model variable
+</span></a><span>    </span><a href = "#H_EDE1C89C"><span>Predict the data
+</span></a><span>    </span><a href = "#H_53E934B8"><span>Compute the training accuracy</span></a></div></div><h1  class = 'S0' id = 'T_3218CA71' ><span>Multi-Class Classification Using Logistic Regression</span></h1><div  class = 'S2'><span>The following sections will guide you through multi-class classification in MATLAB using the </span><span style=' font-family: monospace;'>fitcecoc</span><span> function. An ECOC ('error correcting output codes') model in MATLAB consists of a single model variable which contains the individual one-vs-all models for a multiclass classification problem. In practice, this means that there is no need to train and compare the predictions of individual classifiers.</span></div><h2  class = 'S1' id = 'H_621B0A64' ><span>Load the data</span></h2><div  class = 'S2'><span>Recall that </span><span style=' font-family: monospace;'>ex3data1.mat</span><span> contains a matrix </span><span style=' font-family: monospace;'>X</span><span> of 5000 training examples of handwritten digit images and a vector </span><span style=' font-family: monospace;'>y</span><span> containing the corresponding digit labels. The digit images consist of grayscale pixel intensities from 0 to 1 and the 20x20 pixel images which have been 'unwound' into 1x400 row vectors and stacked into the matrix </span><span style=' font-family: monospace;'>X</span><span>. The class labels range from 1 to 10 (with the 10 value corresponding to a '0' digit). Run the code in this section to load the data.</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>clear;</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span style="color: rgb(60, 118, 61);">% Load saved matrices X and y from file </span></span></div></div><div class="inlineWrapper"><div  class = 'S10'><span style="white-space: pre;"><span>load(</span><span style="color: rgb(160, 32, 240);">'ex3data1.mat'</span><span>);</span></span></div></div></div><h2  class = 'S11' id = 'H_3977670F' ><span>Train a one-vs-all multi-class logistic classifier using </span><span style=' font-family: monospace;'>fitcecoc</span></h2><div  class = 'S2'><span>In ex3 you implemented a one-vs-all model by training 10 separate classifiers. In this section we will use the </span><a href = "https://www.mathworks.com/help/stats/fitcecoc.html"><span style=' font-family: monospace;'>fitcecoc</span></a><span> function to train a single model containing the 10 classifiers </span><span style=' font-style: italic;'>simultaneously</span><span>. First, we'll create a </span><span style=' font-style: italic;'>classifier model template</span><span> variable which is used to store options for training multi-class models, such as the model type and regularization options. Additional options include the solver configuration settings- see the documentation for more information about the available options. After creating the template using the </span><a href = "https://www.mathworks.com/help/stats/templatelinear.html"><span style=' font-family: monospace;'>templateLinear</span></a><span> function, we call </span><span style=' font-family: monospace;'>fitcecoc</span><span> to create and train the multi-class classifier model. The </span><span style=' font-family: monospace;'>fitcecoc</span><span> function will automatically detect the 10 classes (1 - 10) from the response vector variable (</span><span style=' font-family: monospace;'>y</span><span>) and add a bias term to the feature data before training the classifiers. The result is a </span><a href = "https://www.mathworks.com/help/stats/classificationecoc-class.html"><span style=' font-family: monospace;'>ClassificationECOC</span></a><span> model variable which contains the 10 classifier models and subsequently the information about each model.</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>opts = templateLinear(</span><span style="color: rgb(160, 32, 240);">'Regularization'</span><span>,</span><span style="color: rgb(160, 32, 240);">'ridge'</span><span>,</span><span style="color: rgb(160, 32, 240);">'Learner'</span><span>,</span><span style="color: rgb(160, 32, 240);">'logistic'</span><span>,</span><span style="color: rgb(160, 32, 240);">'Lambda'</span><span>,0.001,</span><span style="color: rgb(160, 32, 240);">'PassLimit'</span><span>,5);</span></span></div></div><div class="inlineWrapper"><div  class = 'S10'><span style="white-space: pre;"><span>multiLogMdl = fitcecoc(X,y,</span><span style="color: rgb(160, 32, 240);">'Learners'</span><span>,opts)</span></span></div></div></div><h2  class = 'S11' id = 'H_CB1353C8' ><span>Compute the training accuracy</span></h2><div  class = 'S2'><span>Run the code below to compute the training accuracy. We obtain the predicted class (class with the maximum probability) in the usual manner by calling the </span><a href = "https://www.mathworks.com/help/stats/compactclassificationecoc.predict.html"><span style=' font-family: monospace;'>predict</span></a><span> function and providing the model variable and feature data as inputs. The </span><span style=' font-family: monospace;'>predict</span><span> function will then return the predicted class for each example.</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>fprintf(</span><span style="color: rgb(160, 32, 240);">'Training accuracy: %g%%'</span><span>,100*sum(y == predict(multiLogMdl,X))/length(y))</span></span></div></div></div><h2  class = 'S11' id = 'H_4C0BA1FE' ><span>Predicting the class of a random training example</span></h2><div  class = 'S2'><span>The code below will estimate the class of a random training example, compare with the correct class, and display the corresponding image. We obtain a vector of probabilities predicted for each class by requesting an additional output from </span><span style=' font-family: monospace;'>predict</span><span>. Rerun this section multiple times to repeat with different examples.</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>i = randi(length(y));</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>[class,~,~,prob] = predict(multiLogMdl,X(i,:));</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>imshow(reshape(X(i,:),20,20))</span></span></div></div><div class="inlineWrapper"><div  class = 'S10'><span style="white-space: pre;"><span>fprintf(</span><span style="color: rgb(160, 32, 240);">'True class: %d  |  Predicted class: %d | Probability of match: %.1f%%'</span><span>,y(i),class,100*prob(class));</span></span></div></div></div><h1  class = 'S0' id = 'T_BBF6965F' ><span>Digit Prediction Using a Trained Neural Network</span></h1><div  class = 'S2'><span>In the second part of ex3 you used a pre-trained, feed-forward neural network to perform digit classification, where the weights were provided as two matrices. As we have seen preciously when using MATLAB machine learning functions and apps in companion scripts, model variables returned from functions like </span><span style=' font-family: monospace;'>fitlm</span><span>, </span><span style=' font-family: monospace;'>fitglm</span><span>, </span><span style=' font-family: monospace;'>fitclinear</span><span>, and </span><span style=' font-family: monospace;'>fitcecoc</span><span> contain both model and performance information in addition to the fitted model parameters. They can then be used with the </span><span style=' font-family: monospace;'>predict</span><span> function to predict values or classes of new or existing examples. The same is true with neural network model variables </span><span style=' font-style: italic;'>except</span><span> the model variables themselves can be used for prediction. </span></div><div  class = 'S2'><span>    In this section we load a pre-trained neural network model variable, explore its properties, and use it to predict digit values for image samples. In the companion script for ex4, we will actually create and train a neural network using tools and apps in the Deep Learning Toolbox.</span></div><h2  class = 'S1' id = 'H_4D4A9E3B' ><span>Load the data and neural network variable</span></h2><div  class = 'S2'><span>Run the code below to re-load the image data and labels as well as the trained neural network variable </span><span style=' font-family: monospace;'>net</span><span>.</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>clear;</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>load(</span><span style="color: rgb(160, 32, 240);">'ex3data1.mat'</span><span>);</span></span></div></div><div class="inlineWrapper"><div  class = 'S10'><span style="white-space: pre;"><span>load(</span><span style="color: rgb(160, 32, 240);">'ex3_companion.mat'</span><span>);</span></span></div></div></div><h2  class = 'S11' id = 'H_8BD24E72' ><span>Explore the model variable</span></h2><div  class = 'S2'><span>A trained MATLAB neural network model contains all of the information about the network, including the layer structure and weights. Run this section to display and explore some of the properties of the network variable, </span><span style=' font-family: monospace;'>net</span><span>. In particular, the network architecture is visualized using the </span><span style=' font-family: monospace;'>view</span><span> function, while the hidden and output layer weights and bias values are extracted from the </span><span style=' font-family: monospace;'>IW</span><span>, </span><span style=' font-family: monospace;'>LW</span><span>, and </span><span style=' font-family: monospace;'>b</span><span> properties in the </span><span style=' font-family: monospace;'>net</span><span> variable.    </span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>net </span><span style="color: rgb(60, 118, 61);">% List the network variable properties</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>view(net) </span><span style="color: rgb(60, 118, 61);">% Visualize the network</span></span></div></div><div class="inlineWrapper"><div  class = 'S10'><span style="white-space: pre;"><span>net.IW{1} </span><span style="color: rgb(60, 118, 61);">% View the hidden layer weights</span></span></div></div></div><div  class = 'S13'><span style=' font-weight: bold;'>Note:</span><span> The neural network training process is optimized in MATLAB so that any variables which do not contribute training information are ignored. In the current dataset, 5 elements (pixels) of each training sample were found to have a constant value across all samples during training, and so these features were ignored. Therefore, the model input layer is size 25 x 395, as shown in the output above. As we will see in the next section, the trained network still expects inputs with 400 elements when predicting (as is indicated in the visual diagram of the model. The redundant pixels are automatically disregarded.  </span></div><h2  class = 'S11' id = 'H_EDE1C89C' ><span>Predict the data</span></h2><div  class = 'S2'><span>The analog to the </span><span style=' font-family: monospace;'>predict</span><span> function for linear classification and regression model variables is the </span><a href = "https://www.mathworks.com/help/nnet/ref/sim.html"><span style=' font-family: monospace;'>sim</span></a><span> function for neural network variables. However, the network variable can be used </span><span style=' font-style: italic;'>directly</span><span> for prediction, in this case to predict the probabilities of a match for each digit, by inputting one or more images as input- see the code below.  Run the code in this section to estimate the class of a random example, compare with the true class, and display the corresponding image using the trained network.</span></div><div  class = 'S2'><span style=' font-weight: bold;'>Note:</span></div><ul  class = 'S3'><li  class = 'S4'><span>When training or simulating a neural network in MATLAB, the preferred data organization is with observations </span><span style=' font-style: italic;'>in columns,</span><span> and classes </span><span style=' font-style: italic;'>in rows</span><span>. Therefore the image row vectors should be transposed before using them to train or predict as in the code below. </span></li><li  class = 'S4'><span>The output of the prediction will consist of a 10 X </span><span style=' font-style: italic;'>N</span><span> array of probabilities, where </span><span style=' font-style: italic;'>N </span><span>is the number of images to be classified. The </span><span style=' font-family: monospace;'>max</span><span> function can then be used to find the maximum probability for each example and thus the predicted class.</span></li></ul><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>i = randi(length(y));</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>ysim = net(X(i,:)');</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>[~,class] = max(ysim);</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>imshow(reshape(X(i,:),20,20))</span></span></div></div><div class="inlineWrapper"><div  class = 'S10'><span style="white-space: pre;"><span>fprintf(</span><span style="color: rgb(160, 32, 240);">'True class: %d  |  Predicted class: %d | Probability of match: %.1f%%'</span><span>,y(i),class,100*ysim(class));</span></span></div></div></div><h2  class = 'S11' id = 'H_53E934B8' ><span>Compute the training accuracy</span></h2><div  class = 'S2'><span>The neural network model was trained using regularization with the same data provided in </span><span style=' font-family: monospace;'>ex3data1.mat</span><span>. Run the code below to compute the training accuracy of the model. </span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>[~,ysim] = max(net(X'));</span></span></div></div><div class="inlineWrapper"><div  class = 'S10'><span style="white-space: pre;"><span>fprintf(</span><span style="color: rgb(160, 32, 240);">'Training accuracy: %g%%'</span><span>,100*sum(y == ysim')/length(y));</span></span></div></div></div></div>
+<br>
+<!-- 
+##### SOURCE BEGIN #####
+%% MATLAB Companion Script for _Machine Learning_ ex3 (Optional)
+%% Introduction
+% Coursera's _Machine Learning_ was designed to provide you with a greater understanding 
+% of machine learning algorithms- what they are, how they work, and where to apply 
+% them. You are also shown techniques to improve their performance and to address 
+% common issues. As is mentioned in the course, there are many tools available 
+% that allow you to use machine learning algorithms _without_ having to implement 
+% them yourself. This Live Script was created by MathWorks to help _Machine Learning_ 
+% students explore the data analysis and machine learning tools available in MATLAB.
+%% FAQ
+% *Who is this intended for?*
+%% 
+% * This script is intended for students using MATLAB Online who have completed 
+% ex3 and want to learn more about the corresponding machine learning tools in 
+% MATLAB.
+%% 
+% *How do I use this script?*
+%% 
+% * In the sections that follow, read the information provided about the data 
+% analysis and machine learning tools in MATLAB, then run the code in each section 
+% and examine the results. You may also be presented with instructions for using 
+% a MATLAB machine learning app. This script should be located in the ex3 folder 
+% which should be set as your Current Folder in MATLAB Online.
+%% 
+% *Can I use the tools in this companion script to complete the programming 
+% exercises?*
+%% 
+% * No. Most algorithm steps implemented in the programming exercises are handled 
+% automatically by MATLAB machine learning functions. Additionally, the results 
+% will be similar, but not identical, to those in the programming exercises due 
+% to differences in implementation, parameter settings, and randomization.
+%% 
+% *Where can I obtain help with this script or report issues?*
+%% 
+% * As this script is not part of the original course materials, please direct 
+% any questions, comments, or issues to the _MATLAB Help_ discussion forum.
+%% Multi-Class Logistic Regression and Neural Network Prediction
+% In the first part of this Live Script, a multi-class (one-vs-all) logistic 
+% regression model is implemented using the |fitcecoc| function from the <https://www.mathworks.com/products/statistics.html 
+% Statistics and Machine Learning Toolbox>. In the second part, a pre-trained 
+% neural network created using tools from the<https://www.mathworks.com/products/deep-learning.html  
+% Deep Learning Toolbox> is used to classify handwritten digits.
+%% Files needed for this script
+%% 
+% * |ex3data1.mat| - Training set of hand-written digits
+% * |ex3_MATLAB.mat| - Data file containing a trained neural network variable
+%% Multi-Class Classification Using Logistic Regression
+% The following sections will guide you through multi-class classification in 
+% MATLAB using the |fitcecoc| function. An ECOC ('error correcting output codes') 
+% model in MATLAB consists of a single model variable which contains the individual 
+% one-vs-all models for a multiclass classification problem. In practice, this 
+% means that there is no need to train and compare the predictions of individual 
+% classifiers.
+%% Load the data
+% Recall that |ex3data1.mat| contains a matrix |X| of 5000 training examples 
+% of handwritten digit images and a vector |y| containing the corresponding digit 
+% labels. The digit images consist of grayscale pixel intensities from 0 to 1 
+% and the 20x20 pixel images which have been 'unwound' into 1x400 row vectors 
+% and stacked into the matrix |X|. The class labels range from 1 to 10 (with the 
+% 10 value corresponding to a '0' digit). Run the code in this section to load 
+% the data.
+
+clear;
+% Load saved matrices X and y from file 
+load('ex3data1.mat');
+%% Train a one-vs-all multi-class logistic classifier using |fitcecoc|
+% In ex3 you implemented a one-vs-all model by training 10 separate classifiers. 
+% In this section we will use the <https://www.mathworks.com/help/stats/fitcecoc.html 
+% |fitcecoc|> function to train a single model containing the 10 classifiers _simultaneously_. 
+% First, we'll create a _classifier model template_ variable which is used to 
+% store options for training multi-class models, such as the model type and regularization 
+% options. Additional options include the solver configuration settings- see the 
+% documentation for more information about the available options. After creating 
+% the template using the <https://www.mathworks.com/help/stats/templatelinear.html 
+% |templateLinear|> function, we call |fitcecoc| to create and train the multi-class 
+% classifier model. The |fitcecoc| function will automatically detect the 10 classes 
+% (1 - 10) from the response vector variable (|y|) and add a bias term to the 
+% feature data before training the classifiers. The result is a <https://www.mathworks.com/help/stats/classificationecoc-class.html 
+% |ClassificationECOC|> model variable which contains the 10 classifier models 
+% and subsequently the information about each model.
+
+opts = templateLinear('Regularization','ridge','Learner','logistic','Lambda',0.001,'PassLimit',5);
+multiLogMdl = fitcecoc(X,y,'Learners',opts)
+%% Compute the training accuracy
+% Run the code below to compute the training accuracy. We obtain the predicted 
+% class (class with the maximum probability) in the usual manner by calling the 
+% <https://www.mathworks.com/help/stats/compactclassificationecoc.predict.html 
+% |predict|> function and providing the model variable and feature data as inputs. 
+% The |predict| function will then return the predicted class for each example.
+
+fprintf('Training accuracy: %g%%',100*sum(y == predict(multiLogMdl,X))/length(y))
+%% Predicting the class of a random training example
+% The code below will estimate the class of a random training example, compare 
+% with the correct class, and display the corresponding image. We obtain a vector 
+% of probabilities predicted for each class by requesting an additional output 
+% from |predict|. Rerun this section multiple times to repeat with different examples.
+
+i = randi(length(y));
+[class,~,~,prob] = predict(multiLogMdl,X(i,:));
+imshow(reshape(X(i,:),20,20))
+fprintf('True class: %d  |  Predicted class: %d | Probability of match: %.1f%%',y(i),class,100*prob(class));
+%% Digit Prediction Using a Trained Neural Network
+% In the second part of ex3 you used a pre-trained, feed-forward neural network 
+% to perform digit classification, where the weights were provided as two matrices. 
+% As we have seen preciously when using MATLAB machine learning functions and 
+% apps in companion scripts, model variables returned from functions like |fitlm|, 
+% |fitglm|, |fitclinear|, and |fitcecoc| contain both model and performance information 
+% in addition to the fitted model parameters. They can then be used with the |predict| 
+% function to predict values or classes of new or existing examples. The same 
+% is true with neural network model variables _except_ the model variables themselves 
+% can be used for prediction. 
+% 
+% In this section we load a pre-trained neural network model variable, explore 
+% its properties, and use it to predict digit values for image samples. In the 
+% companion script for ex4, we will actually create and train a neural network 
+% using tools and apps in the Deep Learning Toolbox.
+%% Load the data and neural network variable
+% Run the code below to re-load the image data and labels as well as the trained 
+% neural network variable |net|.
+
+clear;
+load('ex3data1.mat');
+load('ex3_companion.mat');
+%% Explore the model variable
+% A trained MATLAB neural network model contains all of the information about 
+% the network, including the layer structure and weights. Run this section to 
+% display and explore some of the properties of the network variable, |net|. In 
+% particular, the network architecture is visualized using the |view| function, 
+% while the hidden and output layer weights and bias values are extracted from 
+% the |IW|, |LW|, and |b| properties in the |net| variable.    
+
+net % List the network variable properties
+view(net) % Visualize the network
+net.IW{1} % View the hidden layer weights
+%% 
+% *Note:* The neural network training process is optimized in MATLAB so that 
+% any variables which do not contribute training information are ignored. In the 
+% current dataset, 5 elements (pixels) of each training sample were found to have 
+% a constant value across all samples during training, and so these features were 
+% ignored. Therefore, the model input layer is size 25 x 395, as shown in the 
+% output above. As we will see in the next section, the trained network still 
+% expects inputs with 400 elements when predicting (as is indicated in the visual 
+% diagram of the model. The redundant pixels are automatically disregarded.  
+%% Predict the data
+% The analog to the |predict| function for linear classification and regression 
+% model variables is the <https://www.mathworks.com/help/nnet/ref/sim.html |sim|> 
+% function for neural network variables. However, the network variable can be 
+% used _directly_ for prediction, in this case to predict the probabilities of 
+% a match for each digit, by inputting one or more images as input- see the code 
+% below.  Run the code in this section to estimate the class of a random example, 
+% compare with the true class, and display the corresponding image using the trained 
+% network.
+% 
+% *Note:*
+%% 
+% * When training or simulating a neural network in MATLAB, the preferred data 
+% organization is with observations _in columns,_ and classes _in rows_. Therefore 
+% the image row vectors should be transposed before using them to train or predict 
+% as in the code below. 
+% * The output of the prediction will consist of a 10 X _N_ array of probabilities, 
+% where _N_ is the number of images to be classified. The |max| function can then 
+% be used to find the maximum probability for each example and thus the predicted 
+% class.
+
+i = randi(length(y));
+ysim = net(X(i,:)');
+[~,class] = max(ysim);
+imshow(reshape(X(i,:),20,20))
+fprintf('True class: %d  |  Predicted class: %d | Probability of match: %.1f%%',y(i),class,100*ysim(class));
+%% Compute the training accuracy
+% The neural network model was trained using regularization with the same data 
+% provided in |ex3data1.mat|. Run the code below to compute the training accuracy 
+% of the model. 
+
+[~,ysim] = max(net(X'));
+fprintf('Training accuracy: %g%%',100*sum(y == ysim')/length(y));
+##### SOURCE END #####
+--></body></html>

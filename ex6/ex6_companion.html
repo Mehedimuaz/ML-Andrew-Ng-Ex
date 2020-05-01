@@ -1,0 +1,462 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,IE=9,chrome=1"><meta name="generator" content="MATLAB"><title>MATLAB Companion Script for Machine Learning ex6 (Optional)</title><style type="text/css">.rtcContent { padding: 30px; } .S0 { margin: 3px 10px 5px 4px; padding: 0px; line-height: 28.8px; min-height: 0px; white-space: pre-wrap; color: rgb(213, 80, 0); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 24px; font-weight: 400; text-align: left;  }
+.S1 { margin: 20px 10px 5px 4px; padding: 0px; line-height: 20px; min-height: 0px; white-space: pre-wrap; color: rgb(60, 60, 60); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 20px; font-weight: 700; text-align: left;  }
+.S2 { margin: 2px 10px 9px 4px; padding: 0px; line-height: 21px; min-height: 0px; white-space: pre-wrap; color: rgb(0, 0, 0); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 14px; font-weight: 400; text-align: left;  }
+.S3 { margin: 10px 0px 20px; padding-left: 0px; font-family: Helvetica, Arial, sans-serif; font-size: 14px;  }
+.S4 { margin-left: 56px; line-height: 21px; min-height: 0px; text-align: left; white-space: pre-wrap;  }
+.S5 { margin-bottom: 20px; padding-bottom: 4px;  }
+.S6 { margin: 0px; padding: 10px 0px 10px 5px; line-height: 21px; min-height: 0px; white-space: pre-wrap; color: rgb(0, 0, 0); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 14px; font-weight: 700; text-align: start;  }
+.S7 { margin: -1px 0px 0px; padding: 10px 0px 10px 7px; line-height: 21px; min-height: 0px; white-space: pre-wrap; color: rgb(0, 0, 0); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 14px; font-weight: 400; text-align: start;  }
+.CodeBlock { background-color: #F7F7F7; margin: 10px 0 10px 0;}
+.S8 { border-left: 1px solid rgb(233, 233, 233); border-right: 1px solid rgb(233, 233, 233); border-top: 1px solid rgb(233, 233, 233); border-bottom: 0px none rgb(0, 0, 0); border-radius: 4px 4px 0px 0px; padding: 6px 45px 0px 13px; line-height: 17.234px; min-height: 18px; white-space: nowrap; color: rgb(0, 0, 0); font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 14px;  }
+.S9 { border-left: 1px solid rgb(233, 233, 233); border-right: 1px solid rgb(233, 233, 233); border-top: 0px none rgb(0, 0, 0); border-bottom: 0px none rgb(0, 0, 0); border-radius: 0px; padding: 0px 45px 0px 13px; line-height: 17.234px; min-height: 18px; white-space: nowrap; color: rgb(0, 0, 0); font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 14px;  }
+.S10 { border-left: 1px solid rgb(233, 233, 233); border-right: 1px solid rgb(233, 233, 233); border-top: 0px none rgb(0, 0, 0); border-bottom: 1px solid rgb(233, 233, 233); border-radius: 0px 0px 4px 4px; padding: 0px 45px 4px 13px; line-height: 17.234px; min-height: 18px; white-space: nowrap; color: rgb(0, 0, 0); font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 14px;  }
+.S11 { margin: 3px 10px 5px 4px; padding: 0px; line-height: 20px; min-height: 0px; white-space: pre-wrap; color: rgb(60, 60, 60); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 20px; font-weight: 700; text-align: left;  }
+.S12 { border-left: 1px solid rgb(233, 233, 233); border-right: 1px solid rgb(233, 233, 233); border-top: 1px solid rgb(233, 233, 233); border-bottom: 1px solid rgb(233, 233, 233); border-radius: 4px; padding: 6px 45px 4px 13px; line-height: 17.234px; min-height: 18px; white-space: nowrap; color: rgb(0, 0, 0); font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 14px;  }
+.S13 { margin: 10px 10px 9px 4px; padding: 0px; line-height: 21px; min-height: 0px; white-space: pre-wrap; color: rgb(0, 0, 0); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 14px; font-weight: 400; text-align: left;  }
+.S14 { margin: 2px 10px 9px 4px; padding: 0px; line-height: 21px; min-height: 0px; white-space: pre-wrap; color: rgb(0, 0, 0); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 14px; font-weight: 400; text-align: center;  }</style></head><body><div class = rtcContent><h1  class = 'S0' id = 'T_13370202' ><span>MATLAB Companion Script for </span><span style=' font-style: italic;'>Machine Learning</span><span> ex6 (Optional)</span></h1><h2  class = 'S1' id = 'H_5E50F655' ><span>Introduction</span></h2><div  class = 'S2'><span>Coursera's</span><span style=' font-style: italic;'> Machine Learning</span><span> was designed to provide you with a greater understanding of machine learning algorithms- what they are, how they work, and where to apply them. You are also shown techniques to improve their performance and to address common issues. As is mentioned in the course, there are many tools available that allow you to use machine learning algorithms </span><span style=' font-style: italic;'>without</span><span> having to implement them yourself. This Live Script was created by MathWorks to help </span><span style=' font-style: italic;'>Machine Learning</span><span> students explore the data analysis and machine learning tools available in MATLAB.</span></div><h2  class = 'S1' id = 'H_8D135D31' ><span>FAQ</span></h2><div  class = 'S2'><span style=' font-weight: bold;'>Who is this intended for?</span></div><ul  class = 'S3'><li  class = 'S4'><span>This script is intended for students using MATLAB Online who have completed ex6 and want to learn more about the corresponding machine learning tools in MATLAB.</span></li></ul><div  class = 'S2'><span style=' font-weight: bold;'>How do I use this script?</span></div><ul  class = 'S3'><li  class = 'S4'><span>In the sections that follow, read the information provided about the data analysis and machine learning tools in MATLAB, then run the code in each section and examine the results. You may also be presented with instructions for using a MATLAB machine learning app. This script should be located in the ex6 folder which should be set as your Current Folder in MATLAB Online.</span></li></ul><div  class = 'S2'><span style=' font-weight: bold;'>Can I use the tools in this companion script to complete the programming exercises?</span></div><ul  class = 'S3'><li  class = 'S4'><span>No. Most algorithm steps implemented in the programming exercises are handled automatically by MATLAB machine learning functions. Additionally, the results will be similar, but not identical, to those in the programming exercises due to differences in implementation, parameter settings, and randomization.</span></li></ul><div  class = 'S2'><span style=' font-weight: bold;'>Where can I obtain help with this script or report issues?</span></div><ul  class = 'S3'><li  class = 'S4'><span>As this script is not part of the original course materials, please direct any questions, comments, or issues to the </span><span style=' font-style: italic;'>MATLAB Help</span><span> discussion forum.</span></li></ul><h1  class = 'S0' id = 'T_5D986B1B' ><span>Support Vector Machines</span></h1><div  class = 'S2'><span>In this Live Script, we will create and train </span><a href = "https://www.mathworks.com/help/stats/support-vector-machines-for-binary-classification.html"><span>support vector machine </span></a><span>classification models using apps and functions from the </span><a href = "https://www.mathworks.com/products/statistics.html"><span>Statistics and Machine Learning Toolbox</span></a><span>. </span></div><h2  class = 'S1' id = 'H_017A28AA' ><span style=' font-weight: bold;'>Files needed for this script:</span></h2><ul  class = 'S3'><li  class = 'S4'><span style=' font-family: monospace;'>ex6data1.mat</span><span> - Example Dataset 1</span></li><li  class = 'S4'><span style=' font-family: monospace;'>ex6data2.mat</span><span> - Example Dataset 2</span></li><li  class = 'S4'><span style=' font-family: monospace;'>ex6data3.mat</span><span> - Example Dataset 3</span></li><li  class = 'S4'><span style=' font-family: monospace;'>spamTrain.mat</span><span> - Spam training set</span></li><li  class = 'S4'><span style=' font-family: monospace;'>spamTest.mat</span><span> - Spam test set</span></li><li  class = 'S4'><span>emailSample1.txt - Sample email 1</span></li><li  class = 'S4'><span>emailSample2.txt - Sample email 2</span></li><li  class = 'S4'><span>spamSample1.txt - Sample spam 1</span></li><li  class = 'S4'><span>spamSample2.txt - Sample spam 2</span></li><li  class = 'S4'><span>vocab.txt - Vocabulary list</span></li></ul><div  class = 'S5'><div  class = 'S6'><span style=' font-weight: bold;'>Table of Contents</span></div><div  class = 'S7'><a href = "#T_13370202"><span>MATLAB Companion Script for Machine Learning ex6 (Optional)
+</span></a><span>    </span><a href = "#H_5E50F655"><span>Introduction
+</span></a><span>    </span><a href = "#H_8D135D31"><span>FAQ
+</span></a><a href = "#T_5D986B1B"><span>Support Vector Machines
+</span></a><span>    </span><a href = "#H_017A28AA"><span>Files needed for this script:
+</span></a><a href = "#T_929003BB"><span>Train a Linear SVM with the Classification Learner App
+</span></a><span>    </span><a href = "#H_6EE16337"><span>Load dataset 1
+</span></a><span>    </span><a href = "#H_D10D9601"><span>Open the app and select the predictor and response variables
+</span></a><span>    </span><a href = "#H_8D4F4CD0"><span>Select and train the model
+</span></a><span>    </span><a href = "#H_77ED23CC"><span>Evaluate the model
+</span></a><span>    </span><a href = "#H_8DF78EB6"><span>Export the model to the workspace and extract the model variable
+</span></a><span>    </span><a href = "#H_B80E93A6"><span>Predict classes and visualize the decision boundary using the predict function
+</span></a><a href = "#T_C4060962"><span>Train a Gaussian Kernel SVM with the Classification Learner App
+</span></a><span>    </span><a href = "#H_202B3BF4"><span>Load dataset 2
+</span></a><span>    </span><a href = "#H_E480A1BA"><span>Train a Gaussian kernel model
+</span></a><span>    </span><a href = "#H_2620CD3B"><span>Extract the model and visualize the decision boundary
+</span></a><a href = "#T_F54D828D"><span>Fit an SVM model and explore the effect of model parameters using fitcsvm
+</span></a><span>    </span><a href = "#H_31BD6AA3"><span>Load dataset 3
+</span></a><span>    </span><a href = "#H_84DE94B1"><span>Train an SVM classifier with custom parameter settings
+</span></a><span>    </span><a href = "#H_74B74D8F"><span>Automatically select BoxConstraint and KernelScale using hyperparameter optimization
+</span></a><span>    </span><a href = "#H_BAEC4262"><span>Examine the results
+</span></a><a href = "#T_9425286B"><span>Text Processing and Spam Email Classification
+</span></a><span>    </span><a href = "#H_B5840A2F"><span>MATLAB string variables
+</span></a><span>    </span><a href = "#H_52B2B0E9"><span>Load text data
+</span></a><span>    </span><a href = "#H_D1C7D885"><span>Preprocess text using string methods and functions
+</span></a><span>    </span><a href = "#H_614A0C2C"><span>Stem the words in the string array
+</span></a><span>    </span><a href = "#H_9196E7A1"><span>Import the vocabulary list
+</span></a><span>    </span><a href = "#H_B9227949"><span>Map the string array values to the vocabulary list
+</span></a><span>    </span><a href = "#H_003075FA"><span>Train an SVM for spam classification using fitclinear
+</span></a><span>    </span><a href = "#H_949F7CF0"><span>List the top predictors for spam
+</span></a><span>    </span><a href = "#H_185D8E13"><span>Classify your own email 
+</span></a><a href = "#T_6570DDDF"><span>Local Functions
+</span></a><span>    </span><a href = "#H_B68A191E"><span>decisionBoundary
+</span></a><span>    </span><a href = "#H_8556ACDD"><span>preprocess</span></a></div></div><h1  class = 'S0' id = 'T_929003BB' ><span>Train a Linear SVM with the Classification Learner App</span></h1><div  class = 'S2'><span>In this section we train and export an linear SVM classifier model using the </span><a href = "https://www.mathworks.com/help/stats/classificationlearner-app.html"><span>Classification Learner App</span></a><span>.</span></div><h2  class = 'S1' id = 'H_6EE16337' ><span style=' font-weight: bold;'>Load dataset 1</span></h2><div  class = 'S2'><span>Run the code below to load example dataset 1, which consists of two feature variables in the matrix </span><span style=' font-family: monospace;'>X</span><span> and the binary response vector </span><span style=' font-family: monospace;'>y</span><span>. The variables are concatenated into a single data matrix, </span><span style=' font-family: monospace;'>data</span><span> for use with the Classification Learner App.</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>clear;</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>load </span><span style="color: rgb(160, 32, 240);">ex6data1.mat</span><span>;</span></span></div></div><div class="inlineWrapper"><div  class = 'S10'><span style="white-space: pre;"><span class="warning_squiggle_rteliveEditorF54E18D5">data</span><span> = [X,y];</span></span></div></div></div><div  class = 'S2'><span>Follow the steps in the next few sections to train and export an SVM classifier.</span></div><div  class = 'S2'><span style=' font-weight: bold;'>Note: </span><span>If you have difficulty reading the instructions below while the app is open in MATLAB Online, export this script to a pdf file which you can then use to display the instructions in a seperate browser tab or window. To export this script, click on the 'Save' button in the 'Live Editor' tab above, then select 'Export to PDF'.</span></div><h2  class = 'S1' id = 'H_D10D9601' ><span style=' font-weight: bold;'>Open the app and select the predictor and response variables</span></h2><ol  class = 'S3'><li  class = 'S4'><span>In the MATLAB Apps tab, select the '</span><span style=' font-weight: bold;'>Classification Learner'</span><span> from the '</span><span style=' font-weight: bold;'>Machine Learning'</span><span> section (you may need to expand the menu of available apps).</span></li><li  class = 'S4'><span>Select '</span><span style=' font-weight: bold;'>New Session -&gt; From Workspace</span><span>' to start a new interactive session.</span></li><li  class = 'S4'><span>Under '</span><span style=' font-weight: bold;'>Workspace Variable'</span><span>, select '</span><span style=' font-weight: bold;'>data</span><span>'.</span></li><li  class = 'S4'><span>Under '</span><span style=' font-weight: bold;'>Validation</span><span>', select '</span><span style=' font-weight: bold;'>Cross-Validation</span><span>' and use the slider to select 10 folds (see the companion script for ex5 for more information on K-fold cross-validation)</span></li><li  class = 'S4'><span>Click the '</span><span style=' font-weight: bold;'>Start Session</span><span>' button. </span></li></ol><h2  class = 'S11' id = 'H_8D4F4CD0' ><span style=' font-weight: bold;'>Select and train the model</span></h2><ol  class = 'S3'><li  class = 'S4'><span>In the model list, the default model is 'Fine Tree'. Expand the model list and select '</span><span style=' font-weight: bold;'>Linear SVM</span><span>' from the '</span><span style=' font-weight: bold;'>Support Vector Machines</span><span>' list.</span></li><li  class = 'S4'><span>Select '</span><span style=' font-weight: bold;'>Train</span><span>' to train the model. Note that the data is automatically normalized before training.</span></li></ol><h2  class = 'S11' id = 'H_77ED23CC' ><span style=' font-weight: bold;'>Evaluate the model</span></h2><div  class = 'S2'><span>After training, there are several options available for evaluating the model's performance. </span></div><ul  class = 'S3'><li  class = 'S4'><span>The '</span><span style=' font-weight: bold;'>Scatter Plot</span><span>' is automatically updated to indicate misclassified objects with an 'x' marker.</span></li><li  class = 'S4'><span>The '</span><span style=' font-weight: bold;'>Confusion Matrix</span><span>' plot contains the correct and incorrect model predictions by class.</span></li><li  class = 'S4'><span>The '</span><span style=' font-weight: bold;'>Current Model</span><span>' pane contains a summary of the model as well as the training accuracy, training time, and prediction speed for comparison with other models. </span></li></ul><h2  class = 'S11' id = 'H_8DF78EB6' ><span style=' font-weight: bold;'>Export the model to the workspace and extract the model variable</span></h2><ol  class = 'S3'><li  class = 'S4'><span>Select '</span><span style=' font-weight: bold;'>Export Model -&gt; Export Model</span><span>'.</span></li><li  class = 'S4'><span>Select the default output variable name ('trainedModel') and click '</span><span style=' font-weight: bold;'>OK</span><span>'.</span></li><li  class = 'S4'><span>Run the code below to extract the classifier model into the variable </span><span style=' font-family: monospace;'>linSVMmdl</span></li></ol><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>linSVMmdl = trainedModel.ClassificationSVM</span></span></div></div></div><h2  class = 'S11' id = 'H_B80E93A6' ><span style=' font-weight: bold;'>Predict classes and visualize the decision boundary using the </span><span style=' font-weight: bold; font-family: monospace;'>predict</span><span style=' font-weight: bold;'> function</span></h2><div  class = 'S2'><span>As with the other model variables discussed previously in the companion scripts, all of the information about the SVM model is included in the model variable- in this case a </span><a href = "https://www.mathworks.com/help/stats/classificationsvm.html"><span>classificationSVM</span></a><span> model variable. This includes the training data and information, model coefficients, normalization coefficients, etc. The model variable can then be used to predict the class of new feature data using the </span><a href = "https://www.mathworks.com/help/stats/compactclassificationsvm.predict.html"><span style=' font-family: monospace;'>predict</span></a><span> function.  Run the code below to predict the class of a random training example and plot the decision boundary using the </span><span style=' font-family: monospace;'>decisionBoundary</span><span> function (included at the end of this script as a local function) for comparison with your results from ex6. Note that normalization was automatically implemented by the Classification Learner App before training the SVM model, there is no need to normalize feature data before passing it to </span><span style=' font-family: monospace;'>predict</span><span>, the data will again be normalized automatically before prediction. </span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>idx = randi(length(y));</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>fprintf(</span><span style="color: rgb(160, 32, 240);">'Data Point: %d | True class: %d | Predicted class: %d'</span><span>,idx,y(idx),predict(linSVMmdl, X(idx,:)));</span></span></div></div><div class="inlineWrapper"><div  class = 'S10'><span style="white-space: pre;"><span>decisionBoundary(linSVMmdl,X,y);</span></span></div></div></div><h1  class = 'S0' id = 'T_C4060962' ><span>Train a Gaussian Kernel SVM with the Classification Learner App</span></h1><div  class = 'S2'><span>Next, we'll create, train, and export a </span><span style=' font-style: italic;'>non-linear</span><span> classification model using a Gaussian kernel. </span></div><h2  class = 'S1' id = 'H_202B3BF4' ><span style=' font-weight: bold;'>Load dataset 2</span></h2><div  class = 'S2'><span>Run the code below to clear the previous variables and load dataset 2. The feature and response arrays are again combined into a single matrix, </span><span style=' font-family: monospace;'>data</span><span>. </span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>clear;</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>load </span><span style="color: rgb(160, 32, 240);">ex6data2.mat</span><span>;</span></span></div></div><div class="inlineWrapper"><div  class = 'S10'><span style="white-space: pre;"><span>data = [X,y];</span></span></div></div></div><h2  class = 'S11' id = 'H_E480A1BA' ><span>Train a Gaussian kernel model</span></h2><div  class = 'S2'><span>To fit a Gaussian kernel SVM classifier to dataset 2, repeat the steps in the previous section </span><span style=' font-weight: bold; font-style: italic;'>except</span><span>: </span></div><ul  class = 'S3'><li  class = 'S4'><span>Select the '</span><span style=' font-weight: bold;'>Fine Gaussian</span><span>' model* instead of </span><span style=' font-weight: bold;'>Linear SVM</span><span>' from the '</span><span style=' font-weight: bold;'>Support Vector Machines</span><span>' model list.</span></li></ul><div  class = 'S2'><span>*Alternative Gaussian kernels are available, include 'Medium' and 'Coarse', which differ in the value of </span><span style=' font-family: monospace;'>KernelScale</span><span> model parameter. This parameter is discussed later in this script and its value can be set manually in the Classification Learner App, if desired. </span></div><h2  class = 'S11' id = 'H_2620CD3B' ><span style=' font-weight: bold;'>Extract the model and visualize the decision boundary</span></h2><div  class = 'S2'><span>Exporting the trained model to the variable </span><span style=' font-family: monospace;'>trainedModel</span><span>, then run the code below to extract the classifier model into the variable </span><span style=' font-family: monospace;'>gaussSVMmdl</span><span> and plot the decision boundary. </span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>gaussSVMmdl = trainedModel.ClassificationSVM</span></span></div></div><div class="inlineWrapper"><div  class = 'S10'><span style="white-space: pre;"><span>decisionBoundary(gaussSVMmdl,X,y)</span></span></div></div></div><h1  class = 'S0' id = 'T_F54D828D' ><span>Fit an SVM model and explore the effect of model parameters using </span><span style=' font-family: monospace;'>fitcsvm</span></h1><div  class = 'S2'><span>In ex6, you explored the effect of the SVM parameters </span><span style="font-family: STIXGeneral, STIXGeneral-webfont, serif; font-style: italic; font-weight: 400; color: rgb(0, 0, 0);">C</span><span> and </span><span style="font-family: STIXGeneral, STIXGeneral-webfont, serif; font-style: italic; font-weight: 400; color: rgb(0, 0, 0);">σ</span><span> on the model performance. In this section, we train a cross-validated SVM programmatically using the </span><a href = "https://www.mathworks.com/help/stats/fitcsvm.html"><span style=' font-family: monospace;'>fitcsvm</span></a><span> function, where the </span><span style="font-family: STIXGeneral, STIXGeneral-webfont, serif; font-style: italic; font-weight: 400; color: rgb(0, 0, 0);">C</span><span> and </span><span style="font-family: STIXGeneral, STIXGeneral-webfont, serif; font-style: italic; font-weight: 400; color: rgb(0, 0, 0);">σ</span><span> parameters effectively correspond to the </span><span style=' font-family: monospace;'>fitcsvm</span><span> options </span><span style=' font-family: monospace;'>'BoxConstraint'</span><span> and </span><span style=' font-family: monospace;'>'KernelScale'</span><span> respectively.</span></div><h2  class = 'S1' id = 'H_31BD6AA3' ><span style=' font-weight: bold;'>Load dataset 3</span></h2><div  class = 'S2'><span>Run the code below to clear the current model and load dataset 3. (After completing this section, you can repeat the analysis by select one of the first two data sets.)</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>clear;</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>dataset = </span></span><span>3</span><span style="white-space: pre;"><span>;</span></span></div></div><div class="inlineWrapper"><div  class = 'S10'><span style="white-space: pre;"><span>load([</span><span style="color: rgb(160, 32, 240);">'ex6data' </span><span>num2str(dataset) </span><span style="color: rgb(160, 32, 240);">'.mat'</span><span>]);</span></span></div></div></div><h2  class = 'S11' id = 'H_84DE94B1' ><span>Train an SVM classifier with custom parameter settings</span></h2><div  class = 'S2'><span>Select values for the </span><span style=' font-family: monospace;'>BoxConstraint</span><span> and </span><span style=' font-family: monospace;'>KernelScale</span><span>, then run the code in this section to train an SVM classifier using </span><a href = "https://www.mathworks.com/help/stats/fitcsvm.html"><span style=' font-family: monospace;'>fitcsvm</span></a><span style=' font-family: monospace;'> to</span><span> examine the effect of the parameters on the model. A warning may be displayed for certain parameter choices if the decision boundary is not rendered (when all examples are predicted to have the same class). </span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>kernelscale = </span></span><span>1</span><span style="white-space: pre;"><span>;</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>boxconstraint = </span></span><span>1</span><span style="white-space: pre;"><span>;</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>gaussSVMmdl = fitcsvm(X,y,</span><span style="color: rgb(0, 0, 255);">...</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>                     </span><span style="color: rgb(160, 32, 240);">'BoxConstraint'</span><span>,boxconstraint,</span><span style="color: rgb(0, 0, 255);">...</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>                     </span><span style="color: rgb(160, 32, 240);">'KernelScale'</span><span>,kernelscale,</span><span style="color: rgb(0, 0, 255);">...</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>                     </span><span style="color: rgb(160, 32, 240);">'Standardize'</span><span>,true,</span><span style="color: rgb(0, 0, 255);">...</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>                     </span><span style="color: rgb(160, 32, 240);">'KernelFunction'</span><span>,</span><span style="color: rgb(160, 32, 240);">'gaussian'</span><span>);</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>decisionBoundary(gaussSVMmdl,X,y);</span></span></div></div><div class="inlineWrapper"><div  class = 'S10'><span style="white-space: pre;"><span>title(sprintf(</span><span style="color: rgb(160, 32, 240);">'Training accuracy: %0.2f%%'</span><span>, 100*mean(predict(gaussSVMmdl,X)==y)));</span></span></div></div></div><div  class = 'S13'><span style=' font-weight: bold;'>Note:</span><span> The </span><span style=' font-family: monospace;'>BoxConstraint</span><span> and </span><span style=' font-family: monospace;'>KernelScale</span><span> parameters are also customizable in the Classification Learner App. After selecting an SVM classification model, click the '</span><span style=' font-weight: bold;'>Advanced</span><span>' button to change these parameter values. (The </span><span style=' font-family: monospace;'>KernelScale</span><span> option is not available for linear kernels).  </span></div><h2  class = 'S11' id = 'H_74B74D8F' ><span>Automatically select </span><span style=' font-family: monospace;'>BoxConstraint</span><span> and </span><span style=' font-family: monospace;'>KernelScale</span><span> using hyperparameter optimization</span></h2><div  class = 'S2'><span>In the previous section you likely found several pairs of parameter values that result in good training performance and which are also likely generalize well to new data. This is due to the similar effects these parameters have on the final model. In this section we automatically select </span><span style=' font-family: monospace;'>BoxConstraint</span><span> and </span><span style=' font-family: monospace;'>KernelScale</span><span> using hyperparameter optimization. Hyperparameter optimization was discussed previously in the companion script for ex5. Run the code below to create an options structure for K-fold cross-validation and to increase the number of optimization steps to 60. The </span><span style=' font-family: monospace;'>fitcsvm</span><span> function is then called with </span><span style=' font-family: monospace;'>BoxConstraint</span><span> and </span><span style=' font-family: monospace;'>KernelScale</span><span> parameters selected for optimization. (This may take a minute to train). The final model returned by </span><span style=' font-family: monospace;'>fitcsvm</span><span> corresponds to the one with the optimal hyperparameters*.  </span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>folds = 5;</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>opts = struct(</span><span style="color: rgb(160, 32, 240);">'kfold'</span><span>,folds,</span><span style="color: rgb(160, 32, 240);">'MaxObjectiveEvaluations'</span><span>,60,</span><span style="color: rgb(160, 32, 240);">'Repartition'</span><span>,true);</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>gaussSVMmdl = fitcsvm(X,y,</span><span style="color: rgb(0, 0, 255);">...</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>                      </span><span style="color: rgb(160, 32, 240);">'KernelFunction'</span><span>,</span><span style="color: rgb(160, 32, 240);">'gaussian'</span><span>,</span><span style="color: rgb(0, 0, 255);">...</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>                      </span><span style="color: rgb(160, 32, 240);">'Standardize'</span><span>,true,</span><span style="color: rgb(0, 0, 255);">...</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>                      </span><span style="color: rgb(160, 32, 240);">'OptimizeHyperparameters'</span><span>,{</span><span style="color: rgb(160, 32, 240);">'KernelScale'</span><span>,</span><span style="color: rgb(160, 32, 240);">'BoxConstraint'</span><span>},</span><span style="color: rgb(0, 0, 255);">...</span></span></div></div><div class="inlineWrapper"><div  class = 'S10'><span style="white-space: pre;"><span>                      </span><span style="color: rgb(160, 32, 240);">'HyperparameterOptimizationOptions'</span><span>,opts)</span></span></div></div></div><div  class = 'S13'><span>*</span><span style=' font-weight: bold;'>Note:</span><span> As there are two parameters being optimized the cost function is visualized </span><span style=' font-style: italic;'>as a surface</span><span> over a grid of </span><span style=' font-family: monospace;'>BoxConstraint</span><span> and </span><span style=' font-family: monospace;'>KernelScale</span><span> values. Furthermore, the range of parameter combinations resulting in acceptable performance observed in the previous section is seen as the 'trough' in the 'Objective function model' plot. Along this trough are parameter pairs that will provide similar performance as judged by the validation cost. Due to the random nature of validation set selection, your optimal parameter pair may vary along this region upon successive training/parameter optimizations but should still result in comparable performance. </span></div><h2  class = 'S11' id = 'H_BAEC4262' ><span style=' font-weight: bold;'>Examine the results</span></h2><div  class = 'S2'><span>Run the code below to plot the decision boundary of the optimized SVM classifier. </span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>decisionBoundary(gaussSVMmdl,X,y);</span></span></div></div><div class="inlineWrapper"><div  class = 'S10'><span style="white-space: pre;"><span>title(sprintf(</span><span style="color: rgb(160, 32, 240);">'Training accuracy: %0.2f%%'</span><span>, 100*mean(predict(gaussSVMmdl,X)==y)));</span></span></div></div></div><h1  class = 'S0' id = 'T_9425286B' ><span>Text Processing and Spam Email Classification</span></h1><div  class = 'S2'><span>In the second part of ex6, you preprocessed and stemmed text data in the form of email samples, then trained an SVM to classify the samples as spam or not spam. In this section we introduce MATLAB </span><span style=' font-family: monospace;'>string</span><span> variables and use them to preprocess text data before training a spam classifier.</span></div><h2  class = 'S1' id = 'H_B5840A2F' ><span>MATLAB </span><span style=' font-family: monospace;'>string</span><span> variables</span></h2><div  class = 'S2'><a href = "https://www.mathworks.com/help/matlab/characters-and-strings.html"><span style=' font-family: monospace;'>string</span><span> arrays</span></a><span> provide a rich set of functionality for processing and analyzing textual data. They are now the preferred text datatype in MATLAB and offer advantages in most cases over character arrays (</span><span style=' font-family: monospace;'>char</span><span>) and cell arrays of </span><span style=' font-family: monospace;'>char</span><span> variables. Use the control below to list and obtain descriptions of the functions available for working with </span><span style=' font-family: monospace;'>strings</span><span>. Note that certain methods also have equivalent operators. For example, '+' and '==' can be used in place of </span><span style=' font-family: monospace;'>plus</span><span> and </span><span style=' font-family: monospace;'>eq</span><span>. </span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>help </span><span style="color: rgb(160, 32, 240);">string.</span></span><span style="color: rgb(160, 32, 240);">strip</span></div></div></div><h2  class = 'S11' id = 'H_52B2B0E9' ><span>Load text data</span></h2><div  class = 'S2'><span>Run the code below to load a sample email into a character vector </span><span style=' font-family: monospace;'>contents</span><span>. You can return and select a different sample to see the results of the preprocessing operations in the next section.</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>clear;</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>file = </span></span><span style="color: rgb(160, 32, 240);">'emailSample1.txt'</span><span style="white-space: pre;"><span>;</span></span></div></div><div class="inlineWrapper"><div  class = 'S10'><span style="white-space: pre;"><span>contents = fileread(file);</span></span></div></div></div><h2  class = 'S11' id = 'H_D1C7D885' ><span>Preprocess text using </span><span style=' font-family: monospace;'>string</span><span> methods and functions</span></h2><div  class = 'S2'><span>In this section, we will convert the email contents to a string and preprocess the email using the same steps as in the ex6 function </span><span style=' font-family: monospace;'>processEmail.</span><span> If you are curious, you can remove the semicolon after one or more commands to examine the effects of the processing steps below. These steps have been collected into the local function </span><span style=' font-family: monospace;'>preprocess</span><span> at the end of this script which will be used in the remainder of this Live Script.</span></div><ul  class = 'S3'><li  class = 'S4'><span>Convert </span><span style=' font-family: monospace;'>contents</span><span> to a </span><span style=' font-family: monospace;'>string</span></li></ul><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>processed = string(contents);</span></span></div></div></div><ul  class = 'S3'><li  class = 'S4'><span>Lower-case the string using </span><span style=' font-family: monospace;'>lower</span><span>.</span></li></ul><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>processed  = lower(processed);</span></span></div></div></div><ul  class = 'S3'><li  class = 'S4'><span>Strip HTML tags using </span><span style=' font-family: monospace;'>eraseBetween</span></li></ul><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>processed  = eraseBetween(processed,</span><span style="color: rgb(160, 32, 240);">'&lt;'</span><span>,</span><span style="color: rgb(160, 32, 240);">'&gt;'</span><span>,</span><span style="color: rgb(160, 32, 240);">'Boundaries'</span><span>,</span><span style="color: rgb(160, 32, 240);">'inclusive'</span><span>);</span></span></div></div></div><ul  class = 'S3'><li  class = 'S4'><span>Replace dollar signs with 'dollar'</span></li></ul><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>processed = replace(processed,</span><span style="color: rgb(160, 32, 240);">"$"</span><span>,</span><span style="color: rgb(160, 32, 240);">"dollar"</span><span>);</span></span></div></div></div><ul  class = 'S3'><li  class = 'S4'><span>Split the email on whitespace into individual tokens (</span><span style=' font-family: monospace;'>contents</span><span> will become a </span><span style=' font-family: monospace;'>string</span><span> </span><span style=' font-style: italic;'>array</span><span>)</span></li></ul><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>processed = split(processed);</span></span></div></div></div><ul  class = 'S3'><li  class = 'S4'><span>Normalize URLs using </span><span style=' font-family: monospace;'>contains</span><span> and logical indexing</span></li></ul><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>processed(startsWith(processed,[</span><span style="color: rgb(160, 32, 240);">"http://"</span><span>,</span><span style="color: rgb(160, 32, 240);">"https://"</span><span>])) =  </span><span style="color: rgb(160, 32, 240);">"httpaddr"</span><span>;</span></span></div></div></div><ul  class = 'S3'><li  class = 'S4'><span>Normalize email addresses and numbers, and remove punctuation using </span><a href = "https://www.mathworks.com/help/matlab/ref/regexprep.html"><span style=' font-family: monospace;'>regexprep</span></a><span>. </span></li></ul><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>processed = regexprep(processed,</span><span style="color: rgb(160, 32, 240);">'.+@.+'</span><span>,</span><span style="color: rgb(160, 32, 240);">"emailaddr"</span><span>); </span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>processed = regexprep(processed,</span><span style="color: rgb(160, 32, 240);">'[0-9]+'</span><span>,</span><span style="color: rgb(160, 32, 240);">"number"</span><span>);</span></span></div></div><div class="inlineWrapper"><div  class = 'S10'><span style="white-space: pre;"><span>processed = regexprep(processed,</span><span style="color: rgb(160, 32, 240);">'[^a-zA-Z0-9]'</span><span>,</span><span style="color: rgb(160, 32, 240);">""</span><span>);</span></span></div></div></div><ul  class = 'S3'><li  class = 'S4'><span>Remove empty or single character words using </span><span style=' font-family: monospace;'>strlength</span></li></ul><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>processed(strlength(processed)&lt;=1) = [];</span></span></div></div></div><h2  class = 'S11' id = 'H_614A0C2C' ><span>Stem the words in the string array</span></h2><div  class = 'S2'><span>Run the code below to stem the words using </span><span style=' font-family: monospace;'>porterStemmer.m</span><span>  (included with ex6). Since </span><span style=' font-family: monospace;'>porterStemmer</span><span> was created for character arrays, we'll convert the elements of </span><span style=' font-family: monospace;'>contents</span><span> to character vectors before passing them to </span><span style=' font-family: monospace;'>porterStemmer</span><span>, then convert the output back into a </span><span style=' font-family: monospace;'>string</span><span>. </span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S12'><span style="white-space: pre;"><span>processed = arrayfun(@(str)string(porterStemmer(char(str))),processed)</span></span></div></div></div><h2  class = 'S11' id = 'H_9196E7A1' ><span>Import the vocabulary list</span></h2><div  class = 'S2'><span>The next step is to load the vocabulary words in vocab.txt. Since the file contains the (unneeded) word indices as well as the word list, we'll import the data into a </span><span style=' font-family: monospace;'>table</span><span> usng </span><span style=' font-family: monospace;'>readtable</span><span>, then select only the words by extracting the second column and converting it into a </span><span style=' font-family: monospace;'>string</span><span> array.</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>vocab = readtable(</span><span style="color: rgb(160, 32, 240);">'vocab.txt'</span><span>);</span></span></div></div><div class="inlineWrapper"><div  class = 'S10'><span style="white-space: pre;"><span>vocab = string(vocab{:,2});      </span></span></div></div></div><h2  class = 'S11' id = 'H_B9227949' ><span>Map the string array values to the vocabulary list</span></h2><div  class = 'S2'><span>Run the code below to create a binary vector, </span><span style=' font-family: monospace;'>features</span><span> where </span><span style=' font-family: monospace;'>features(i)</span><span> equals </span><span style=' font-family: monospace;'>1</span><span> if </span><span style=' font-family: monospace;'>vocab(i)</span><span> appears in </span><span style=' font-family: monospace;'>processed</span><span> and 0 otherwise. The vocabulary list is then displayed alongside the feature vector in a </span><span style=' font-family: monospace;'>table</span><span>. To see what vocabulary words are in the email, hover the cursor over '</span><span style=' font-family: monospace;'>features</span><span>', click down arrow when it appears, then enter '1' for both the largest and smallest value to select between (or sort from largest to smallest). You should see the 48 words from the dictionary that were in found in the first spam email sample.</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>features = double(ismember(vocab,processed));</span></span></div></div><div class="inlineWrapper"><div  class = 'S10'><span style="white-space: pre;"><span>table(vocab,features)</span></span></div></div></div><div  class = 'S13'><span>If desired, you can load and process a different email to see processed result and the resulting feature vector (there is no need to re-import the vocabulary list.</span></div><h2  class = 'S11' id = 'H_003075FA' ><span>Train an SVM for spam classification using </span><span style=' font-family: monospace;'>fitclinear</span></h2><div  class = 'S2'><span>In this section we train an SVM classifier model for spam detection using the </span><span style=' font-family: monospace;'>fitclinear</span><span> function. As there are a large number of variables (1,899), the </span><span style=' font-family: monospace;'>fitclinear</span><span> function will offer improved performance over </span><span style=' font-family: monospace;'>fitcsvm</span><span>. (As has been mentioned in previous companion scripts, </span><span style=' font-family: monospace;'>fitrlinear</span><span> and </span><span style=' font-family: monospace;'>fitclinear</span><span> are more efficient when training models with a large number of variables). Run the code below to load the email training set in </span><span style=' font-family: monospace;'>spamTrain.mat</span><span> which contains a feature matrix </span><span style=' font-family: monospace;'>X</span><span> and response vector </span><span style=' font-family: monospace;'>y</span><span>. The </span><span style=' font-family: monospace;'>fitclinear</span><span> function is then called to train an SVM model by setting the </span><span style=' font-family: monospace;'>'Learner'</span><span> option to </span><span style=' font-family: monospace;'>'svm'</span><span>. We will also add regularization and cross-validate the model using hold-out validation (since there is a large amount of training data in this particular example) and then obtain the optimal regularization strength using hyperparameter optimization. Lastly we will load the test set and compute the training and test accuracies using the optimized classifier. </span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>load </span><span style="color: rgb(160, 32, 240);">spamTrain.mat</span><span>;</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>opts = struct(</span><span style="color: rgb(160, 32, 240);">'Holdout'</span><span>,0.3);</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>linSVMmdl = fitclinear(X,y,</span><span style="color: rgb(160, 32, 240);">'Learner'</span><span>,</span><span style="color: rgb(160, 32, 240);">'svm'</span><span>,</span><span style="color: rgb(160, 32, 240);">'Regularization'</span><span>,</span><span style="color: rgb(160, 32, 240);">'ridge'</span><span>,</span><span style="color: rgb(160, 32, 240);">'OptimizeHyperparameters'</span><span>,{</span><span style="color: rgb(160, 32, 240);">'lambda'</span><span>},</span><span style="color: rgb(160, 32, 240);">'HyperparameterOptimizationOptions'</span><span>,opts)</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>load(</span><span style="color: rgb(160, 32, 240);">'spamTest.mat'</span><span>);</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>fprintf(</span><span style="color: rgb(160, 32, 240);">'Training Accuracy: %f | Test Accuracy: %f\n'</span><span>,</span><span style="color: rgb(0, 0, 255);">...</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>        mean(predict(linSVMmdl,X)==y)*100,</span><span style="color: rgb(0, 0, 255);">...</span></span></div></div><div class="inlineWrapper"><div  class = 'S10'><span style="white-space: pre;"><span>        mean(predict(linSVMmdl,Xtest)==ytest)*100);</span></span></div></div></div><h2  class = 'S11' id = 'H_949F7CF0' ><span>List the top predictors for spam</span></h2><div  class = 'S2'><span>As in ex6, we print out the top predictor words as given by their score (model coefficient). The model coefficients are found in the </span><span style=' font-family: monospace;'>Beta</span><span> model property of a </span><span style=' font-family: monospace;'>classificationLinear</span><span> variable, which we combine with the vocabulary words into a </span><span style=' font-family: monospace;'>table</span><span> before sorting. Compare with your results from ex6:</span></div><div  class = 'S14'><img class = "imageNode" src = "data:image/png;base64,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" width = "540" height = "83" alt = "" style = "vertical-align: baseline"></img></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span style="color: rgb(60, 118, 61);">% Sort the weights and obtain the vocabulary list</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>tbl = table(vocab,linSVMmdl.Beta,</span><span style="color: rgb(160, 32, 240);">'VariableNames'</span><span>,{</span><span style="color: rgb(160, 32, 240);">'Word'</span><span>,</span><span style="color: rgb(160, 32, 240);">'Score'</span><span>})</span></span></div></div><div class="inlineWrapper"><div  class = 'S10'><span style="white-space: pre;"><span>tbl = sortrows(tbl,</span><span style="color: rgb(160, 32, 240);">'Score'</span><span>,</span><span style="color: rgb(160, 32, 240);">'descend'</span><span>)</span></span></div></div></div><h2  class = 'S11' id = 'H_185D8E13' ><span>Classify your own email </span></h2><div  class = 'S2'><span>The code below has been set up for you to use your trained model to classify email samples using the trained SVM model and the local function </span><span style=' font-family: monospace;'>preprocess</span><span>. Just add your own email text file to the Current Folder, add the file name (e.g. 'myemail.txt') to the code below, and select 'yourEmail' using the dropdown menu. Alternatively, you can select and classify the samples included with ex6.</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>yourEmail = </span><span style="color: rgb(160, 32, 240);">''</span><span>;</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>eml = </span></span><span style="color: rgb(160, 32, 240);">'emailSample1.txt'</span><span style="white-space: pre;"><span>;</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>processed = preprocess(eml);</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>features = ismember(vocab,processed);</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span style="color: rgb(0, 0, 255);">if </span><span>predict(linSVMmdl,double(features)')</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>    disp(</span><span style="color: rgb(160, 32, 240);">'This email is probably spam.'</span><span>)</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span style="color: rgb(0, 0, 255);">else</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>    disp(</span><span style="color: rgb(160, 32, 240);">'This email is probably not spam.'</span><span>)</span></span></div></div><div class="inlineWrapper"><div  class = 'S10'><span style="white-space: pre;"><span style="color: rgb(0, 0, 255);">end</span></span></div></div></div><h1  class = 'S0' id = 'T_6570DDDF' ><span>Local Functions</span></h1><h2  class = 'S1' id = 'H_B68A191E' ><span style=' font-family: monospace;'>decisionBoundary</span></h2><div  class = 'S2'><span>The </span><span style=' font-family: monospace;'>decisionBoundary</span><span> function plots the positive (y = 1) and negative examples of a given dataset provided as an input feature matrix </span><span style=' font-family: monospace;'>X</span><span> and response vector </span><span style=' font-family: monospace;'>y</span><span>. The decision boundary for the classifier model </span><span style=' font-family: monospace;'>mdl</span><span> is also plotted using the </span><span style=' font-family: monospace;'>contour</span><span> function. Any misclassified points are plotted as red x's.</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span style="color: rgb(0, 0, 255);">function </span><span>decisionBoundary(mdl,X,y)</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>    figure; hold </span><span style="color: rgb(160, 32, 240);">on</span><span>;</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>    x1 = linspace(min(X(:,1)),max(X(:,1)));</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>    x2 = linspace(min(X(:,2)),max(X(:,2)));</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>    [Xgrid,Ygrid] = meshgrid(x1,x2);</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>    Z = reshape(predict(mdl,[Xgrid(:),Ygrid(:)]), size(Xgrid));</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>    contour(Xgrid,Ygrid,Z,</span><span style="color: rgb(160, 32, 240);">'Levels'</span><span>,1); </span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>    plot(X(y==1,1),X(y==1,2),</span><span style="color: rgb(160, 32, 240);">'k+'</span><span>,</span><span style="color: rgb(160, 32, 240);">'MarkerSize'</span><span>,7);</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>    plot(X(~y,1),X(~y,2),</span><span style="color: rgb(160, 32, 240);">'ko'</span><span>,</span><span style="color: rgb(160, 32, 240);">'MarkerFaceColor'</span><span>,</span><span style="color: rgb(160, 32, 240);">'y'</span><span>,</span><span style="color: rgb(160, 32, 240);">'MarkerSize'</span><span>,7); </span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>    misclassidx = y~=predict(mdl,X);</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>    plot(X(misclassidx,1),X(misclassidx,2),</span><span style="color: rgb(160, 32, 240);">'rx'</span><span>)</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>    hold </span><span style="color: rgb(160, 32, 240);">off</span><span>;</span></span></div></div><div class="inlineWrapper"><div  class = 'S10'><span style="white-space: pre;"><span style="color: rgb(0, 0, 255);">end</span></span></div></div></div><h2  class = 'S1' id = 'H_8556ACDD' ><span style=' font-family: monospace;'>preprocess</span></h2><div  class = 'S2'><span style=' font-family: monospace;'>preprocess</span><span> is executes the steps for preprocessing emails used in the Live Script above.</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span style="color: rgb(0, 0, 255);">function </span><span>contents = preprocess(file)</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>    contents = string(fileread(file));</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>    contents  = lower(contents);</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>    contents  = eraseBetween(contents,</span><span style="color: rgb(160, 32, 240);">'&lt;'</span><span>,</span><span style="color: rgb(160, 32, 240);">'&gt;'</span><span>,</span><span style="color: rgb(160, 32, 240);">'Boundaries'</span><span>,</span><span style="color: rgb(160, 32, 240);">'inclusive'</span><span>);</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>    contents = replace(contents,</span><span style="color: rgb(160, 32, 240);">"$"</span><span>,</span><span style="color: rgb(160, 32, 240);">"dollar "</span><span>);</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>    contents = split(contents);</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>    contents(startsWith(contents,[</span><span style="color: rgb(160, 32, 240);">"http://"</span><span>,</span><span style="color: rgb(160, 32, 240);">"https://"</span><span>])) =  </span><span style="color: rgb(160, 32, 240);">"httpaddr"</span><span>;</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>    contents = regexprep(contents,</span><span style="color: rgb(160, 32, 240);">'.+@.+'</span><span>,</span><span style="color: rgb(160, 32, 240);">"emailaddr"</span><span>); </span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>    contents = regexprep(contents,</span><span style="color: rgb(160, 32, 240);">'[0-9]+'</span><span>,</span><span style="color: rgb(160, 32, 240);">"number"</span><span>);</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>    contents = regexprep(contents,</span><span style="color: rgb(160, 32, 240);">'[^a-zA-Z0-9]'</span><span>,</span><span style="color: rgb(160, 32, 240);">""</span><span>);</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>    contents(strlength(contents)&lt;=1) = [];</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>    contents = arrayfun(@(str)string(porterStemmer(char(str))),contents);</span></span></div></div><div class="inlineWrapper"><div  class = 'S10'><span style="white-space: pre;"><span style="color: rgb(0, 0, 255);">end</span></span></div></div></div></div>
+<br>
+<!-- 
+##### SOURCE BEGIN #####
+%% MATLAB Companion Script for _Machine Learning_ ex6 (Optional)
+%% Introduction
+% Coursera's _Machine Learning_ was designed to provide you with a greater understanding 
+% of machine learning algorithms- what they are, how they work, and where to apply 
+% them. You are also shown techniques to improve their performance and to address 
+% common issues. As is mentioned in the course, there are many tools available 
+% that allow you to use machine learning algorithms _without_ having to implement 
+% them yourself. This Live Script was created by MathWorks to help _Machine Learning_ 
+% students explore the data analysis and machine learning tools available in MATLAB.
+%% FAQ
+% *Who is this intended for?*
+%% 
+% * This script is intended for students using MATLAB Online who have completed 
+% ex6 and want to learn more about the corresponding machine learning tools in 
+% MATLAB.
+%% 
+% *How do I use this script?*
+%% 
+% * In the sections that follow, read the information provided about the data 
+% analysis and machine learning tools in MATLAB, then run the code in each section 
+% and examine the results. You may also be presented with instructions for using 
+% a MATLAB machine learning app. This script should be located in the ex6 folder 
+% which should be set as your Current Folder in MATLAB Online.
+%% 
+% *Can I use the tools in this companion script to complete the programming 
+% exercises?*
+%% 
+% * No. Most algorithm steps implemented in the programming exercises are handled 
+% automatically by MATLAB machine learning functions. Additionally, the results 
+% will be similar, but not identical, to those in the programming exercises due 
+% to differences in implementation, parameter settings, and randomization.
+%% 
+% *Where can I obtain help with this script or report issues?*
+%% 
+% * As this script is not part of the original course materials, please direct 
+% any questions, comments, or issues to the _MATLAB Help_ discussion forum.
+%% Support Vector Machines
+% In this Live Script, we will create and train <https://www.mathworks.com/help/stats/support-vector-machines-for-binary-classification.html 
+% support vector machine >classification models using apps and functions from 
+% the <https://www.mathworks.com/products/statistics.html Statistics and Machine 
+% Learning Toolbox>. 
+%% *Files needed for this script:*
+%% 
+% * |ex6data1.mat| - Example Dataset 1
+% * |ex6data2.mat| - Example Dataset 2
+% * |ex6data3.mat| - Example Dataset 3
+% * |spamTrain.mat| - Spam training set
+% * |spamTest.mat| - Spam test set
+% * emailSample1.txt - Sample email 1
+% * emailSample2.txt - Sample email 2
+% * spamSample1.txt - Sample spam 1
+% * spamSample2.txt - Sample spam 2
+% * vocab.txt - Vocabulary list
+%% Train a Linear SVM with the Classification Learner App
+% In this section we train and export an linear SVM classifier model using the 
+% <https://www.mathworks.com/help/stats/classificationlearner-app.html Classification 
+% Learner App>.
+%% *Load dataset 1*
+% Run the code below to load example dataset 1, which consists of two feature 
+% variables in the matrix |X| and the binary response vector |y|. The variables 
+% are concatenated into a single data matrix, |data| for use with the Classification 
+% Learner App.
+
+clear;
+load ex6data1.mat;
+data = [X,y];
+%% 
+% Follow the steps in the next few sections to train and export an SVM classifier.
+% 
+% *Note:* If you have difficulty reading the instructions below while the app 
+% is open in MATLAB Online, export this script to a pdf file which you can then 
+% use to display the instructions in a seperate browser tab or window. To export 
+% this script, click on the 'Save' button in the 'Live Editor' tab above, then 
+% select 'Export to PDF'.
+%% *Open the app and select the predictor and response variables*
+%% 
+% # In the MATLAB Apps tab, select the '*Classification Learner'* from the '*Machine 
+% Learning'* section (you may need to expand the menu of available apps).
+% # Select '*New Session -> From Workspace*' to start a new interactive session.
+% # Under '*Workspace Variable'*, select '*data*'.
+% # Under '*Validation*', select '*Cross-Validation*' and use the slider to 
+% select 10 folds (see the companion script for ex5 for more information on K-fold 
+% cross-validation)
+% # Click the '*Start Session*' button. 
+%% *Select and train the model*
+%% 
+% # In the model list, the default model is 'Fine Tree'. Expand the model list 
+% and select '*Linear SVM*' from the '*Support Vector Machines*' list.
+% # Select '*Train*' to train the model. Note that the data is automatically 
+% normalized before training.
+%% *Evaluate the model*
+% After training, there are several options available for evaluating the model's 
+% performance. 
+%% 
+% * The '*Scatter Plot*' is automatically updated to indicate misclassified 
+% objects with an 'x' marker.
+% * The '*Confusion Matrix*' plot contains the correct and incorrect model predictions 
+% by class.
+% * The '*Current Model*' pane contains a summary of the model as well as the 
+% training accuracy, training time, and prediction speed for comparison with other 
+% models. 
+%% *Export the model to the workspace and extract the model variable*
+%% 
+% # Select '*Export Model -> Export Model*'.
+% # Select the default output variable name ('trainedModel') and click '*OK*'.
+% # Run the code below to extract the classifier model into the variable |linSVMmdl|
+
+linSVMmdl = trainedModel.ClassificationSVM
+%% *Predict classes and visualize the decision boundary using the |predict| function*
+% As with the other model variables discussed previously in the companion scripts, 
+% all of the information about the SVM model is included in the model variable- 
+% in this case a <https://www.mathworks.com/help/stats/classificationsvm.html 
+% classificationSVM> model variable. This includes the training data and information, 
+% model coefficients, normalization coefficients, etc. The model variable can 
+% then be used to predict the class of new feature data using the <https://www.mathworks.com/help/stats/compactclassificationsvm.predict.html 
+% |predict|> function.  Run the code below to predict the class of a random training 
+% example and plot the decision boundary using the |decisionBoundary| function 
+% (included at the end of this script as a local function) for comparison with 
+% your results from ex6. Note that normalization was automatically implemented 
+% by the Classification Learner App before training the SVM model, there is no 
+% need to normalize feature data before passing it to |predict|, the data will 
+% again be normalized automatically before prediction. 
+
+idx = randi(length(y));
+fprintf('Data Point: %d | True class: %d | Predicted class: %d',idx,y(idx),predict(linSVMmdl, X(idx,:)));
+decisionBoundary(linSVMmdl,X,y);
+%% Train a Gaussian Kernel SVM with the Classification Learner App
+% Next, we'll create, train, and export a _non-linear_ classification model 
+% using a Gaussian kernel. 
+%% *Load dataset 2*
+% Run the code below to clear the previous variables and load dataset 2. The 
+% feature and response arrays are again combined into a single matrix, |data|. 
+
+clear;
+load ex6data2.mat;
+data = [X,y];
+%% Train a Gaussian kernel model
+% To fit a Gaussian kernel SVM classifier to dataset 2, repeat the steps in 
+% the previous section _*except*_: 
+%% 
+% * Select the '*Fine Gaussian*' model* instead of *Linear SVM*' from the '*Support 
+% Vector Machines*' model list.
+%% 
+% *Alternative Gaussian kernels are available, include 'Medium' and 'Coarse', 
+% which differ in the value of |KernelScale| model parameter. This parameter is 
+% discussed later in this script and its value can be set manually in the Classification 
+% Learner App, if desired. 
+%% *Extract the model and visualize the decision boundary*
+% Exporting the trained model to the variable |trainedModel|, then run the code 
+% below to extract the classifier model into the variable |gaussSVMmdl| and plot 
+% the decision boundary. 
+
+gaussSVMmdl = trainedModel.ClassificationSVM
+decisionBoundary(gaussSVMmdl,X,y)
+%% Fit an SVM model and explore the effect of model parameters using |fitcsvm|
+% In ex6, you explored the effect of the SVM parameters $C$ and $\sigma$ on 
+% the model performance. In this section, we train a cross-validated SVM programmatically 
+% using the <https://www.mathworks.com/help/stats/fitcsvm.html |fitcsvm|> function, 
+% where the $C$ and $\sigma$ parameters effectively correspond to the |fitcsvm| 
+% options |'BoxConstraint'| and |'KernelScale'| respectively.
+%% *Load dataset 3*
+% Run the code below to clear the current model and load dataset 3. (After completing 
+% this section, you can repeat the analysis by select one of the first two data 
+% sets.)
+
+clear;
+dataset = 3;
+load(['ex6data' num2str(dataset) '.mat']);
+%% Train an SVM classifier with custom parameter settings
+% Select values for the |BoxConstraint| and |KernelScale|, then run the code 
+% in this section to train an SVM classifier using <https://www.mathworks.com/help/stats/fitcsvm.html 
+% |fitcsvm|> |to| examine the effect of the parameters on the model. A warning 
+% may be displayed for certain parameter choices if the decision boundary is not 
+% rendered (when all examples are predicted to have the same class). 
+
+kernelscale = 1;
+boxconstraint = 1;
+gaussSVMmdl = fitcsvm(X,y,...
+                     'BoxConstraint',boxconstraint,...
+                     'KernelScale',kernelscale,...
+                     'Standardize',true,...
+                     'KernelFunction','gaussian');
+
+decisionBoundary(gaussSVMmdl,X,y);
+title(sprintf('Training accuracy: %0.2f%%', 100*mean(predict(gaussSVMmdl,X)==y)));
+%% 
+% *Note:* The |BoxConstraint| and |KernelScale| parameters are also customizable 
+% in the Classification Learner App. After selecting an SVM classification model, 
+% click the '*Advanced*' button to change these parameter values. (The |KernelScale| 
+% option is not available for linear kernels).  
+%% Automatically select |BoxConstraint| and |KernelScale| using hyperparameter optimization
+% In the previous section you likely found several pairs of parameter values 
+% that result in good training performance and which are also likely generalize 
+% well to new data. This is due to the similar effects these parameters have on 
+% the final model. In this section we automatically select |BoxConstraint| and 
+% |KernelScale| using hyperparameter optimization. Hyperparameter optimization 
+% was discussed previously in the companion script for ex5. Run the code below 
+% to create an options structure for K-fold cross-validation and to increase the 
+% number of optimization steps to 60. The |fitcsvm| function is then called with 
+% |BoxConstraint| and |KernelScale| parameters selected for optimization. (This 
+% may take a minute to train). The final model returned by |fitcsvm| corresponds 
+% to the one with the optimal hyperparameters*.  
+
+folds = 5;
+opts = struct('kfold',folds,'MaxObjectiveEvaluations',60,'Repartition',true);
+gaussSVMmdl = fitcsvm(X,y,...
+                      'KernelFunction','gaussian',...
+                      'Standardize',true,...
+                      'OptimizeHyperparameters',{'KernelScale','BoxConstraint'},...
+                      'HyperparameterOptimizationOptions',opts)
+%% 
+% **Note:* As there are two parameters being optimized the cost function is 
+% visualized _as a surface_ over a grid of |BoxConstraint| and |KernelScale| values. 
+% Furthermore, the range of parameter combinations resulting in acceptable performance 
+% observed in the previous section is seen as the 'trough' in the 'Objective function 
+% model' plot. Along this trough are parameter pairs that will provide similar 
+% performance as judged by the validation cost. Due to the random nature of validation 
+% set selection, your optimal parameter pair may vary along this region upon successive 
+% training/parameter optimizations but should still result in comparable performance. 
+%% *Examine the results*
+% Run the code below to plot the decision boundary of the optimized SVM classifier. 
+
+decisionBoundary(gaussSVMmdl,X,y);
+title(sprintf('Training accuracy: %0.2f%%', 100*mean(predict(gaussSVMmdl,X)==y)));
+%% Text Processing and Spam Email Classification
+% In the second part of ex6, you preprocessed and stemmed text data in the form 
+% of email samples, then trained an SVM to classify the samples as spam or not 
+% spam. In this section we introduce MATLAB |string| variables and use them to 
+% preprocess text data before training a spam classifier.
+%% MATLAB |string| variables
+% <https://www.mathworks.com/help/matlab/characters-and-strings.html |string| 
+% arrays> provide a rich set of functionality for processing and analyzing textual 
+% data. They are now the preferred text datatype in MATLAB and offer advantages 
+% in most cases over character arrays (|char|) and cell arrays of |char| variables. 
+% Use the control below to list and obtain descriptions of the functions available 
+% for working with |strings|. Note that certain methods also have equivalent operators. 
+% For example, '+' and '==' can be used in place of |plus| and |eq|. 
+
+help string.strip
+%% Load text data
+% Run the code below to load a sample email into a character vector |contents|. 
+% You can return and select a different sample to see the results of the preprocessing 
+% operations in the next section.
+
+clear;
+file = 'emailSample1.txt';
+contents = fileread(file);
+%% Preprocess text using |string| methods and functions
+% In this section, we will convert the email contents to a string and preprocess 
+% the email using the same steps as in the ex6 function |processEmail.| If you 
+% are curious, you can remove the semicolon after one or more commands to examine 
+% the effects of the processing steps below. These steps have been collected into 
+% the local function |preprocess| at the end of this script which will be used 
+% in the remainder of this Live Script.
+%% 
+% * Convert |contents| to a |string|
+
+processed = string(contents);
+%% 
+% * Lower-case the string using |lower|.
+
+processed  = lower(processed);
+%% 
+% * Strip HTML tags using |eraseBetween|
+
+processed  = eraseBetween(processed,'<','>','Boundaries','inclusive');
+%% 
+% * Replace dollar signs with 'dollar'
+
+processed = replace(processed,"$","dollar");
+%% 
+% * Split the email on whitespace into individual tokens (|contents| will become 
+% a |string| _array_)
+
+processed = split(processed);
+%% 
+% * Normalize URLs using |contains| and logical indexing
+
+processed(startsWith(processed,["http://","https://"])) =  "httpaddr";
+%% 
+% * Normalize email addresses and numbers, and remove punctuation using <https://www.mathworks.com/help/matlab/ref/regexprep.html 
+% |regexprep|>. 
+
+processed = regexprep(processed,'.+@.+',"emailaddr"); 
+processed = regexprep(processed,'[0-9]+',"number");
+processed = regexprep(processed,'[^a-zA-Z0-9]',"");
+%% 
+% * Remove empty or single character words using |strlength|
+
+processed(strlength(processed)<=1) = [];
+%% Stem the words in the string array
+% Run the code below to stem the words using |porterStemmer.m|  (included with 
+% ex6). Since |porterStemmer| was created for character arrays, we'll convert 
+% the elements of |contents| to character vectors before passing them to |porterStemmer|, 
+% then convert the output back into a |string|. 
+
+processed = arrayfun(@(str)string(porterStemmer(char(str))),processed)
+%% Import the vocabulary list
+% The next step is to load the vocabulary words in vocab.txt. Since the file 
+% contains the (unneeded) word indices as well as the word list, we'll import 
+% the data into a |table| usng |readtable|, then select only the words by extracting 
+% the second column and converting it into a |string| array.
+
+vocab = readtable('vocab.txt');
+vocab = string(vocab{:,2});      
+%% Map the string array values to the vocabulary list
+% Run the code below to create a binary vector, |features| where |features(i)| 
+% equals |1| if |vocab(i)| appears in |processed| and 0 otherwise. The vocabulary 
+% list is then displayed alongside the feature vector in a |table|. To see what 
+% vocabulary words are in the email, hover the cursor over '|features|', click 
+% down arrow when it appears, then enter '1' for both the largest and smallest 
+% value to select between (or sort from largest to smallest). You should see the 
+% 48 words from the dictionary that were in found in the first spam email sample.
+
+features = double(ismember(vocab,processed));
+table(vocab,features)
+%% 
+% If desired, you can load and process a different email to see processed result 
+% and the resulting feature vector (there is no need to re-import the vocabulary 
+% list.
+%% Train an SVM for spam classification using |fitclinear|
+% In this section we train an SVM classifier model for spam detection using 
+% the |fitclinear| function. As there are a large number of variables (1,899), 
+% the |fitclinear| function will offer improved performance over |fitcsvm|. (As 
+% has been mentioned in previous companion scripts, |fitrlinear| and |fitclinear| 
+% are more efficient when training models with a large number of variables). Run 
+% the code below to load the email training set in |spamTrain.mat| which contains 
+% a feature matrix |X| and response vector |y|. The |fitclinear| function is then 
+% called to train an SVM model by setting the |'Learner'| option to |'svm'|. We 
+% will also add regularization and cross-validate the model using hold-out validation 
+% (since there is a large amount of training data in this particular example) 
+% and then obtain the optimal regularization strength using hyperparameter optimization. 
+% Lastly we will load the test set and compute the training and test accuracies 
+% using the optimized classifier. 
+
+load spamTrain.mat;
+opts = struct('Holdout',0.3);
+linSVMmdl = fitclinear(X,y,'Learner','svm','Regularization','ridge','OptimizeHyperparameters',{'lambda'},'HyperparameterOptimizationOptions',opts)
+load('spamTest.mat');
+fprintf('Training Accuracy: %f | Test Accuracy: %f\n',...
+        mean(predict(linSVMmdl,X)==y)*100,...
+        mean(predict(linSVMmdl,Xtest)==ytest)*100);
+%% List the top predictors for spam
+% As in ex6, we print out the top predictor words as given by their score (model 
+% coefficient). The model coefficients are found in the |Beta| model property 
+% of a |classificationLinear| variable, which we combine with the vocabulary words 
+% into a |table| before sorting. Compare with your results from ex6:
+% 
+% 
+
+% Sort the weights and obtain the vocabulary list
+tbl = table(vocab,linSVMmdl.Beta,'VariableNames',{'Word','Score'})
+tbl = sortrows(tbl,'Score','descend')
+%% Classify your own email 
+% The code below has been set up for you to use your trained model to classify 
+% email samples using the trained SVM model and the local function |preprocess|. 
+% Just add your own email text file to the Current Folder, add the file name (e.g. 
+% 'myemail.txt') to the code below, and select 'yourEmail' using the dropdown 
+% menu. Alternatively, you can select and classify the samples included with ex6.
+
+yourEmail = '';
+eml = 'emailSample1.txt';
+processed = preprocess(eml);
+features = ismember(vocab,processed);
+if predict(linSVMmdl,double(features)')
+    disp('This email is probably spam.')
+else
+    disp('This email is probably not spam.')
+end
+%% Local Functions
+%% |decisionBoundary|
+% The |decisionBoundary| function plots the positive (y = 1) and negative examples 
+% of a given dataset provided as an input feature matrix |X| and response vector 
+% |y|. The decision boundary for the classifier model |mdl| is also plotted using 
+% the |contour| function. Any misclassified points are plotted as red x's.
+
+function decisionBoundary(mdl,X,y)
+    figure; hold on;
+    x1 = linspace(min(X(:,1)),max(X(:,1)));
+    x2 = linspace(min(X(:,2)),max(X(:,2)));
+    [Xgrid,Ygrid] = meshgrid(x1,x2);
+    Z = reshape(predict(mdl,[Xgrid(:),Ygrid(:)]), size(Xgrid));
+    contour(Xgrid,Ygrid,Z,'Levels',1); 
+    plot(X(y==1,1),X(y==1,2),'k+','MarkerSize',7);
+    plot(X(~y,1),X(~y,2),'ko','MarkerFaceColor','y','MarkerSize',7); 
+    misclassidx = y~=predict(mdl,X);
+    plot(X(misclassidx,1),X(misclassidx,2),'rx')
+    hold off;
+end
+%% |preprocess|
+% |preprocess| is executes the steps for preprocessing emails used in the Live 
+% Script above.
+
+function contents = preprocess(file)
+    contents = string(fileread(file));
+    contents  = lower(contents);
+    contents  = eraseBetween(contents,'<','>','Boundaries','inclusive');
+    contents = replace(contents,"$","dollar ");
+    contents = split(contents);
+    contents(startsWith(contents,["http://","https://"])) =  "httpaddr";
+    contents = regexprep(contents,'.+@.+',"emailaddr"); 
+    contents = regexprep(contents,'[0-9]+',"number");
+    contents = regexprep(contents,'[^a-zA-Z0-9]',"");
+    contents(strlength(contents)<=1) = [];
+    contents = arrayfun(@(str)string(porterStemmer(char(str))),contents);
+end
+##### SOURCE END #####
+--></body></html>

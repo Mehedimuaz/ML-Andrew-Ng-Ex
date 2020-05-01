@@ -1,0 +1,257 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,IE=9,chrome=1"><meta name="generator" content="MATLAB"><title>MATLAB Companion Script for Machine Learning ex1 (Optional)</title><style type="text/css">.rtcContent { padding: 30px; } .S0 { margin: 3px 10px 5px 4px; padding: 0px; line-height: 28.8px; min-height: 0px; white-space: pre-wrap; color: rgb(213, 80, 0); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 24px; font-weight: 400; text-align: left;  }
+.S1 { margin: 20px 10px 5px 4px; padding: 0px; line-height: 20px; min-height: 0px; white-space: pre-wrap; color: rgb(60, 60, 60); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 20px; font-weight: 700; text-align: left;  }
+.S2 { margin: 2px 10px 9px 4px; padding: 0px; line-height: 21px; min-height: 0px; white-space: pre-wrap; color: rgb(0, 0, 0); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 14px; font-weight: 400; text-align: left;  }
+.S3 { margin: 10px 0px 20px; padding-left: 0px; font-family: Helvetica, Arial, sans-serif; font-size: 14px;  }
+.S4 { margin-left: 56px; line-height: 21px; min-height: 0px; text-align: left; white-space: pre-wrap;  }
+.S5 { margin-bottom: 20px; padding-bottom: 4px;  }
+.S6 { margin: 0px; padding: 10px 0px 10px 5px; line-height: 21px; min-height: 0px; white-space: pre-wrap; color: rgb(0, 0, 0); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 14px; font-weight: 700; text-align: start;  }
+.S7 { margin: -1px 0px 0px; padding: 10px 0px 10px 7px; line-height: 21px; min-height: 0px; white-space: pre-wrap; color: rgb(0, 0, 0); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 14px; font-weight: 400; text-align: start;  }
+.CodeBlock { background-color: #F7F7F7; margin: 10px 0 10px 0;}
+.S8 { border-left: 1px solid rgb(233, 233, 233); border-right: 1px solid rgb(233, 233, 233); border-top: 1px solid rgb(233, 233, 233); border-bottom: 0px none rgb(0, 0, 0); border-radius: 4px 4px 0px 0px; padding: 6px 45px 0px 13px; line-height: 17.234px; min-height: 18px; white-space: nowrap; color: rgb(0, 0, 0); font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 14px;  }
+.S9 { border-left: 1px solid rgb(233, 233, 233); border-right: 1px solid rgb(233, 233, 233); border-top: 0px none rgb(0, 0, 0); border-bottom: 0px none rgb(0, 0, 0); border-radius: 0px; padding: 0px 45px 0px 13px; line-height: 17.234px; min-height: 18px; white-space: nowrap; color: rgb(0, 0, 0); font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 14px;  }
+.S10 { border-left: 1px solid rgb(233, 233, 233); border-right: 1px solid rgb(233, 233, 233); border-top: 0px none rgb(0, 0, 0); border-bottom: 1px solid rgb(233, 233, 233); border-radius: 0px 0px 4px 4px; padding: 0px 45px 4px 13px; line-height: 17.234px; min-height: 18px; white-space: nowrap; color: rgb(0, 0, 0); font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 14px;  }
+.S11 { border-left: 1px solid rgb(233, 233, 233); border-right: 1px solid rgb(233, 233, 233); border-top: 1px solid rgb(233, 233, 233); border-bottom: 1px solid rgb(233, 233, 233); border-radius: 4px; padding: 6px 45px 4px 13px; line-height: 17.234px; min-height: 18px; white-space: nowrap; color: rgb(0, 0, 0); font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 14px;  }
+.S12 { margin: 3px 10px 5px 4px; padding: 0px; line-height: 20px; min-height: 0px; white-space: pre-wrap; color: rgb(60, 60, 60); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 20px; font-weight: 700; text-align: left;  }
+.S13 { margin: 15px 10px 5px 4px; padding: 0px; line-height: 18px; min-height: 0px; white-space: pre-wrap; color: rgb(60, 60, 60); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 17px; font-weight: 700; text-align: left;  }
+.S14 { margin: 3px 10px 5px 4px; padding: 0px; line-height: 18px; min-height: 0px; white-space: pre-wrap; color: rgb(60, 60, 60); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 17px; font-weight: 700; text-align: left;  }
+.S15 { margin: 10px 10px 9px 4px; padding: 0px; line-height: 21px; min-height: 0px; white-space: pre-wrap; color: rgb(0, 0, 0); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 14px; font-weight: 400; text-align: left;  }</style></head><body><div class = rtcContent><h1  class = 'S0' id = 'T_13370202' ><span>MATLAB Companion Script for </span><span style=' font-style: italic;'>Machine Learning</span><span> ex1 (Optional)</span></h1><h2  class = 'S1' id = 'H_5E50F655' ><span>Introduction</span></h2><div  class = 'S2'><span>Coursera's</span><span style=' font-style: italic;'> Machine Learning</span><span> was designed to provide you with a greater understanding of machine learning algorithms- what they are, how they work, and where to apply them. You are also shown techniques to improve their performance and to address common issues. As is mentioned in the course, there are many tools available that allow you to use machine learning algorithms </span><span style=' font-style: italic;'>without</span><span> having to implement them yourself. This Live Script was created by MathWorks to help </span><span style=' font-style: italic;'>Machine Learning</span><span> students explore the data analysis and machine learning tools available in MATLAB.</span></div><h2  class = 'S1' id = 'H_8D135D31' ><span>FAQ</span></h2><div  class = 'S2'><span style=' font-weight: bold;'>Who is this intended for?</span></div><ul  class = 'S3'><li  class = 'S4'><span>This script is intended for students using MATLAB Online who have completed ex1 and want to learn more about the corresponding machine learning tools in MATLAB.</span></li></ul><div  class = 'S2'><span style=' font-weight: bold;'>How do I use this script?</span></div><ul  class = 'S3'><li  class = 'S4'><span>In the sections that follow, read the information provided about the data analysis and machine learning tools in MATLAB, then run the code in each section and examine the results. You may also be presented with instructions for using a MATLAB machine learning app. This script should be located in the ex1 folder which should be set as your Current Folder in MATLAB Online.</span></li></ul><div  class = 'S2'><span style=' font-weight: bold;'>Can I use the tools in this companion script to complete the programming exercises?</span></div><ul  class = 'S3'><li  class = 'S4'><span>No. Most algorithm steps implemented in the programming exercises are handled automatically by MATLAB machine learning functions. Additionally, the results will be similar, but not identical, to those in the programming exercises due to differences in implementation, parameter settings, and randomization.</span></li></ul><div  class = 'S2'><span style=' font-weight: bold;'>Where can I obtain help with this script or report issues?</span></div><ul  class = 'S3'><li  class = 'S4'><span>As this script is not part of the original course materials, please direct any questions, comments, or issues to the </span><span style=' font-style: italic;'>MATLAB Help</span><span> discussion forum.</span></li></ul><h1  class = 'S0' id = 'T_3262D960' ><span>Linear Regression</span></h1><div  class = 'S2'><span>In this script, linear regression models for both single and multiple variables are implemented using the </span><span style=' font-family: monospace;'>fitlm</span><span> function from the </span><a href = "https://www.mathworks.com/products/statistics.html"><span>Statistics and Machine Learning Toolbox</span></a><span>. A quick tutorial is also included on using the </span><span style=' font-style: italic;'>Regression Learner App,</span><span> which provides a graphical interface for creating regression models. </span></div><h2  class = 'S1' id = 'H_EA0AA664' ><span>Files needed for this script</span></h2><ul  class = 'S3'><li  class = 'S4'><span>ex1data1.txt - Dataset for linear regression with one variable</span></li><li  class = 'S4'><span>ex1data2.txt - Dataset for linear regression with multiple variables</span></li></ul><div  class = 'S5'><div  class = 'S6'><span style=' font-weight: bold;'>Table of Contents</span></div><div  class = 'S7'><a href = "#T_13370202"><span>MATLAB Companion Script for Machine Learning ex1 (Optional)
+</span></a><span>    </span><a href = "#H_5E50F655"><span>Introduction
+</span></a><span>    </span><a href = "#H_8D135D31"><span>FAQ
+</span></a><a href = "#T_3262D960"><span>Linear Regression
+</span></a><span>    </span><a href = "#H_EA0AA664"><span>Files needed for this script
+</span></a><a href = "#T_C1E2C458"><span>Linear Regression with One Variable
+</span></a><span>    </span><a href = "#H_AB2BA6DC"><span>Load the data into a table
+</span></a><span>    </span><a href = "#H_23982852"><span>Fit a linear model using the fitlm function
+</span></a><span>    </span><a href = "#H_0F2AB581"><span>Making predictions using the LinearModel variable
+</span></a><a href = "#T_7A4BA8AA"><span>Linear Regression with Multiple Variables
+</span></a><span>    </span><a href = "#H_0BB03206"><span>Load and preview the data
+</span></a><span>    </span><a href = "#H_F6B9114B"><span>Fit a linear model using fitlm and estimate housing prices
+</span></a><span>    </span><a href = "#H_75F331EA"><span>Using the Regression Learner App
+</span></a><span>        </span><a href = "#H_D3894559"><span>Open the app and select the variables
+</span></a><span>        </span><a href = "#H_9E3C562D"><span>Select and train the model
+</span></a><span>        </span><a href = "#H_F60B735C"><span>Evaluate the model
+</span></a><span>        </span><a href = "#H_6BC1E8AE"><span>Export the model</span></a></div></div><h1  class = 'S0' id = 'T_C1E2C458' ><span>Linear Regression with One Variable</span></h1><div  class = 'S2'><span>This section covers the MATLAB implementation of single variable linear regression corresponding to the first part of ex1. Recall that the file ex1data1.txt contains two columns of data: the first column corresponds to the populations of cities and the second column contains the profit of food trucks in those cities. </span></div><h2  class = 'S1' id = 'H_AB2BA6DC' ><span>Load the data into a </span><span style=' font-family: monospace;'>table</span></h2><div  class = 'S2'><span>The </span><a href = "https://www.mathworks.com/help/matlab/matlab_prog/create-a-table.html"><span style=' font-family: monospace;'>table</span></a><span> datatype is now the preferred datatype for most data analysis and machine learning tasks in MATLAB. In this script we will use tables instead of vectors and matrices. A </span><span style=' font-family: monospace;'>table</span><span> consists of rows and columns where each column corresponds to a variable, and each row corresponds to an observation. </span></div><div  class = 'S2'><span>Run the code below to:</span></div><ul  class = 'S3'><li  class = 'S4'><span>Read the profit data into a </span><span style=' font-family: monospace;'>table</span><span> using the </span><a href = "https://www.mathworks.com/help/matlab/ref/readtable.html"><span style=' font-family: monospace;'>readtable</span></a><span> function</span></li><li  class = 'S4'><span>Add descriptive names to the </span><span style=' font-family: monospace;'>table</span><span> variables</span></li><li  class = 'S4'><span>Compute summary statistics on each variable</span></li><li  class = 'S4'><span>Display the methods available for working with </span><span style=' font-family: monospace;'>table</span><span> variables.</span></li></ul><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>clear;</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>data = readtable(</span><span style="color: rgb(160, 32, 240);">'ex1data1.txt'</span><span>); </span><span style="color: rgb(60, 118, 61);">% read tabular data into a table</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>data.Properties.VariableNames = {</span><span style="color: rgb(160, 32, 240);">'Population'</span><span>,</span><span style="color: rgb(160, 32, 240);">'Profit'</span><span>} </span><span style="color: rgb(60, 118, 61);">% name the variables</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>summary(data)</span></span></div></div><div class="inlineWrapper"><div  class = 'S10'><span style="white-space: pre;"><span>methods(data)</span></span></div></div></div><div  class = 'S2'><span>Use the </span><span style=' font-family: monospace;'>help</span><span> control below to view descriptions of the functions for working with </span><span style=' font-family: monospace;'>table</span><span> variables diplayed above.</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S11'><span style="white-space: pre;"><span>help </span><span style="color: rgb(160, 32, 240);">table.</span></span><span style="color: rgb(160, 32, 240);">outerjoin</span></div></div></div><h2  class = 'S12' id = 'H_23982852' ><span>Fit a linear model using the </span><span style=' font-family: monospace;'>fitlm</span><span> function</span></h2><div  class = 'S2'><span>There are many available functions in the Statistics and Machine Learning Toolbox for fitting a model to data. To fit a linear regression model to the data in our </span><span style=' font-family: monospace;'>table</span><span>, we'll use the </span><a href = "https://www.mathworks.com/help/stats/fitlm.html"><span style=' font-family: monospace;'>fitlm</span></a><span> function. As we will see, there is no need to add a column of ones to the data for a bias term, to create a separate cost function, or to implement gradient descent to converge on the model parameters as in ex1- these tasks are automatically taken care of by </span><span style=' font-family: monospace;'>fitlm</span><span>. The output of </span><span style=' font-family: monospace;'>fitlm</span><span> is a </span><a href = "https://www.mathworks.com/help/stats/linearmodel-class.html"><span style=' font-family: monospace;'>LinearModel</span></a><span> variable which contains all of the information about the model. </span></div><div  class = 'S2'><span>    Run the code in this se`        ction to fit the linear model. The model coefficients (</span><span style="font-family: STIXGeneral, STIXGeneral-webfont, serif; font-style: italic; font-weight: 400; color: rgb(0, 0, 0);">θ</span><span>) are extracted from the model variable and printed out for you below- compare to your results from ex1. After running, double-click on the variable </span><span style=' font-family: monospace;'>linMdl</span><span> in the MATLAB workspace to examine its properties further. Variable properties can also be extracted and displayed using the '</span><span style=' font-weight: bold;'>.</span><span>' operator, as in the code below used to extract the </span><span style=' font-family: monospace;'>Coefficients</span><span> property. The result is a </span><span style=' font-family: monospace;'>table</span><span> of the model coefficients and additional statistical information.</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>linMdl = fitlm(data);</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>linMdl.Coefficients</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>theta = linMdl.Coefficients.Estimate;</span></span></div></div><div class="inlineWrapper"><div  class = 'S10'><span style="white-space: pre;"><span>fprintf(</span><span style="color: rgb(160, 32, 240);">'Theta computed by fitlm: [%f; %f]'</span><span>,theta(1),theta(2))</span></span></div></div></div><h2  class = 'S12' id = 'H_0F2AB581' ><span>Making predictions using the </span><span style=' font-family: monospace;'>LinearModel</span><span> variable</span></h2><div  class = 'S2'><span>Below we use the </span><a href = "https://www.mathworks.com/help/stats/compactlinearmodel.predict.html"><span style=' font-family: monospace;'>predict</span></a><span> function to predict profit for different populations using the model trained in the previous section. Note that the first input to </span><span style=' font-family: monospace;'>predict</span><span> is a trained model variable, while the second input is a feature value or list of values in the form of a vector, matrix or table. Run the code in this section and compare with your results from ex1.</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span style="color: rgb(60, 118, 61);">% Predict values for population sizes of 35,000 and 70,000</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>predict1 = predict(linMdl,3.5);</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>fprintf(</span><span style="color: rgb(160, 32, 240);">'For population = 35,000, we predict a profit of %f'</span><span>, predict1*10000);</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>predict2 = predict(linMdl,7);</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>fprintf(</span><span style="color: rgb(160, 32, 240);">'For population = 70,000, we predict a profit of %f'</span><span>, predict2*10000);</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span style="color: rgb(60, 118, 61);">% Plot the linear fit</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>plot(data.Population,data.Profit,</span><span style="color: rgb(160, 32, 240);">'rx'</span><span>); hold </span><span style="color: rgb(160, 32, 240);">on</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>profit = predict(linMdl,data);</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>plot(data.Population, profit, </span><span style="color: rgb(160, 32, 240);">'-'</span><span>)</span></span></div></div><div class="inlineWrapper"><div  class = 'S10'><span style="white-space: pre;"><span>legend(</span><span style="color: rgb(160, 32, 240);">'Training data'</span><span>, </span><span style="color: rgb(160, 32, 240);">'Linear regression'</span><span>); hold </span><span style="color: rgb(160, 32, 240);">off </span></span></div></div></div><h1  class = 'S0' id = 'T_7A4BA8AA' ><span>Linear Regression with Multiple Variables</span></h1><h2  class = 'S1' id = 'H_0BB03206' ><span>Load and preview the data</span></h2><div  class = 'S2'><span>Recall that the file ex1data2.txt contains a training set of housing prices in Portland, Oregon. Each row corresponds to a house where the element in the first column is the size of the house (in square feet), the second column is the number of bedrooms, and the third column is the price of the house. Run this section to load the data into a </span><span style=' font-family: monospace;'>table</span><span>. After a </span><span style=' font-family: monospace;'>table</span><span> is displayed as output you can perform basic sort and filter operations on a given columns as follows:</span></div><ol  class = 'S3'><li  class = 'S4'><span>Hover the mouse pointer over the desired variable name (column heading)</span></li><li  class = 'S4'><span>Click on the down arrow when it appears</span></li><li  class = 'S4'><span>Choose the desired sort option to sort all rows in the table based on the value in that variable OR</span></li><li  class = 'S4'><span>Enter a specific range in the boxes provided to select only rows whose value for the selected variable falls inside that range</span></li><li  class = 'S4'><span>The MATLAB code required to perform 3 and/or 4 is automatically displayed below the </span><span style=' font-family: monospace;'>table</span><span>. If desired, the code can be copied to the clipboard or added to the script using the 'Copy' and 'Update' code buttons.</span></li></ol><div  class = 'S2'><span>After running this section, experiment with sorting and filtering the data </span><span style=' font-family: monospace;'>table</span><span> below. (Since we want to use all the observations in </span><span style=' font-family: monospace;'>data</span><span>, there is no need to copy the code or add it to the script.)</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>clear;</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span style="color: rgb(60, 118, 61);">% Load Data</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>data = readtable(</span><span style="color: rgb(160, 32, 240);">'ex1data2.txt'</span><span>);</span></span></div></div><div class="inlineWrapper"><div  class = 'S10'><span style="white-space: pre;"><span>data.Properties.VariableNames = {</span><span style="color: rgb(160, 32, 240);">'Size'</span><span>, </span><span style="color: rgb(160, 32, 240);">'Bedrooms'</span><span>, </span><span style="color: rgb(160, 32, 240);">'Price'</span><span>}</span></span></div></div></div><h2  class = 'S12' id = 'H_F6B9114B' ><span>Fit a linear model using </span><span style=' font-family: monospace;'>fitlm</span><span> and estimate housing prices</span></h2><div  class = 'S2'><span>The </span><span style=' font-family: monospace;'>fitlm</span><span> function can be used to fit a regression model with multiple variables as well. Note that the last column (variable) in the input table is considered the response variable by </span><span style=' font-family: monospace;'>fitlm</span><span> by default while all other variables are considered predictors. A different response variable can be specified, if desired- see the </span><span style=' font-family: monospace;'>fitlm</span><span> documentation for more information. Run this section to fit a linear model, display the model the coefficients, and predict the price of a 1650 sqft, 3-bedroom house. Compare with your results from ex1.</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>linMdl = fitlm(data);</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>theta = linMdl.Coefficients.Estimate;</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>fprintf(</span><span style="color: rgb(160, 32, 240);">'Theta computed by fitlm: [%f; %f]'</span><span>,theta(1),theta(2))</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>price = predict(linMdl,[1650 3]); </span><span style="color: rgb(60, 118, 61);">% Enter your price formula here</span></span></div></div><div class="inlineWrapper"><div  class = 'S10'><span style="white-space: pre;"><span>fprintf(</span><span style="color: rgb(160, 32, 240);">'Predicted price of a 1650 sq-ft, 3 br house: $%f'</span><span>, price);</span></span></div></div></div><h2  class = 'S12' id = 'H_75F331EA' ><span>Using the Regression Learner App</span></h2><div  class = 'S2'><span>In this section, we reproduce the results of the previous section while providing an introduction to the </span><a href = "https://www.mathworks.com/help/stats/regression-learner-app.html"><span style=' font-style: italic;'>Regression Learner App</span></a><span>. This app offers a graphical interface for building, training, and evaluating linear regression models. Run the code below to clear the workspace and reload the housing data, then follow the steps in the next few sections.</span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S8'><span style="white-space: pre;"><span>clear;</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span style="color: rgb(60, 118, 61);">% Load Data</span></span></div></div><div class="inlineWrapper"><div  class = 'S9'><span style="white-space: pre;"><span>data = readtable(</span><span style="color: rgb(160, 32, 240);">'ex1data2.txt'</span><span>);</span></span></div></div><div class="inlineWrapper"><div  class = 'S10'><span style="white-space: pre;"><span>data.Properties.VariableNames = {</span><span style="color: rgb(160, 32, 240);">'Size'</span><span>, </span><span style="color: rgb(160, 32, 240);">'Bedrooms'</span><span>, </span><span style="color: rgb(160, 32, 240);">'Price'</span><span>};</span></span></div></div></div><div  class = 'S2' id = 'H_87C2848E' ><span style=' font-weight: bold;'>Note: </span><span>If you have difficulty reading the instructions below while the app is open in MATLAB Online, export this script to a pdf file which you can then use to display the instructions in a separate browser tab or window. To export this script, click on the 'Save' button in the 'Live Editor' tab above, then select 'Export to PDF'.</span></div><h3  class = 'S13' id = 'H_D3894559' ><span>Open the app and select the variables</span></h3><ol  class = 'S3'><li  class = 'S4'><span>In the MATLAB Apps tab, select the </span><span style=' font-weight: bold;'>Regression Learner</span><span> app from the Machine Learning section (you may need to expand the menu of available apps).</span></li><li  class = 'S4'><span>Select '</span><span style=' font-weight: bold;'>New Session -&gt; From Workspace</span><span>' to start a new interactive session.</span></li><li  class = 'S4'><span>Under '</span><span style=' font-weight: bold;'>Workspace Variable'</span><span>, select '</span><span style=' font-weight: bold;'>data</span><span>' (if not already selected).</span></li><li  class = 'S4'><span>Under '</span><span style=' font-weight: bold;'>Response</span><span>' select '</span><span style=' font-weight: bold;'>Price</span><span>' (if not already selected).</span></li><li  class = 'S4'><span>Under '</span><span style=' font-weight: bold;'>Predictors</span><span>' select '</span><span style=' font-weight: bold;'>Size</span><span>' and '</span><span style=' font-weight: bold;'>Bedrooms</span><span>' (if not already selected).</span></li><li  class = 'S4'><span>Under '</span><span style=' font-weight: bold;'>Validation</span><span>' select '</span><span style=' font-weight: bold;'>No Validation</span><span>'</span></li><li  class = 'S4'><span>Click the '</span><span style=' font-weight: bold;'>Start Session</span><span>' button.</span></li></ol><h3  class = 'S14' id = 'H_9E3C562D' ><span>Select and train the model</span></h3><div  class = 'S2'><span>There are many available models to choose from (the default model is 'Fine Tree'). To train a regession model corresponding to the one in the previous section obtained using </span><span style=' font-family: monospace;'>fitlm</span><span>:</span></div><ol  class = 'S3'><li  class = 'S4'><span>Expand the model list and select '</span><span style=' font-weight: bold;'>Linear</span><span>' from the '</span><span style=' font-weight: bold;'>Linear Regression Models</span><span>' list.</span></li><li  class = 'S4'><span>Select '</span><span style=' font-weight: bold;'>Train</span><span>' to fit the model.</span></li></ol><h3  class = 'S14' id = 'H_F60B735C' ><span>Evaluate the model</span></h3><div  class = 'S2'><span>After training, there are several options available for evaluating model performance. </span></div><ul  class = 'S3'><li  class = 'S4'><span>The training results, including error values, prediction speed, and training time for the selected model is shown in the '</span><span style=' font-weight: bold;'>Current Model</span><span>' pane. </span></li><li  class = 'S4'><span>The model predictions for the training data are visualized in the '</span><span style=' font-weight: bold;'>Response Plot</span><span>', which is shown by default. To plot the response by variable, select the desired feature variable from the choices in '</span><span style=' font-weight: bold;'>X-axis</span><span>'. </span></li><li  class = 'S4'><span>The '</span><span style=' font-weight: bold;'>Predicted vs. Actual</span><span>' and '</span><span style=' font-weight: bold;'>Residuals</span><span>' plots offer additional visual means of visualizing and evaluating model performance.</span></li></ul><h3  class = 'S14' id = 'H_6BC1E8AE' ><span>Export the model</span></h3><div  class = 'S2'><span>To export a linear regression model variable from the app into the workspace:</span></div><ol  class = 'S3'><li  class = 'S4'><span>Select '</span><span style=' font-weight: bold;'>Export Model -&gt; Export Model</span><span>'.</span></li><li  class = 'S4'><span>Select the default output variable name ('trainedModel').</span></li><li  class = 'S4'><span>Extract the linear model to the variable </span><span style=' font-family: monospace;'>LinMdl</span><span> by running the command below</span></li></ol><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S11'><span style="white-space: pre;"><span>linMdl = trainedModel.LinearModel</span></span></div></div></div><div  class = 'S15'><span style=' font-family: monospace;'>linMdl</span><span> variable now contains the linear regression model. It can be used to predict housing prices using the </span><span style=' font-family: monospace;'>predict</span><span> function using the methods provided earlier for working with </span><span style=' font-family: monospace;'>LinearModel</span><span> variables returned from </span><span style=' font-family: monospace;'>fitlm</span><span>.</span></div></div>
+<br>
+<!-- 
+##### SOURCE BEGIN #####
+%% MATLAB Companion Script for _Machine Learning_ ex1 (Optional)
+%% Introduction
+% Coursera's _Machine Learning_ was designed to provide you with a greater understanding 
+% of machine learning algorithms- what they are, how they work, and where to apply 
+% them. You are also shown techniques to improve their performance and to address 
+% common issues. As is mentioned in the course, there are many tools available 
+% that allow you to use machine learning algorithms _without_ having to implement 
+% them yourself. This Live Script was created by MathWorks to help _Machine Learning_ 
+% students explore the data analysis and machine learning tools available in MATLAB.
+%% FAQ
+% *Who is this intended for?*
+%% 
+% * This script is intended for students using MATLAB Online who have completed 
+% ex1 and want to learn more about the corresponding machine learning tools in 
+% MATLAB.
+%% 
+% *How do I use this script?*
+%% 
+% * In the sections that follow, read the information provided about the data 
+% analysis and machine learning tools in MATLAB, then run the code in each section 
+% and examine the results. You may also be presented with instructions for using 
+% a MATLAB machine learning app. This script should be located in the ex1 folder 
+% which should be set as your Current Folder in MATLAB Online.
+%% 
+% *Can I use the tools in this companion script to complete the programming 
+% exercises?*
+%% 
+% * No. Most algorithm steps implemented in the programming exercises are handled 
+% automatically by MATLAB machine learning functions. Additionally, the results 
+% will be similar, but not identical, to those in the programming exercises due 
+% to differences in implementation, parameter settings, and randomization.
+%% 
+% *Where can I obtain help with this script or report issues?*
+%% 
+% * As this script is not part of the original course materials, please direct 
+% any questions, comments, or issues to the _MATLAB Help_ discussion forum.
+%% Linear Regression
+% In this script, linear regression models for both single and multiple variables 
+% are implemented using the |fitlm| function from the <https://www.mathworks.com/products/statistics.html 
+% Statistics and Machine Learning Toolbox>. A quick tutorial is also included 
+% on using the _Regression Learner App,_ which provides a graphical interface 
+% for creating regression models. 
+%% Files needed for this script
+%% 
+% * ex1data1.txt - Dataset for linear regression with one variable
+% * ex1data2.txt - Dataset for linear regression with multiple variables
+%% Linear Regression with One Variable
+% This section covers the MATLAB implementation of single variable linear regression 
+% corresponding to the first part of ex1. Recall that the file ex1data1.txt contains 
+% two columns of data: the first column corresponds to the populations of cities 
+% and the second column contains the profit of food trucks in those cities. 
+%% Load the data into a |table|
+% The <https://www.mathworks.com/help/matlab/matlab_prog/create-a-table.html 
+% |table|> datatype is now the preferred datatype for most data analysis and machine 
+% learning tasks in MATLAB. In this script we will use tables instead of vectors 
+% and matrices. A |table| consists of rows and columns where each column corresponds 
+% to a variable, and each row corresponds to an observation. 
+% 
+% Run the code below to:
+%% 
+% * Read the profit data into a |table| using the <https://www.mathworks.com/help/matlab/ref/readtable.html 
+% |readtable|> function
+% * Add descriptive names to the |table| variables
+% * Compute summary statistics on each variable
+% * Display the methods available for working with |table| variables.
+
+clear;
+data = readtable('ex1data1.txt'); % read tabular data into a table
+data.Properties.VariableNames = {'Population','Profit'} % name the variables
+summary(data)
+methods(data)
+%% 
+% Use the |help| control below to view descriptions of the functions for working 
+% with |table| variables diplayed above.
+
+help table.outerjoin
+%% Fit a linear model using the |fitlm| function
+% There are many available functions in the Statistics and Machine Learning 
+% Toolbox for fitting a model to data. To fit a linear regression model to the 
+% data in our |table|, we'll use the <https://www.mathworks.com/help/stats/fitlm.html 
+% |fitlm|> function. As we will see, there is no need to add a column of ones 
+% to the data for a bias term, to create a separate cost function, or to implement 
+% gradient descent to converge on the model parameters as in ex1- these tasks 
+% are automatically taken care of by |fitlm|. The output of |fitlm| is a <https://www.mathworks.com/help/stats/linearmodel-class.html 
+% |LinearModel|> variable which contains all of the information about the model. 
+% 
+% Run the code in this se`        ction to fit the linear model. The model coefficients 
+% ($\theta$) are extracted from the model variable and printed out for you below- 
+% compare to your results from ex1. After running, double-click on the variable 
+% |linMdl| in the MATLAB workspace to examine its properties further. Variable 
+% properties can also be extracted and displayed using the '*.*' operator, as 
+% in the code below used to extract the |Coefficients| property. The result is 
+% a |table| of the model coefficients and additional statistical information.
+
+linMdl = fitlm(data);
+linMdl.Coefficients
+theta = linMdl.Coefficients.Estimate;
+fprintf('Theta computed by fitlm: [%f; %f]',theta(1),theta(2))
+%% Making predictions using the |LinearModel| variable
+% Below we use the <https://www.mathworks.com/help/stats/compactlinearmodel.predict.html 
+% |predict|> function to predict profit for different populations using the model 
+% trained in the previous section. Note that the first input to |predict| is a 
+% trained model variable, while the second input is a feature value or list of 
+% values in the form of a vector, matrix or table. Run the code in this section 
+% and compare with your results from ex1.
+
+% Predict values for population sizes of 35,000 and 70,000
+predict1 = predict(linMdl,3.5);
+fprintf('For population = 35,000, we predict a profit of %f', predict1*10000);
+predict2 = predict(linMdl,7);
+fprintf('For population = 70,000, we predict a profit of %f', predict2*10000);
+% Plot the linear fit
+plot(data.Population,data.Profit,'rx'); hold on
+profit = predict(linMdl,data);
+plot(data.Population, profit, '-')
+legend('Training data', 'Linear regression'); hold off 
+%% Linear Regression with Multiple Variables
+%% Load and preview the data
+% Recall that the file ex1data2.txt contains a training set of housing prices 
+% in Portland, Oregon. Each row corresponds to a house where the element in the 
+% first column is the size of the house (in square feet), the second column is 
+% the number of bedrooms, and the third column is the price of the house. Run 
+% this section to load the data into a |table|. After a |table| is displayed as 
+% output you can perform basic sort and filter operations on a given columns as 
+% follows:
+%% 
+% # Hover the mouse pointer over the desired variable name (column heading)
+% # Click on the down arrow when it appears
+% # Choose the desired sort option to sort all rows in the table based on the 
+% value in that variable OR
+% # Enter a specific range in the boxes provided to select only rows whose value 
+% for the selected variable falls inside that range
+% # The MATLAB code required to perform 3 and/or 4 is automatically displayed 
+% below the |table|. If desired, the code can be copied to the clipboard or added 
+% to the script using the 'Copy' and 'Update' code buttons.
+%% 
+% After running this section, experiment with sorting and filtering the data 
+% |table| below. (Since we want to use all the observations in |data|, there is 
+% no need to copy the code or add it to the script.)
+
+clear;
+% Load Data
+data = readtable('ex1data2.txt');
+data.Properties.VariableNames = {'Size', 'Bedrooms', 'Price'}
+%% Fit a linear model using |fitlm| and estimate housing prices
+% The |fitlm| function can be used to fit a regression model with multiple variables 
+% as well. Note that the last column (variable) in the input table is considered 
+% the response variable by |fitlm| by default while all other variables are considered 
+% predictors. A different response variable can be specified, if desired- see 
+% the |fitlm| documentation for more information. Run this section to fit a linear 
+% model, display the model the coefficients, and predict the price of a 1650 sqft, 
+% 3-bedroom house. Compare with your results from ex1.
+
+linMdl = fitlm(data);
+theta = linMdl.Coefficients.Estimate;
+fprintf('Theta computed by fitlm: [%f; %f]',theta(1),theta(2))
+price = predict(linMdl,[1650 3]); % Enter your price formula here
+fprintf('Predicted price of a 1650 sq-ft, 3 br house: $%f', price);
+%% Using the Regression Learner App
+% In this section, we reproduce the results of the previous section while providing 
+% an introduction to the <https://www.mathworks.com/help/stats/regression-learner-app.html 
+% _Regression Learner App_>. This app offers a graphical interface for building, 
+% training, and evaluating linear regression models. Run the code below to clear 
+% the workspace and reload the housing data, then follow the steps in the next 
+% few sections.
+
+clear;
+% Load Data
+data = readtable('ex1data2.txt');
+data.Properties.VariableNames = {'Size', 'Bedrooms', 'Price'};
+%% 
+% *Note:* If you have difficulty reading the instructions below while the app 
+% is open in MATLAB Online, export this script to a pdf file which you can then 
+% use to display the instructions in a separate browser tab or window. To export 
+% this script, click on the 'Save' button in the 'Live Editor' tab above, then 
+% select 'Export to PDF'.
+% Open the app and select the variables
+%% 
+% # In the MATLAB Apps tab, select the *Regression Learner* app from the Machine 
+% Learning section (you may need to expand the menu of available apps).
+% # Select '*New Session -> From Workspace*' to start a new interactive session.
+% # Under '*Workspace Variable'*, select '*data*' (if not already selected).
+% # Under '*Response*' select '*Price*' (if not already selected).
+% # Under '*Predictors*' select '*Size*' and '*Bedrooms*' (if not already selected).
+% # Under '*Validation*' select '*No Validation*'
+% # Click the '*Start Session*' button.
+% Select and train the model
+% There are many available models to choose from (the default model is 'Fine 
+% Tree'). To train a regession model corresponding to the one in the previous 
+% section obtained using |fitlm|:
+%% 
+% # Expand the model list and select '*Linear*' from the '*Linear Regression 
+% Models*' list.
+% # Select '*Train*' to fit the model.
+% Evaluate the model
+% After training, there are several options available for evaluating model performance. 
+%% 
+% * The training results, including error values, prediction speed, and training 
+% time for the selected model is shown in the '*Current Model*' pane. 
+% * The model predictions for the training data are visualized in the '*Response 
+% Plot*', which is shown by default. To plot the response by variable, select 
+% the desired feature variable from the choices in '*X-axis*'. 
+% * The '*Predicted vs. Actual*' and '*Residuals*' plots offer additional visual 
+% means of visualizing and evaluating model performance.
+% Export the model
+% To export a linear regression model variable from the app into the workspace:
+%% 
+% # Select '*Export Model -> Export Model*'.
+% # Select the default output variable name ('trainedModel').
+% # Extract the linear model to the variable |LinMdl| by running the command 
+% below
+
+linMdl = trainedModel.LinearModel
+%% 
+% |linMdl| variable now contains the linear regression model. It can be used 
+% to predict housing prices using the |predict| function using the methods provided 
+% earlier for working with |LinearModel| variables returned from |fitlm|.
+##### SOURCE END #####
+--></body></html>
