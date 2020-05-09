@@ -94,8 +94,12 @@ fprintf('Cost at initial theta (zeros): %f\n', cost);
 
 
 ---- Use fminunc to minimize cost
-%  Set options for fminunc. Here the commands are probably different for octave
+%  Set options for fminunc. Here the commands are probably different for ***** octave
 options = optimset('GradObj', 'on', 'MaxIter', 400);
+
+% Set Options ***** Matlab
+options = optimoptions(@fminunc,'Algorithm','Quasi-Newton','GradObj', 'on', 'MaxIter', 1000)
+
 %  Run fminunc to obtain the optimal theta
 %  This function will return theta and the cost
 [theta, cost] = fminunc(@(t)(costFunction(t, X, y)), initial_theta, options);
@@ -109,8 +113,12 @@ disp('theta:');disp(theta);
 % Initialize fitting parameters
 initial_theta = zeros(size(X, 2), 1);
 lambda = 0;
-% Set Options
+% Set Options ***** Octave
 options = optimset('GradObj', 'on', 'MaxIter', 400);
+
+% Set Options ***** Matlab
+options = optimoptions(@fminunc,'Algorithm','Quasi-Newton','GradObj', 'on', 'MaxIter', 400)
+
 % Optimize
 [theta, J, exit_flag] = fminunc(@(t)(costFunctionReg(t, X, y, lambda)), initial_theta, options);
 % Plot Boundary
