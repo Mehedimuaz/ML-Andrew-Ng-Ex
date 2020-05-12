@@ -19,10 +19,12 @@ W = zeros(L_out, 1 + L_in);
 % Note: The first column of W corresponds to the parameters for the bias unit
 %
 
+% For rand-initialization of any Theta, epsilon_init = sqrt(6) / (sqrt(s(l)) + sqrt(s(l)));
 
+% Randomly initialize the weights to small values
 
-
-
+epsilon_init = 0.12;
+W = rand(L_in, L_out + 1) * 2 * epsilon_init - epsilon_init;
 
 
 

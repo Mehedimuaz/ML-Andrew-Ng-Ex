@@ -64,20 +64,34 @@ Theta2_grad = zeros(size(Theta2));
 
 
 
+% Add ones to the X data matrix
+X = [ones(m, 1) X];
 
+a2 = sigmoid(X * Theta1');
+a2 = [ones(size(a2, 1), 1) a2];
 
+a3 = sigmoid(a2 * Theta2');
 
+% Now, a2 is a m X num_labels matrix
+% Convert y into a m X num_labels matrix
 
+y_matrix = zeros(m, num_labels);
+for i = 1: m,
+  y_matrix(i, y(i)) = 1;
+endfor
 
+Theta1_sq = Theta1 .* Theta1;
+Theta2_sq = Theta2 .* Theta2;
 
+J = sum(sum((-1) * y_matrix .* log(a3) - (1 - y_matrix) .* log(1 - a3))) / m + (sum(sum(Theta1_sq(:, 2:end) * lambda)) + sum(sum(Theta2_sq(:, 2:end) * lambda))) / (2 * m);
 
+% Forward propagation done. Back propagation starts here.
 
+del3 = a3 - y_matrix;
+Theta2_grad = ((del3' * a2) + (lambda * [zeros(size(Theta2, 1), 1) Theta2(:, 2:end)])) / m;
 
-
-
-
-
-
+del2 = del3 * Theta2 .* a2 .* (1 - a2);
+Theta1_grad = ((del2(:, 2:end)' * X) + (lambda * [zeros(size(Theta1, 1), 1) Theta1(:, 2:end)])) / m;
 
 
 % -------------------------------------------------------------
