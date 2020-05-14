@@ -93,6 +93,7 @@ Theta2_grad = ((del3' * a2) + (lambda * [zeros(size(Theta2, 1), 1) Theta2(:, 2:e
 del2 = del3 * Theta2 .* a2 .* (1 - a2);
 Theta1_grad = ((del2(:, 2:end)' * X) + (lambda * [zeros(size(Theta1, 1), 1) Theta1(:, 2:end)])) / m;
 
+% Oops! didn't need a for loop, not even during the first time.
 
 % -------------------------------------------------------------
 
