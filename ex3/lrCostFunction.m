@@ -46,6 +46,8 @@ J = sum((-1) * y .* log(h_theta_x) - (1 - y) .* log(1 - h_theta_x)) / m + (sum(t
 
 grad = (sum((h_theta_x - y) .* X))' / m + ([0 ;theta(2:end)] * lambda) / m;
 
+% derivation for gradient calculation: https://www.coursera.org/learn/neural-networks-deep-learning/discussions/weeks/2/threads/ysF-gYfISSGBfoGHyLkhYg
+
 
 
 

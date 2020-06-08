@@ -24,10 +24,22 @@ sigma = 0.3;
 %
 
 
+C_mat = [0.01, 0,03, 0.1, 0.3, 1, 3, 10, 30];
+sigma_mat = [0.01, 0,03, 0.1, 0.3, 1, 3, 10, 30];
+error_mat = ones(size(C_mat, 2), size(sigma_mat, 2));
+for i = 1: size(C_mat, 2),
+  for j = 1: size(sigma_mat, 2),
+    model = svmTrain(X, y, C_mat(1, i), @(x1, x2) gaussianKernel(x1, x2, sigma_mat(1, j)));
+    predictions = svmPredict(model, Xval);
+    error_mat(i, j) = mean(double(predictions ~= yval));
+  endfor
+endfor
 
+[~, ind] = min(error_mat(:));
+[r, c] = ind2sub(size(error_mat),ind);
 
-
-
+C = C_mat(1, r);
+sigma = sigma_mat(1, c);
 
 % =========================================================================
 
