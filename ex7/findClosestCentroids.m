@@ -21,7 +21,15 @@ idx = zeros(size(X,1), 1);
 % Note: You can use a for-loop over the examples to compute this.
 %
 
+m = size(X,1);
+cost_store = zeros(m, K);
 
+for i = 1: K,
+  % copying ith centroid to m rows by repmat(centroids(i, :), m, 1);
+  cost_store(:, i) = sum((X - repmat(centroids(i, :), m, 1)) .^ 2, 2);
+endfor
+
+[~, idx] = min(cost_store, [], 2);
 
 
 

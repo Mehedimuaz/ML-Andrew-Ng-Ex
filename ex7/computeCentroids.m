@@ -27,6 +27,12 @@ centroids = zeros(K, n);
 %
 
 
+% m x K matrix with 1 for corresponding cluster value in each row
+centroid_matrix = eye(K)(idx,:);
+for i = 1: K,
+  centroids(i, :) = sum(X .* centroid_matrix(:, i), 1) / sum(centroid_matrix(:, i), 1);
+endfor
+
 
 
 
